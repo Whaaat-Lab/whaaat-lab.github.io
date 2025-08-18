@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | fillaHole</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" style="width: 600px; height: 800px; background: #231F20"></canvas>
+    <script src="Build/wackyHoles.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/wackyHoles.data.gz",
+        frameworkUrl: "Build/wackyHoles.framework.js.gz",
+        codeUrl: "Build/wackyHoles.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "fillaHole",
+        productVersion: "0.1",
+      });
+    </script>
+  </body>
+</html>

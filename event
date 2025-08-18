@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whaaat!? Festival 2024</title>
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/kax8djx.css">
+    <link rel="stylesheet" href="whaaat.css">
+</head>
+<body>
+    <div class="container">
+        
+
+    
+        <div class="frame">
+            <img src="tvimagelayers/tv.png" alt="Frame">
+            <div class="video-container">
+                <video src="channelvideo/LIVINGROOM1-sm.m4v" autoplay loop muted webkit-playsinline playsinline></video>
+            </div>
+            <div id="btn1" class="btn" data-channel="1"></div>
+            <div id="btn2" class="btn" data-channel="2"></div>
+            <div id="btn3" class="btn" data-channel="3"></div>
+            <div id="btn4" class="btn" data-channel="4"></div>
+            <div id="btn5" class="btn" data-channel="5"></div>
+            <div id="btn6" class="btn" data-channel="6"></div>
+        </div>
+       <div class="signup">
+            
+        <div class="notification-container">
+            <p class="notification">Returning for its seventh season:<br>America's favorite festival for experimental games and playful interactions!</p>
+            
+            <!-- <p class="notification">America's favorite experimental games and playful interactions event returns for our seventh season!</p> -->
+            <div id="ticket"><a href="https://www.eventbrite.com/e/whaaat-festival-2024-tickets-1029544263607?aff=oddtdtcreator">Learn More!?</a></div>
+            <!-- <form action="https://whaaat.us17.list-manage.com/subscribe/post?u=5852695ce94c7b2d4773eff91&amp;id=d62c192b0a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" width="500px" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5852695ce94c7b2d4773eff91_d62c192b0a" tabindex="-1" value=""></div>
+                  
+                    <div class="input-form"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+                </form> -->
+            </div>
+            <p></p>
+        <div class="pf-container">
+            <p class="pf">Past Festivals:
+                <a href="https://www.whaaat.io/2023/">2023</a> |
+                <a href="https://www.whaaat.io/2022/">2022</a> |
+                <a href="https://www.whaaat.io/2021/">2021</a> |
+                <a href="https://www.whaaat.io/2020/">2020</a>  |
+                <a href="https://www.whaaat.io/2019/">2019</a>  |
+                <a href="https://www.whaaat.io/2018/">2018</a></p>
+        </div>
+    </div>
+</div>
+
+    <script>
+        let btn1 = document.querySelector('#btn1');
+        btn1.addEventListener('click', ()=>{ 
+            changeChannel(btn1.dataset.channel);
+        });
+
+        let btn2 = document.querySelector('#btn2');
+        btn2.addEventListener('click', ()=>{ 
+            changeChannel(btn2.dataset.channel);
+        });
+
+        let btn3 = document.querySelector('#btn3');
+        btn3.addEventListener('click', ()=>{ 
+            changeChannel(btn3.dataset.channel);
+        });
+
+        let btn4 = document.querySelector('#btn4');
+        btn4.addEventListener('click', ()=>{ 
+            changeChannel(btn4.dataset.channel);
+        });
+
+        let btn5 = document.querySelector('#btn5');
+        btn5.addEventListener('click', ()=>{ 
+            changeChannel(btn5.dataset.channel);
+        });
+
+        let btn6 = document.querySelector('#btn6');
+        btn6.addEventListener('click', ()=>{ 
+            changeChannel(btn6.dataset.channel);
+        });
+
+        function changeChannel(channel) {
+            let video = document.querySelector('video');
+            let oldSrc = video.src;
+            // console.log("Old Source is: " + oldSrc);
+
+            let newSrc = "channelvideo/LIVINGROOM" + channel + "-sm.m4v";
+            // console.log("New Source is: " + newSrc);           
+            
+            if (oldSrc.includes(newSrc)) {
+                let newSrc = "channelvideo/staticonly.m4v";
+                video.setAttribute('src', newSrc);
+                video.load();
+            }
+            else { 
+                video.setAttribute('src', newSrc);
+                video.load();
+            }
+        }
+    
+        // dial3 -- on/off
+        /*
+        let powerState = true;
+        const btn3 = document.querySelector('.btn3').addEventListener('click', onOff);
+        
+        function onOff() {
+            if (powerState == true) {
+                // alert('power is off');
+                powerState = false;
+                let video = document.querySelector('video');
+                video.setAttribute('src', 'none');
+            }
+            else {
+                //alert('power is on');
+                powerState = true;
+                let video = document.querySelector('video');
+                video.setAttribute('src', 'channelvideo/mov/staticonly.mov');
+            }
+
+        }
+        */
+    </script>
+</body>
+</html>

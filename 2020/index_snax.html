@@ -1,0 +1,895 @@
+
+<!---------------------
+Whaaat!? Festival 2020
+---------------------->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Whaaat!? A Festival for Games and Experimental Interactions</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="https://use.typekit.net/qkk8zor.css">
+		
+		
+		<!-- CSS -->
+		<style type="text/css">
+		
+
+			*{
+				padding: 0px;
+				margin: 0px;
+				box-sizing: border-box;
+			}
+			
+			body {
+				max-width: 1200px;
+				margin: auto;
+				text-align: center;
+				background-color: #fff;
+				//font-size: 1em;
+				font-size: 100%;
+				-webkit-text-size-adjust: none;
+				line-height: 1.5em;
+				font-family: acumin-pro, sans-serif;
+				font-family: sans-serif;
+				color: rgba(48, 48, 48, 1);
+			}
+
+			/* The Grid! */
+
+			.grid {
+				font: inherit;
+				display: grid;
+				grid-gap: 0px;
+				grid-template-columns: repeat(6, 200px);
+				grid-template-rows: repeat(8, 200px);
+				grid-template-areas:
+					
+/*
+					"h1 h1 h1 h2 h2 h2"
+					"t0 t0 b4 b4 n1 n1"
+					"t0 t0 x1 x1 a4 c2"
+					"a2 a2 x1 x1 b9 c2"
+					"a2 a2 x1 x1 b7 b7"
+					"i1 i1 i1 i1 b2 b2"
+					"b8 c1 c1 a3 a8 a9"
+					"a5 a6 b6 b6 b1 b1"
+					"b3 b3 s1 s1 b5 b5"
+					"b3 b3 s1 s1 b5 b5"
+					"f1 f1 f2 f2 f3 f3";
+
+
+					"h1 h1 h1 h2 h2 h2"
+					"t1 t1 n1 n1 b7 b7"
+					"t1 t1 a2 a2 a4 n2"
+					"t1 t1 a2 a2 b9 n2"
+					"b1 b1 i1 i1 i1 i1"
+					"b8 b4 b4 a3 a8 a9"
+					"a5 a6 b6 b6 c1 c1"
+					"b3 b3 s1 s1 b5 b5"
+					"b3 b3 s1 s1 b5 b5"
+					"f1 f1 f2 f2 f3 f3";
+
+*/
+					"h1 h1 h1 h2 h2 h2"
+					"s2 s2 b7 b7 a2 a2"
+					"s2 s2 g1 g2 a2 a2"
+					"b1 b1 b8 a3 c1 c1"
+					"t1 t1 n1 n1 n2 b9"
+					"t1 t1 b4 b4 n2 b9"
+					"t1 t1 i1 i1 i1 i1"
+					"f1 f1 f2 f2 f3 f3";
+
+				background-color: #fff;
+				color: #444;
+				text-align: left;
+
+			}
+
+			h1 {
+				background-color: #000;
+				background-image: url("images/cataloglogo@2x.png");
+				background-size: contain;
+				grid-area: h1;
+				margin: 0;
+			}
+			
+			h2 {
+				background-color: #000;
+				padding-top: 15px;
+				grid-area: h2;
+				margin: 0;
+				color: #fff;
+				text-align: center;
+				font-size: 250%;
+				line-height: 1em;
+			}
+			
+			/* Text fix for Responsive issue */
+			.text {		
+				height: 100%;
+				width: 100%;
+				-webkit-text-size-adjust: none;
+			}
+			
+			.ad {
+				background-size: contain;
+				background-repeat: none;
+				padding: 10px;
+				border: black thin solid;
+				position: relative;
+			}
+			
+			.alenda {
+				grid-area: a1;
+				background-image: url("images/alenda.png");
+			}
+			
+			.alenda .text {
+				font-size: 100%;
+				line-height: 115%;
+				padding-top: 97%;
+			}
+			
+			.ami {
+				grid-area: t0;
+				background-image: url("images/tigerflowerAmi_square@2x.png");
+			}	
+			
+			.ami .text {
+				font-size: 75%;
+				line-height: 110%;
+				padding-top: 85%;
+			}
+			
+			
+			.ami .dateBanner {
+				top: 93%;
+			}
+			
+			.arcade {
+				grid-area: a6;
+				background-image: url("images/virtualarcade@2x.png");
+				padding-top: 70%;
+				font-size: 65%;
+				line-height: 1.2em;
+			}
+			
+			.arcade_cat {
+				grid-area: c2;
+				background-image: url("images/catarcade.png");
+				padding-top: 140%;
+				font-size: 65%;
+				line-height: 1.1em;
+				
+			}
+			
+			.arcade_nature {
+				grid-area: n2;
+				background-image: url("images/naaaturcade.png");
+				padding-top: 140%;
+				font-size: 60%;
+				line-height: 1em;
+				
+			}
+			
+			.arcade_catRedux {
+				grid-area: c2;
+				background-image: url("images/catredux@2x.png");
+				padding-top: 166%;
+				font-size: 60%;
+				line-height: 1em;
+				
+			}
+			
+			.basement {
+				grid-area: b4;
+				background-image: url("images/basement.png");
+				background-repeat: no-repeat;
+			}
+			
+			.basement_console {
+				float: left;
+				position: inherit;
+				margin-top: -3px;
+				top: 0;
+				clip-path: polygon(0% 0%, 15% 0, 15% 45%, 43% 66%, 43% 100%, 0% 100%);
+				shape-outside: polygon(0% 0%, 15% 0, 15% 45%, 43% 66%, 43% 100%, 0% 100%);
+			}
+			
+			
+			.basement_text {
+				clear: top;
+				padding-top: 25%;
+				padding-left: 5%;
+				font-size: 70%;
+				line-height: 1.1em;
+				text-align: justify;
+				height: 100%;
+			}
+			
+			.birds {
+				grid-area: b9;
+				background-image: url("images/birds.png");
+			}
+			
+			.bookClub {
+				grid-area: b1;
+/* 				background-image: url("images/bookclub_irr@2x.png"); */
+
+			}
+			
+			.bc_image {
+				float: left;
+				clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 49%, 100% 54%, 65% 49%, 65% 49%, 65% 67%, 65% 67%, 25% 100%, 25% 100%, 0% 100%, 0% 100%); 
+				shape-outside: polygon(0% 0%, 100% 0%, 100% 0%, 100% 49%, 100% 54%, 65% 49%, 65% 49%, 65% 67%, 65% 67%, 25% 100%, 25% 100%, 0% 100%, 0% 100%);
+			}
+			
+			.bookClub_text {
+				clear: top;
+				padding-top: 10%;
+				font-size: 70%;
+				line-height: 1.2em;
+				text-align: justify;
+				height: 100%;
+			}
+			
+			.calendar {
+				background-image: url("images/dayplanner.png");
+				grid-area: b7;
+				padding-left: 40%;
+				font-size: 90%;
+				line-height: 1.2em;
+			}
+			
+			.cereal {
+				background-image: url("images/cereal@2x.png");
+				grid-area: a3;
+				padding-top: 110px;
+				font-size: 60%;
+				line-height: 1.2em;
+			}
+			
+			.conduct {
+				background-image: url("images/CODEOFCONDUCT@2x.png");
+				grid-area: c1;
+			}
+			
+			.creature {
+				grid-area: a8;
+				background-image: url("images/creature@2x.png");
+				width: 100%;
+				padding-top: 30%;
+				padding-left: 45%;
+				font-size: 65%;
+				line-height: 1.2em;
+			}
+			
+			.dateBanner {
+				position: absolute;
+				top: 1%;
+				width: 100%;
+				color: #fff;
+				text-align: center;
+				text-transform: uppercase;
+			}
+			
+			.deliveries {
+				grid-area: a9;
+				background-image: url("images/deliveries@2x.png");
+				font-size: 65%;
+				line-height: 1.2em;
+				padding-left: 55%;
+			}
+			
+			.fannyPack {
+				grid-area: p1;
+				background-image: url("images/fannypack@2x.png");
+			}
+			
+			.fannyPack_text {
+				z-index: 1;
+				padding: 10px;
+				padding-left: 55%;
+				float: right;
+				font-size: 75%;
+				line-height: 1.1em;
+				width: inherit;
+				height: inherit;
+			}
+			
+			.gameClub {
+				grid-area: g1;
+				background-image: url("images/secretgame@2x.png");
+				padding-top: 65%;
+				font-size: 62%;
+				line-height: 1.2em;
+				background-color: #000;
+				color: #fff;
+			}
+			
+			.gameClub_current {
+				grid-area: g2;
+				background-color: #000;
+				color: #fff;
+				line-height: 1.2em;
+			}
+			
+			.gameClub_header {
+				position: relative;
+				top: -5%;
+			}
+			
+			
+			
+			.gameJams {
+				grid-area: b2;
+				background-image: url("images/gamejams@2x.png");
+				padding-top: 20%;
+				padding-right: 30%;
+				font-size: 85%;
+				line-height: 1.1em;
+			}
+			
+						
+			.hams {
+				grid-area: b6;
+				background-image: url("images/hams@2x.png");
+				padding-top: 140px;
+				font-size: 65%;
+				line-height: 1.2em;
+			}
+			
+			.interactiveAd {
+				grid-area: i1;
+				height: 100%;
+			}
+			
+			.nature {
+				grid-area: n1;
+				background-image: url("images/naaaatureWeb.png");
+			}
+			
+			.orderForm {
+				grid-area: b5;
+				background-image: url("images/orderform@2x.png");
+				padding-top: 140px;
+				font-size: 65%;
+				line-height: 1.2em;
+			}
+			
+			.paolo {
+				background-image: url("images/paolo_OOS@2x.png");
+				grid-area: b3;
+				padding-top: 10%;
+				padding-left: 50%;
+				font-size: 95%;
+				line-height: 1.3em;
+			}
+			
+			.register {
+				background-image: url("images/registernow_orange@2x.png");
+				grid-area: a2;
+			}
+			
+			.register_text {
+				grid-area: a2;
+				z-index: 1;
+				padding: 10px;
+				padding-top: 45%;
+				font-size: 100%;
+				line-height: 1.3em;
+				position: absolute;
+			}
+			
+			.robot_friend {
+				grid-area: b8;
+				background-image: url("images/robotfriend@2x.png");
+				padding-top: 23%;
+				padding-left: 45%;
+				font-size: 60%;
+				line-height: 1.1em;
+				
+			}
+			
+			.sharp {
+				grid-area: s1;
+				background-image: url("images/johnoutofstockjohnbig@2x.png");
+				padding-top: 65%;
+				padding-left: 40%;
+				font-size: 90%;
+				line-height: 1.2em;
+			}
+			
+			.sharp_image {
+				width: 100%;
+				float: left;
+				clip-path: polygon(100% 0%, 100% 70%, 40% 70%, 36% 100%, 1% 100%, 1% 0%);
+				shape-outside: polygon(100% 0%, 100% 70%, 40% 70%, 36% 100%, 1% 100%, 1% 0%);
+			}
+			
+			.sms {
+				grid-area: a5;
+				width: 100%;
+				background-image: url("images/sms@2x.png");
+				padding-top: 45%;
+				font-size: 75%;
+				line-height: 1.2em;
+			}
+			
+			.snax {
+				grid-area: s2;
+				background-image: url("images/snax.png");
+				width: 100%;
+			}
+			
+			.traaacy {
+				grid-area: t1;
+				width: 100%;
+				background-image: url("images/traaacy@2x.png");
+				font-size: 100%;
+				line-height: 115%;
+				padding-top: 99%;
+			}
+			
+			.vibes {
+				grid-area: v1;
+				width: 100%;
+				background-image: url("images/vibes.png");
+			}	
+			
+			.xalavier {
+				grid-area: x1;
+				width: 100%;
+				background-image: url("images/xalavier.png");
+				padding-top: 140%;
+				font-size: 60%;
+				line-height: 110%;
+			}	
+			
+			/* colors */
+			.c_snax {
+				color: #e0a44f;
+			}	
+			
+			.c_nature {
+				
+			}
+			
+			.c_vibes {
+				
+			}
+			
+			.c_art {
+				
+			}
+			
+			/* typography */
+			
+			.ad p {
+				padding-bottom: 2%;
+			}
+			
+			.wideItalic {
+				font-family: acumin-pro-wide, sans-serif;
+				font-weight: 900;
+				font-style: italic;
+			}
+			
+			.condensedItalic {
+				font-family: acumin-pro-condensed, sans-serif;
+				font-weight: 400;
+				font-style: italic;
+			}
+			
+			.headline {
+				text-transform: uppercase;
+			}
+			
+			.caps {
+				text-transform: uppercase;
+			}
+			
+			.disclaimer {
+				font-size: x-small;
+			}
+			
+			.red {
+				/* color: #ed1c24; */
+				color: #52A123;
+			}
+			
+			.live {
+				border: red thick dashed;
+			}
+			
+			.liveBanner {
+				background-image: url("images/live.png");
+				background-repeat: no-repeat;
+				background-size: 110px;
+				position: absolute;
+				top: -5%;
+				left: 0;
+				width: 53%;
+				height: 28%;
+				z-index: 15;
+			}
+			
+			/* Links */
+			
+			a {
+				color: #e0a44f;
+				text-decoration: none;
+			}
+			
+			.cssButton {
+				cursor: hand;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: none;
+			}
+			
+			.adButton:hover {
+				background-color: rgba(224, 164, 79, 0.1);
+			}
+			
+			.cssHover {
+				background-color: rgba(224, 164, 79, 0.3) !important;
+				z-index: 9 !important;
+			}
+			
+			/* Footer */
+			
+			.eef {
+				grid-area: f1;
+				background-image: url("images/eef.png");
+				border: none !important;
+			}
+			
+			.atlas {
+				grid-area: f2;
+				background-image: url("images/atlas.png");
+				border: none !important;
+			}
+			
+			.engineering {
+				grid-area: f3;
+				background-image: url("images/engineering.png");
+				border: none !important;
+			}
+
+		</style>
+		
+		    	
+	
+	</head>
+	
+	<body>
+		<div id="test"></div>
+		<div class="grid">
+			<h1></h1>
+			<h2>
+				<span class="condensedItalic headline">receive months of</span><br />
+				<span class="wideItalic headline">festival novelties</span><br />
+				<span class="headline">in the comfort of your home!!!</span>
+			</h2>
+			
+			
+			<!-- Current Month -->
+						
+			<div class="snax ad"></div>
+
+			
+			<div class="register ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://www.eventbrite.com/e/whaaat-20202021-experience-tickets-119823339835";'></div>
+				<div class="register_text"><strong>"So wait, what is this exactly?"</strong><br />
+					This year, we're forgoing the one-day festival and exchanging it for a year-long* remote festival extravaganza, complete with amazing guests, weird games, clubs, surprise swag by mail and a whole lot more. New surprises will be announced every month.	Register now to be included in the experimental mailings and for priority registration for each month's activities.
+				</div>
+			</div>
+			
+			
+			<div class="calendar ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://calendar.google.com/calendar/u/0?cid=d2hhYWF0QGNvbG9yYWRvLmVkdQ";'></div>
+				<div class="text">
+					Check the live calendar to see all the goings-on each month: including talks, book club meetings, game club discussions, pop-up arcade events, and more! Then write that business down in your day planner! Bust out those colored tabs to organize it all! Or better yet, add it to the calendar on your Palm Pilot. It's the future!  
+				</div>
+			</div>
+			
+						
+			<div class="gameClub ad">
+				
+				
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.ref = "https://cuboulder.zoom.us/j/95139361113";';></div>
+				<div class="text">Let's play games together. But in <em>secret</em>. It's Snaaack month! This week we're going to hop on Parsec together and play Overcooked 2. Obviously!</div>
+			</div>
+			
+			<div class="gameClub_current ad">
+			
+				<div class="text">
+				<div class="gameClub_header">
+					<h6>WED. 2/24 @ 12:30-1PM MDT</h6>	
+				</div>
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+					onclick='location.href = "https://www.waldengame.com/";'></div>
+					<img src="images/scg_nextGame.png" width="180" alt="Overcooked 2!" />
+				</div>
+			</div>
+			
+									
+			 
+			 <!-- General Festival Info -->	
+
+			
+			<div class="bookClub ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://www.upress.umn.edu/book-division/books/playing-nature";'></div>
+				<img class="bc_image" src="images/bookclub_irr@2x.png" width="100%" /><div class="bookClub_text">
+				Join us on Mondays from 12:30-1PM as we read and discuss Alenda Y. Chang's <a href="https://www.upress.umn.edu/book-division/books/playing-nature">Playing Nature</a>! 
+				</div>
+			</div>
+			
+			 <div class="cereal ad">
+				 <div class="text">Do you remember how Jerry Seinfeld always had tons of cereal? And like, <em>kid</em> cereal? That's because he's awesome. He also has a bunch of classic cars. Classic cars and sugary cereal are a great combo. You should eat more cereal.
+				 </div>
+			 </div>	
+			 
+			 <div class="conduct ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://www.notion.so/Whaaat-Code-of-Conduct-347972696f144be1baca58ae1a6088c9";'></div>
+
+			</div>		
+			
+			
+			<!-- Nature Month -->
+									
+			<div class="nature ad"></div>
+
+			
+			<div class="arcade_nature ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://forms.gle/TwuwrZEX8vf8Cke78";'></div>
+				<h4 class="dateBanner"></h4>
+				<div class="text">
+					Can computers fully replicate the awe-inspiring splendor of actual nature? No. But February might be a little cold for you to go on an actual nature walk, so we’re bringing the outdoors indoors for the second volume of the Whaaat!? Arcade! Games full of open spaces, simulated ecologies, strange creatures, presented with plenty of space and weird immersive surprises.
+				</div>
+			</div>
+			
+			<div class="basement ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://twitch.tv/whaaatfestival/";'></div>
+				<h4 class="dateBanner">03.06 / 10am (MDT)</h4>
+				<div class="basement_text">This week we play more Nature games. Last week of outdoor exploration and "fun" in the "sun"!</div>
+			</div>
+			
+<!--
+			<div class="alenda ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href="https://cuboulder.zoom.us/meeting/register/tJEsd-urqzkiEtQPy5fW2QOFIvjhFBzV6YYr";'></div>
+				<div class="text">
+					Join our interactive excursion into the world of nature and videogames, led by Alenda Y. Chang, the author of <a href="https://www.upress.umn.edu/book-division/books/playing-nature">Playing Nature: Ecology in Video Games</a>. Alenda will discuss the critical role of video games in response to our burgeoning ecological crisis, and then lead us in some play-based activites that will delve into the surprising connections between games and nature.
+				</div>
+			</div>
+-->
+			
+			<div class="traaacy ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://cuboulder.zoom.us/meeting/register/tJEsfuCqqTIoGNY0l_gZGzNhBL1YNIKF6pQq";'></div>
+					<div class="text">Tracy Fullerton, game designer, creator of <em>Walden, a Game</em>, professor in the USC Games program at the University of Southern California, and the director of the Game Innovation Lab, will discuss her design methods, encouraging designers to find inspiration in ideas and activities that have meaning to them and seeing where those ideas lead, rather than relying on standard genres and design solutions.
+					</div>
+			</div>
+			
+			<div class="birds ad"></div>
+			
+			<div class="interactiveAd">
+				<iframe id="" src="interactiveAd_nature/ad.html" name="" width="800" height="200" frameborder="0" marginheight="0" scrolling="no"></iframe>
+			</div>
+
+
+
+			<!-- Good Vibes -->
+			
+<!--
+			<div class="vibes ad"></div> 
+			
+			<div class="ami ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://cuboulder.zoom.us/meeting/register/tJ0pd-6gqD0sG9Vn1Uncqse_cQ7_TwkXm1pu";'></div>
+				<div class="text">
+					a special talk about <a href="https://pinktigergames.com/">Pink Tiger Games</a>, <a href-"https://flatterme.cards/">Flatter Me</a>, and making sweet, kind games to connect people and make them feel seen and heard.
+				</div>
+				<div class="dateBanner">december 2, 6pm mst</div>
+			</div>
+			
+			<div class="arcade_cat ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://twitch.tv/whaaatfestival/";'></div>
+				<div class="text">
+					Do we love cats, or have they just hypnotized us into serving their every whim? We may never know, but cats were the theme of the <strong>first Whaaat!? Arcade</strong> of the season. Every game featured in the arcade was cat  related. Experimental cat-themed controllers were on display.
+				</div>
+			</div>
+			
+			<div class="fannyPack ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://hellopoetry.com/poem/465637/is-that-man-wearing-a-fanny-pack/";'></div>
+				<div class="fannyPack_text"><p>i want to thank you for letting your guard down.<br />i wont let you regret it. i know your still letting some wounds heal. i wont ever forget it. the tremble in your voice, i know will not compromise.don't ever not speak to me. i am hoping to stay cornered by your truth. i am hoping to stay cornered by your beauty.</p><pre>&Tab;</pre><p>-Austin Stephenson</p></div>
+			</div></div>
+			
+			<div class="xalavier ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://cuboulder.zoom.us/meeting/register/tJUvd--hpjsrHteVF2Qz4nAv4IjMq_IE4lLV";'></div>
+					<div class="text">We'll open up our internet browsers, explore a LOT of Wikipedia pages, and discuss the cycles that cause our favorite cult media to be overlooked: what makes audiences decide what a work is before they even experience it?
+					</div>
+			</div>
+			
+			<!-- Launch -->
+					
+<!--			
+			<div class="paolo ad">
+				<div class="text">
+					<p>Our featured item for September was an amazing experimental gameplay session with Paolo <br /> Pedercini from <br /><a href="https://molleindustria.org/">Molleindustria</a>.</p>
+					<p>We played a massively multiplayer version of <a href="https://molleindustria.org/demsocsim/">Democratic Socialism Simulator</a>, got a special guided tour of <a href="https://likelike.glitch.me/">LikeLike's oMoMa</a>, saw a new episode of Friennnds, and completed an epic quest from <a href="https://molleindustria.itch.io/rules-and-roberts">Rules and Roberts</a>. Our supplies of wonder flew off the shelves!
+					</p>
+				</div>
+			</div>
+			
+			<div class="sharp ad">
+				<div class="text">
+					On Wednesday, October 28, John Sharp joined us to discuss his phenomenal book <a href="https://mitpress.mit.edu/books/works-game">Works of Game</a>! He told us things he liked about it. He told us things he didn't like about it. It was great!
+				</div>
+			</div>
+			
+			<div class="gameJams ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://www.eventbrite.com/e/whaaat-20202021-experience-tickets-119823339835";'></div>
+				<div class="text">
+					<p>Right now we're all surround by nanny cams. Not cool! This month create a game about hiding your identity from the technology around you. This could be using webcam filters, voice modulators, real masks, or whatever you can think of. Submissions accepted until October 7.</p>
+					</div>
+			</div>
+			
+						
+			<div class="orderForm ad">
+				<div class="cssButton"
+				onmouseover='this.className="cssButton cssHover"'
+				onmouseout='this.className="cssButton"'
+				onclick='location.href = "https://www.eventbrite.com/e/whaaat-20202021-experience-tickets-119823339835";'></div>
+			</div>
+			
+-->
+
+			<!-- Random Ads -->
+<!--
+			
+			<div class="arcade ad">
+				<div class="text">
+					It's like Coachella, but instead of music, it's games! And instead of in the desert, it's on the internet! At your house! Another win!
+				</div>
+			</div>	
+			
+			<div class="creature ad">
+				<div class="text">
+					A nature reserve filled with mutants that teach you how to make better video games? Possibly, but first you'd have to successfully hit one with a tranquilizer dart.
+					</div>
+			</div>
+			
+			<div class="deliveries ad">
+				<div class="text">
+					Things will come to you in the mail! What things? Whatever we can afford! But good things. Not dead things or rocks or old food. That’s gross.
+				</div>
+			</div>
+			
+			<div class="hams ad"></div>
+
+			
+			<div class="sms ad">
+				<div class="text">You want to trust us with your phone number? Okay! You should! We'll take it and give it strangers, and then you'll play experimental SMS games with those same strangers! It's an experiment!
+				</div>
+			</div>
+			
+			
+-->		
+			
+			
+			<div class="robot_friend ad">
+				<div class="text">
+					Do you crave connection, but also have a big problem with real humans? Try texting a robot! It’s been programmed to be your friend, and is 55% less clingy than older models!
+					</div>
+			</div>		
+			
+
+			
+						
+			<!-- Footer -->
+			<div class="eef ad"></div>
+			<div class="atlas ad"></div>
+			<div class="engineering ad"></div>
+		</div>
+	</body>
+	
+	
+		<script src="js/luxon.min.js"></script>
+		<script language="javascript">	
+			var whaaatTime = luxon.DateTime.local().setZone('America/Denver');
+						
+			var day = whaaatTime.weekday;
+ 			var hour = whaaatTime.hour;
+ 			var minutes = whaaatTime.minute;
+ 			
+ 			var test = document.getElementById("test");
+ 			//test.innerHTML = day;
+			
+			var sgc = document.getElementsByClassName("gameClub")[0];
+			var sgc_Link = sgc.getElementsByClassName("cssButton")[0];
+			
+			var wbc = document.getElementsByClassName("bookClub")[0];
+			var wbc_Link = wbc.getElementsByClassName("cssButton")[0];
+		
+			if(day == "3" && hour == "12"){		
+				if(minutes >= 30 && minutes <= 60){
+					sgc.className = "gameClub ad live"; 
+					sgc_Link.onclick = function() { GoZoom("https://cuboulder.zoom.us/j/94426704112") };
+				} 
+			} else {
+				sgc.className = "gameClub ad";
+				sgc_Link.onclick = function() { OpenInfoPage("https://www.notion.so/Whaaat-Secret-Game-Club-2c00fe400ed6436c8f186f32982e695d") };
+			}
+			
+			if(day == "1" && hour == "12"){		
+/*
+				if(minutes >= 30 && minutes <= 60){
+					wbc.className = "bookClub ad live"; 
+					wbc_Link.onclick = function() { GoZoom("https://cuboulder.zoom.us/j/99758593477") };
+				} 
+*/
+			} else {
+				wbc.className = "bookClub ad";
+				wbc_Link.onclick = function() { OpenInfoPage("https://www.upress.umn.edu/book-division/books/playing-nature") };
+			}
+			
+			function OpenInfoPage(thisLink) { 
+            	window.open(thisLink); 
+        	} 
+        	
+        	function GoZoom(thisLink) { 
+            	window.open(thisLink, "_blank"); 
+        	} 
+		</script>	
+
+	
+</html>

@@ -1,0 +1,904 @@
+
+<!---------------------
+Whaaat?! Festival 2021
+---------------------->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Whaaat?! A Festival for Games and Experimental Interactions</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="https://use.typekit.net/izv4gsy.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		
+		<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+		
+		<script language="javascript">	
+		var imagesArray = ["pyramid.png", "android.png", "tankCar.png"];
+		
+		function displayImage(){
+			var num = Math.floor(Math.random() * imagesArray.length); 
+			var imageElement = document.getElementsByClassName("heroBurnImage");
+			var imageName = "images/" + imagesArray[num];
+			console.log(imageName);
+			imageElement[0].src = imageName;
+		}
+		
+		window.onload = function(){
+			displayImage();
+		}
+		
+		</script>
+		
+		
+		
+		<!-- CSS -->
+		<style type="text/css">
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				margin: 0 auto;
+				padding: 0;
+				width: 100%; /* fall back */
+				width: 100vw;
+				text-align: center;
+				background-color: #a68c71;
+
+
+				background-image: url("images/stripein_3.png");
+				background-repeat: repeat-y;
+				background-position: center top;
+
+
+				font-family: urw-din, sans-serif; 
+				color: #333;
+			    font-size: 150%;
+			    min-width: 905px;
+			}
+			
+/*
+			#bgHeader {
+				display: block;
+				background-image: url("images/stripein_4.png");
+				background-repeat: none;
+				background-position: center top;
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				z-index: -1;
+				height: 1653px;
+			}
+			
+			#bg {
+				display: block;
+				background-image: url("images/BGstripes.png");
+				background-repeat: repeat-y;
+				background-position: center top;
+				position: relative;
+				margin-bottom: -12000px;
+				top: 1653px;
+				z-index: -2;
+				height: 12000px;
+			}
+*/
+			
+/*
+			#backgroundWrapper_1 {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				position: absolute;
+				top: 0px;
+				z-index: -1;
+			}
+			
+			#backgroundWrapper_1 img {
+				position: relative;
+				left: -25%;
+			}
+			
+			#backgroundWrapper_2 {
+				text-align: center;
+				position: absolute;
+				top: 5000px;
+				z-index: -1;
+				transform: scaleY(-1);
+				
+			}
+			
+			#backgroundWrapper_2 img {
+				position: relative;
+				left: -25%;
+			}
+*/
+
+
+			
+			header {
+/*
+				background-image: url("images/stripein.png");
+				background-repeat: no-repeat;
+				background-position: center top;
+*/
+				position: relative;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+			}
+			
+			#hero {
+				padding-top: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+				width: 60%;
+				font-family: itc-avant-garde-gothic-pro, sans-serif; 
+				color: #fff;
+				text-transform: uppercase;
+			}
+			
+			.heroBurnImage {
+				mix-blend-mode: color-burn;
+				width: 60%;
+			}
+			
+			h2 {			
+				font-weight: 100;
+				font-size: 200%;
+				text-align: left;
+				margin: 0;
+				padding: 0;
+			}
+			
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			
+			h1 img {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			h3 {
+				text-transform: uppercase;
+				text-align: center;
+				font-size: 200%;
+				line-height: 120%;
+			}
+			
+			.whiteText {
+				color: #fff;
+			}
+			
+			a {
+				color: #a43544;
+			}
+			
+			a:visited {
+				color: #cf5927;
+			}
+			
+			.register {
+				background-color: #e69922;
+				padding: 20px;
+				margin: 20px;
+				width: 300px;
+				height: 30px;
+				position: relative;
+				left: -100px;
+				
+			}
+			
+			.register a {
+				color: #fff;
+				text-decoration: none;
+			}
+			
+			.register:hover {
+				background-color: #c93140;
+			}
+			
+			
+			nav {
+				background-color: #a43544;
+				font-size: 1.5rem;
+				color: #fff;
+				padding: 30px 0 30px 0;
+				position: relative;
+				top: 60px;
+				margin: 0;
+				margin-bottom: 0px;
+				text-transform: capitalize;
+			}
+			
+			nav a {
+				color: #fff;
+				padding-right: 30px;
+				padding-left: 30px;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+			
+			main {
+				margin: 0 auto;
+				width: 60%;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+				position: relative;
+				top: 100px;
+				line-height: 1.5em;
+				padding-bottom: 100px;
+			}
+			
+			.copy {
+				background: #fff;
+				padding: 20px;
+				text-align: left;
+			}
+			
+			.intro {
+				
+				
+			}
+			
+			.schedule {
+				display: grid;
+				grid-template-columns: 25% 75%;	
+				grid-remplate-rows: auto;
+				grid-row-gap: 40px;
+				font-size: 1rem;
+				background-color: #fff;	
+				padding: 80px;
+			}
+			
+			.schedule--time{
+				font-weight: bold;
+			}
+			.schedule--location{
+				color: #666;
+			}
+			
+			.schedule--event {
+				text-align: left;
+				align-self: start;
+				background-color: #fff;	
+			}
+			
+			.schedule--event--title {
+				font-size: 1.75rem;
+				padding-bottom: 10px;
+				align-self: start;
+			}
+			
+			.schedule--event--description {
+				line-height: 1.5rem;
+			}
+			
+			
+			.conferenceDetails {
+				column-count: 2;
+				font-size: 80%;
+				display: flex;
+			}
+			
+			.detailInfo {
+				width: 80%;
+				padding: 0 5px;
+				break-inside: avoid;
+			}
+			
+			.detailInfo img {
+				width: 100%;
+			}
+			
+			
+			.speakers {
+				column-count: 2;
+				row-count: 2;
+				display: flex;
+				font-size: 80%;
+			}
+			
+			.speakerInfo {
+				text-align: left;
+				width: 80%;
+				padding: 0 10px;
+				break-inside: avoid;
+			}
+			
+			.speakerInfo a {
+				text-decoration: none;
+			}
+			
+			
+			
+			.speakerInfo img {
+				width: 100%;
+			}
+			
+			/* Arcade Information */
+			
+			.gameListing {
+				text-align: left;
+				padding-bottom: 15px;
+			}
+			
+			.gameListing h4 {
+				margin-bottom: 10px !important;
+			}
+	
+			.gameDescription {
+				text-align: left;
+				font-size: 1.25rem;
+				line-height: 1.75rem;
+			}
+			
+			#gameListCenter {
+				clear: both;
+			}
+
+			
+			
+			.featureList {
+				column-count: 2;
+				text-align: center;
+			}
+			
+			.tickets {
+				column-count: 3;
+				color: #fff;
+			}
+			
+			.ticketOption {
+				padding: 10px;
+				background-color: #333;
+			}
+			
+			.ticketOption:hover {
+				background-color: #000;
+			}
+			
+			.ticketDescription {
+				font-size: 50%;
+			}
+			
+			.tickets a {
+				text-decoration: none;
+				color: #fff;
+			}
+			
+			.mapImage {
+				padding-top: 20px;
+			}
+			
+			/* Mailing List */
+			
+			.signup {
+				text-align: center;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				clear: both;
+				font-size: 60%;
+			}
+			
+			.signup h4 {
+				font-size: 150%;
+			}
+			
+			.signup emailField {
+				float: left;
+				width: 50%;
+			}
+			
+			.signup emailSubmit {
+				float: right;
+				width: 50%;
+			}
+			
+			.archive {
+				font-size: 75%;
+			}
+			
+			.archive ol {
+				display: inline;
+				list-style-image: none;
+			}
+			
+			.archive li {
+				display: inline;
+				list-style-image: none;
+				padding-left: 20px;
+				text-transform: uppercase;
+			}
+			
+			.archive a {
+				color: #999;
+				text-decoration: none;
+			}
+			
+			footer {
+				text-align: center;
+				width: 100%;
+				position: relative;
+				top: 50px;
+				padding: 0;
+				margin: 0;
+				background-color: #fff;
+			}
+			
+			footer img {
+				width: 100%;
+				max-width: 1000px;
+			}
+			
+			/* Typography */
+			.title {
+				font-family: itc-avant-garde-gothic-pro-500, sans-serif; 
+				text-transform: uppercase;
+				text-align: center;
+				line-height: 120%;		
+			}
+			
+			.centered {
+				text-align: center;
+			}
+			
+			/* Mailchimp */
+			#mc_embed_signup{
+				background:#fff; 
+				padding: 20px;
+				margin: 20px;
+			}
+
+/*
+			@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+				body { font-size: 200%;}
+				#signUp { width: 90%; clear: both;}
+				#apply { width: 90%; clear: both; border-left: none;}
+			}
+*/
+		</style>		    	
+	
+	</head>
+	<body>
+<!--
+		
+	<div id="backgroundWrapper_1">
+		<img src="images/stripein_2.png" width="150%" />
+	</div>
+	
+	<div id="backgroundWrapper_2">
+		<img src="images/stripein_2.png" width="150%" />
+	</div>
+-->
+		<div id="bgHeader"></div>
+				<div id="bg"></div>	
+		
+		
+		<header>
+			<div id="hero">
+				<img class="heroBurnImage" src="" alt="an interesting image" />
+				<h2>14 November</h2>
+				<h1><img src="images/logo_black.png" /></h1>
+				<div class="register">
+					<a href="#registration">REGISTER!</a>
+				</div>
+			</div>
+			<nav>
+				<a href="#schedule">Schedule</a> | 
+				<a href="#speakers">Speakers</a> | 
+				<a href="#games">Games</a> | 
+				<a href="#map">Location</a> |
+				<a href="#about">About</a>
+			</nav>
+		</header>
+		
+		
+		<main>
+			
+			<div class="intro copy">
+				<h3>A CARNIVAL OF GAME-RELATED WEIRDNESS</h3>
+				<p>Whaaat!? has returned from the virtual wilderness! We’re back in-person in November for an arcade and conference packed with phenomenal guest speakers, bizarre games, and experimental interactions. And yeah, we’re gonna have cereal again, too.</p>
+			</div>
+			
+			<!-- Schedule -->
+			<a name="schedule"></a>
+			<h3 class="whiteText">Schedule</h3>
+			
+			<div class="schedule">
+						
+				<div class="schedule--info">
+					<div class="schedule--time">9AM - 10PM</div>
+					<div class="schedule--location">ATLAS Lobby</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Check-in and Cereal Bar</div>
+					<div class="schedule--event--description">Conference ticket-holders can come early to check-in, get a peek at some of our featured games, meet with the other attendees over coffee and ALL THE CEREAL THEY CAN EAT in the ATLAS lobby</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">9AM - 4PM</div>
+					<div class="schedule--location">ATLAS Lobby</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Whaaat!? Tabletop</div>
+					<div class="schedule--event--description">All day long we'll have a rotating selection of tabletop and experimental games in the ATLAS lobby for you to explore and play with your friends.</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">10AM - 10:15AM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Opening Remarks</div>
+					<div class="schedule--event--description">The Whaaat!? Team welcomes you to this game-filled grand-prix that we've created.</div>
+				</div>
+
+				
+				<div class="schedule--info">
+					<div class="schedule--time">10:15AM - 11AM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Session 1: <em>Make Tiny Weird Software Please</em> with Nathalie Lawhead</div>
+					<div class="schedule--event--description">A talk about old computer culture, the early internet, and how creative philosophies of the past digital age are still relevant to us today... why weird wacky things that you can run on your desktop (for no other reason but to have a weird thing running on your desktop) continues to be important. This talk is all about the value of building weird niche software!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">ATLAS</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Whaaat!? Arcade</div>
+					<div class="schedule--event--description">This year's collection of games is the best and boldest yet, including some of the weirdest ways to earn Whaaat!?-Bucks, the official base currency of the Whaaat!? economy. Check the full <a href-"#games">games listing</a> for more details!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">ATLAS 104</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">MAL presents <em>That Kid in Your Neighborhood's Basement</em></div>
+					<div class="schedule--event--description">Our good friends at the <a href="https://mediaarchaeologylab.com">Media Archeology Lab</a> return to fuel your nostalgia-thirst a special exhibition for Whaaat!? Featuring a nirvana of vintage consoles and classics, this is a rare occasion to play some amazing games including Q*bert, Zork, Contra, GoldenEye and the infamous ET on an original Commodore 64, Apple //c, Atari 2600, NES, N64, Sega Genesis, and Vextrex!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">BTU Lab</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Electric Zine Jam</div>
+					<div class="schedule--event--description">All day long, experiment and play with the <a href="https://alienmelon.itch.io/electric-zine-maker/devlog/288222/update-12-the-big-one-new-ui-new-templates">Electric Zine Maker</a> from alienmelon (Nathalie Lawhead). Best zine gets a special prize!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">ATLAS 1B25</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Animals, Skateboards, and Animals on Skateboards</em></div>
+					<div class="schedule--event--description">What do you get when you cross the world's best activity with some of our favorite four-legged friends? Bliss and happiness, that's what! Don't look a gift horse in the grip-tape!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">ATLAS 1B27</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Naaaturcade</em></div>
+					<div class="schedule--event--description">The most serene nature-filled game-play session you'll ever experience. A veritable <em>jungle</em> of games.</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11AM - 3PM</div>
+					<div class="schedule--location">ATLAS 1B31</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">The Whaaat!? Student Showcase</em></div>
+					<div class="schedule--event--description">Come play some of the most impressive games from the ATLAS community of amazing students. You won't want to miss this!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">11:15AM - 12PM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Session 2: <em>No Good Fun ):</em> with Seemingly Pointless</div>
+					<div class="schedule--event--description">What do we mean when we say something is "fun"? What do we mean when we say that a game is "good"? Hold on to your seatbelts as James and Joe of Seemingly Pointless break down these concepts until fun sounds bad and bad sounds like good fun!</div>
+				</div>
+									
+				
+				<div class="schedule--info">
+					<div class="schedule--time">12PM - 1PM</div>
+					<div class="schedule--location">ATLAS Lobby / Boulder Area</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Lunch Break / Game Lunch</div>
+					<div class="schedule--event--description">Conference Attendees can grab a special box lunch from one of the best food trucks in the world, <a href="https://greyduckeats.wixsite.com/mysite">Grey Duck Eats</a>! While you're at it, why not grab a boardgame to play while you eat with your new besties!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">1PM - 2PM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Local Industry <strike>Panel</strike> GameShow!</div>
+					<div class="schedule--event--description">Panels are so 2019! This year we're making some of our favorite local designers and developers play a game show. We have no idea how this will go. Double Dare? More like Double <em>Ludem</em> Dare</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">1PM - 2PM</div>
+					<div class="schedule--location">BTU Lab</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">TinyCade Workshop</div>
+					<div class="schedule--event--description">Join award-winning game designer Peter Gyory as you work with his new creation, the <a href="https://tinycade.github.io/tinycade-homepage/">TinyCade!</a> Build the game controller of your fantasies!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">1:15PM - 2PM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Session 3: <em>Viral Project Creators Hate Him! (One Easy Trick to Make Weird Internet Shit)</em> with Brian Moore</div>
+					<div class="schedule--event--description"><em>This one weird trick will have you making weird stuff on the internet that people share. From scooters you scream into, to antisocial networks, to games that show the effectiveness of thoughts and prayers, you’ll come away with a sense of confusion but maybe—just maybe—a tool to help make more dumb stuff.</em></div>
+				</div>
+				
+				
+				<div class="schedule--info">
+					<div class="schedule--time">3PM - 3:45PM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Session 4: <em>The Controller is Your Mouth</em> with Nicole He</div>
+					<div class="schedule--event--description">Nicole will dive into the particular challenges of making games with vocal input and show off her not-yet-announced new game!</div>
+				</div>
+				
+				<div class="schedule--info">
+					<div class="schedule--time">3:45PM - 4PM</div>
+					<div class="schedule--location">ATLAS 100</div>
+				</div>
+				<div class="schedule--event">
+					<div class="schedule--event--title">Closing Remarks</div>
+					<div class="schedule--event--description">Are you as tired as we are? This is when the ball drops. You won't want to miss it.</div>
+				</div>
+				
+			</div>
+			
+<!--
+			<h3 class="whiteText">arcade</h3>
+			<div class="copy">
+				<p>This year's specially curated selection of games will not disappoint. From vintage classic on the original hardware to installation games that can't be experienced anywhere else. You'll be talking about this for months. We'll provide a list as we get closer, but, keep in mind, we don't want to blow all the surprises. 🙈🙉🙊</p>
+			</div>
+-->
+			<a name="speakers"></a>
+			<h3 class="whiteText">Featured Speakers</h3>
+			
+			<div class="speakers copy">
+				<div class="speakerInfo">
+					<a href="https://nicole.pizza/"><img src="images/nicole.jpg" /></a>
+					<a href="https://nicole.pizza/"><h3>Nicole<br />He</h3></a>
+					<p>Nicole He is a game developer and creative technologist based in Brooklyn, making unconventional voice technology projects and videogames. She previously worked as a creative technologist at Google Creative Lab and an outreach lead at Kickstarter, and currently teaches at NYU ITP.</p>
+				</div>
+				<div class="speakerInfo">
+					<a href="http://alienmelon.com/"><img src="images/nathalie.jpg" /></a>
+					<a href="http://alienmelon.com/"><h3>Nathalie<br />Lawhead</h3></a>
+					<p>Nathalie Lawhead is a solo-dev that makes experimental work on computers ranging from net-art to altgames and art games. They have been making this stuff for over 10 years, so they are very experienced in programming, art, animation, sound design, writing, narrative, composing, and all the things...</p>
+				</div>
+			</div>
+			<div class="speakers copy">	
+				<div class="speakerInfo">
+					<a href="https://brianmoore.com"><img src="images/blwm.png" /></a>
+					<a href="https://brianmoore.com"><h3>Brian<br />Moore</h3></a>
+					<p>Brian Moore is a Los Angeles-based, mostly technology-focused creative director who makes weird, fun, and arguably “innovative” projects. <br /><br />From pull cords that help you escape Zoom calls to real scooters powered by angry screams to Emmy-nominated political commentary video games, Brian’s work is medium agnostic and religiously irreverent.</p>
+				</div>
+				<div class="speakerInfo">
+					<a href="https://www.seempoint.com"><img src="images/cox.png" /></a>
+					<a href="https://www.seempoint.com"><h3>Seemingly<br />Pointless</h3></a>
+					<p>Seemingly Pointless is a very serious, super stylish media studio owned and operated by The Brothers Cox™. We make games, we make films, we make whatever you are paying us to make! Concise and intense, our work has been described as satirical reflections of reality; media with simple concepts and deep implementations. Hope you have enough space on your computer for all these files. stuff for over 10 years, so they are very experienced in programming, art, animation, sound design, writing, narrative, composing, and all the things...</p>
+				</div>
+			</div>
+			
+
+			<!-- Arcade -->
+			<a name="games"></a>
+			<h3 class="whiteText">Arcade</h3>
+			<div class="copy">
+				
+			<p>We went all out this year. These games are some of our absolute favorites, and we promise you won't end the day without a giant smile plastered on your face. You can take that to the bank!</p>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://www.boomerangfu.com/">Boomerang Fu - Cranky Watermelon</a></h4>
+					<div class="gameDescription">The Secret Game Club favorite is back! Everyone team up against coffee cup.</div>
+				</div>
+						
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://www.davidoreilly.com/everything/">Everything - David OReilly</a></h4>
+					<div class="gameDescription">Travel through the Universe and see it from different points of view.</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4>Japan World Cup</h4>
+					<div class="gameDescription">Absurdist horse racing in its <em>most</em> bananas incarnation. What did you expect?</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4>Number Cruncher - The Whaaat!? Lab Brats</h4>
+					<div class="gameDescription">The one and only place where you can mine for Whaaat!? Coin, the most elusive and bewildering of the cryptocurrencies.</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://nuts.game/">Nuts - Joon, Pol, Muutsch, Char & Torfi</a></h4>
+					<div class="gameDescription">Gear up your caravan, boot up your GPS, spread out your map and head for the depths of Melmoth Forest. As a rookie field researcher, you’ll place cameras during the day, and watch the footage at night, tracking the movements of a scurry of squirrels. Where do they hide their nuts? What puzzling routes do they take? And why do they behave so strangely? </div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://mouseandthebillionaire.com">Pando - Mouse & the Billionaire</a></h4>
+					<div class="gameDescription">A two-person contemplative experience that explores deep time through the lens of Pando, the world's oldest living organism.</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://store.steampowered.com/app/1280850/Swing_Striker/">RoboSkate - Matas Sakalauskas</a></h4>
+					<div class="gameDescription">You're a robotic arm on a skateboard. It makes pretty much perfect sense. Why are you even questioning it!?</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://skatebirb.com/">Skatebird - Glass Bottom Games</a></h4>
+					<div class="gameDescription">Grind on bendy straws, kickflip over staplers, and carve killer lines through cardboard and sticky tape parks. You're a SKATEBIRD!</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="http://skatestorygame.com/">Skate Story - Sam Eng</a></h4>
+					<div class="gameDescription">Tony Hawk Pro Skater meets Journey</div>
+				</div>
+				
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://bearwarp.com">Split - bearwarp</a></h4>
+					<div class="gameDescription">Presented on two separate screens, players are encouraged to collect objects while avoiding obstacles, but only a single set of controls is offered for the two unrelated spaces.</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://store.steampowered.com/app/1280850/Swing_Striker/">Swing Striker - Giant Fox</a></h4>
+					<div class="gameDescription">Intergalactic grappling hook soccer like you've never seen it before!</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4><a class="unstyled" href="https://www.waldengame.com/">Walden, A Game - Tracy Fullerton</a></h4>
+					<div class="gameDescription">An exploratory narrative and open world simulation of the life of American philosopher Henry David Thoreau during his experiment in self-reliant living at Walden Pond.</div>
+				</div>
+				
+				
+				
+
+				
+				<p>Also including...</p>
+										<div class="gameListing">
+					<h4>The ATLAS Student Game Showcase</h4>
+					<div class="gameDescription">Featuring some of the best and wildest games out of the ATLAS Institute's Game Design and Development community.</div>
+				</div>
+				
+				<div class="gameListing">
+					<h4>...and many many more surprises to come!</h4>
+				</div>
+						
+			</div>
+			
+			<!-- Map -->
+			<div id="infoSection">
+				<a name="map"></a>
+				<div id="infoSectionContent">
+				<h3 class="whiteText">Getting to Whaaat!?</h3>
+				<div class="copy">All events at Whaaat!? will be in the <a href="atlas.colorado.edu">ATLAS Institute</a> at CU Boulder. Paid parking can be found in the nearby Euclid lot (underneath the CASE building), and free parking within walking distance can often be found on the Hill, west of Broadway<p></p></div>
+				<iframe class="mapImage" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.0325058934504!2d-105.27189244912043!3d40.00772147931364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bec3384ff175f%3A0xe59d1ef9575505f5!2sATLAS+Institute%2C+University+of+Colorado+Boulder!5e0!3m2!1sen!2sus!4v1537459124298" width="100%" height="450" margin="100px" frameborder="" style="border:" allowfullscreen></iframe>
+				<div id="infoSectionContent">
+			</div>
+
+			<a name="about"></a>
+			<h3 class="whiteText">Two Ways to Whaaat!?: <br />Arcade and Conference.</h3>
+			
+			<div class="conferenceDetails copy">
+				<div class="detailInfo">
+					<img src="images/arcade.png" />
+					<h3>Arcade</h3>
+					<p>Two floors of the ATLAS Institute full of themed arcades and curated experiences, free and open to all, thanks to the generous support of the <a href="https://www.colorado.edu/atlas/">ATLAS Institute</a> and the <a href="https://www.colorado.edu/program/eef/">Engineering Excellence Fund</a>. </p>
+				</div>
+				<div class="detailInfo">
+					<img src="images/conference.png" />
+					<h3>Conference</h3>
+					<p>All access to speaker talks, panels, and workshops, as well as some surprise gifts (and access to the cereal bar).</p>
+				</div>
+			</div>
+						
+			<a name="registration"></a>
+			<h3 class="whiteText">Registration</h3>
+			<p>Registration is open now for both Arcade and Full Conference passes. Arcade is free and open to all, and the Conference is limited to 175 seats. Register below for your chance to attend this year's Whaaat!? Festival. We'll see you then!</p>
+			<div class="tickets">
+							<div class="ticketOption">
+								<a href="https://www.eventbrite.com/e/whaaat-festival-tickets-170062598811">
+								<div class="ticketDescription">Arcade</div>
+								<div class="ticketPrice title">Free</div>
+								<div class="ticketDescription">Access to the Whaaat!? Arcade!</div>
+								</a>
+							</div>
+							
+							<div class="ticketOption">
+								<a href="https://www.eventbrite.com/e/whaaat-festival-tickets-170062598811">
+								<div class="ticketDescription">Conference</div>
+								<div class="ticketPrice title">$30</div>
+								<div class="ticketDescription">$20 Early Bird until 10/1</div>
+								</a>
+							</div>
+							
+							<div class="ticketOption">
+								<a href="https://forms.gle/1UK9hiBBTDPbk6Az8">
+								<div class="ticketDescription">Student Scholarship</div>
+								<div class="ticketPrice title">Via Application</div>
+								<div class="ticketDescription">Application opens 10/1</div>
+								</a>
+							</div>
+			</div>
+
+			
+			
+			<div class="signup">
+			
+			<!-- Begin Mailchimp Signup Form -->
+
+			<div id="mc_embed_signup">
+				<form action="https://whaaat.us17.list-manage.com/subscribe/post?u=5852695ce94c7b2d4773eff91&amp;id=d62c192b0a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+					<h4 class="title">Sign up for the mailing list</h4>
+					<div class="emailField"><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" width="300px" required></div>
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5852695ce94c7b2d4773eff91_d62c192b0a" tabindex="-1" value=""></div>
+					<p></p>
+					<div class="emailSubmit"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    			</div>
+				</form>
+			</div>
+
+			<!--End mc_embed_signup-->
+			
+			</div>
+			
+			<div class="archive copy">
+				<ol>
+					<li><a href="https://speckle-harmony-762.notion.site/Whaaat-Code-of-Conduct-347972696f144be1baca58ae1a6088c9">Code of Conduct</a></li>
+					<li><a href="mailto:festival@whaaat.io">festival@whaaat.io</a></li>
+					<li><a href="https://twitter.com/WhaaatFestival/">@WhaaatFestival</a></li>
+				</ol>
+			</div>
+			
+			<div class="archive copy">
+				<ol>
+					<li>past festivals:</li>
+					<li><a href="/2020/">2020</a></li>
+					<li><a href="/2019/">2019</a></li>
+					<li><a href="/2018/">2018</a></li>
+				</ol>
+			</div>
+		
+		</main>
+		
+		<footer>
+			<img src="images/universityPartners.png" />
+		</footer>
+		
+		
+		
+	
+	</body>
+	
+
+
+</html>

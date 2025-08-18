@@ -1,0 +1,410 @@
+
+<!---------------------
+Whaaat?! Festival 2021
+---------------------->
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Whaaat?! A Festival for Games and Experimental Interactions</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="https://use.typekit.net/izv4gsy.css">
+		<link rel="stylesheet" href="css/normalize.css">
+		
+		<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+		
+		<script language="javascript">	
+		var imagesArray = ["pyramid.png", "android.png", "tankCar.png"];
+		
+		function displayImage(){
+			var num = Math.floor(Math.random() * imagesArray.length); 
+			var imageElement = document.getElementsByClassName("heroBurnImage");
+			var imageName = "images/" + imagesArray[num];
+			console.log(imageName);
+			imageElement[0].src = imageName;
+		}
+		
+		window.onload = function(){
+			displayImage();
+		}
+		
+		</script>
+		
+		<!-- CSS -->
+		<style type="text/css">
+			html {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				margin: 0 auto;
+				padding: 0;
+				width: 100%; /* fall back */
+				width: 100vw;
+				text-align: center;
+				background-color: #a68c71;
+				background-image: url("images/stripein_2.png");
+				background-repeat: no-repeat;
+				background-position: center top;
+				font-family: urw-din, sans-serif; 
+				color: #333;
+			    font-size: 150%;
+			}
+			
+			header {
+/*
+				background-image: url("images/stripein.png");
+				background-repeat: no-repeat;
+				background-position: center top;
+*/
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+			}
+			
+			#hero {
+				padding-top: 100px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 0;
+				margin-bottom: 0;
+				padding-bottom: 0;
+				width: 60%;
+				font-family: itc-avant-garde-gothic-pro, sans-serif; 
+				color: #fff;
+				text-transform: uppercase;
+			}
+			
+			.heroBurnImage {
+				mix-blend-mode: color-burn;
+				width: 60%;
+			}
+			
+			h2 {			
+				font-weight: 100;
+				font-size: 200%;
+				text-align: left;
+				margin: 0;
+				padding: 0;
+			}
+			
+			h1 {
+				margin: 0;
+				padding: 0;
+			}
+			
+			h1 img {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			
+			h3 {
+				text-transform: uppercase;
+				text-align: center;
+				font-size: 200%;
+				line-height: 120%;
+			}
+			
+			.whiteText {
+				color: #fff;
+			}
+			
+			main {
+				margin: 0 auto;
+				width: 60%;
+				text-align: center;
+				padding: 0;
+				margin: 0 auto;
+				position: relative;
+				top: 100px;
+				line-height: 1.5em;
+				padding-bottom: 100px;
+			}
+			
+			.copy {
+				background: #fff;
+				padding: 20px;
+				text-align: left;
+			}
+			
+			.intro {
+				
+				
+			}
+			
+			
+			.conferenceDetails {
+				column-count: 2;
+				font-size: 80%;
+			}
+			
+			.detailInfo {
+				width: 100%;
+			}
+			
+			.detailInfo img {
+				width: 100%;
+			}
+			
+			
+			.speakers {
+				column-count: 2;
+			}
+			
+			.speakerInfo {
+				text-align: left;
+				font-size: 80%;
+			}
+			
+			.speakerInfo img {
+				width: 100%;
+			}
+			
+			
+			.featureList {
+				column-count: 2;
+				text-align: center;
+			}
+			
+			.tickets {
+				column-count: 3;
+				color: #fff;
+			}
+			
+			.ticketOption {
+				padding: 10px;
+				background-color: #333;
+			}
+			
+			.ticketOption:hover {
+				background-color: #000;
+			}
+			
+			.ticketDescription {
+				font-size: 50%;
+			}
+			
+			.tickets a {
+				text-decoration: none;
+				color: #fff;
+			}
+			
+			
+			
+			
+			.signup {
+				text-align: center;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				clear: both;
+			}
+			
+			.archive {
+				font-size: 75%;
+			}
+			
+			.archive ol {
+				display: inline;
+				list-style-image: none;
+			}
+			
+			.archive li {
+				display: inline;
+				list-style-image: none;
+				padding-left: 20px;
+				text-transform: uppercase;
+			}
+			
+			.archive a {
+				color: #999;
+				text-decoration: none;
+			}
+			
+			footer {
+				text-align: center;
+				width: 100%;
+				position: relative;
+				top: 50px;
+				padding: 0;
+				margin: 0;
+				background-color: #fff;
+			}
+			
+			footer img {
+				width: 100%;
+				max-width: 1000px;
+			}
+			
+			/* Typography */
+			.title {
+				font-family: itc-avant-garde-gothic-pro-500, sans-serif; 
+				text-transform: uppercase;
+				text-align: center;
+				line-height: 120%;		
+			}
+			
+			.centered {
+				text-align: center;
+			}
+			
+			/* Mailchimp */
+			#mc_embed_signup{
+				background:#fff; 
+				padding: 20px;
+				margin: 20px;
+			}
+
+/*
+			@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+				body { font-size: 200%;}
+				#signUp { width: 90%; clear: both;}
+				#apply { width: 90%; clear: both; border-left: none;}
+			}
+*/
+		</style>		    	
+	
+	</head>
+	<body>
+		
+		<header>
+			<div id="hero">
+				<img class="heroBurnImage" src="" alt="an interesting image" />
+				<h2>13/14 November</h2>
+				<h1><img src="images/logo_black.png" /></h1>
+			</div>
+			
+		</header>
+		
+		
+		<main>
+			<div class="intro copy">
+				<h3>Some Super Snappy Copy</h3>
+				<p>Vivamus ipsum arcu, vestibulum sit amet lacinia id, faucibus id nisl. Duis viverra quis turpis vel vehicula. Fusce feugiat nibh id auctor dapibus. Nunc porta nibh dui, sit amet aliquam massa pellentesque eu. Donec ac faucibus turpis. Aenean tellus tortor, aliquet et lobortis sed, condimentum eu nulla. Vestibulum semper consectetur lacus fermentum venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc suscipit vel ipsum in fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras efficitur vitae libero id suscipit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Nunc mattis fringilla velit sed finibus. Aenean pharetra luctus magna a.</p>
+			</div>
+
+			<h3 class="whiteText">This year we're excited to feature two distinct tracks</h3>
+			<h3 class="whiteText">Arcade and Conference.</h3>			
+			
+			<div class="conferenceDetails copy">
+				<div class="detailInfo">
+					<img src="images/arcade.png" />
+					<h3>Arcade</h3>
+					<p>The Whaaat!? Tabletop and Digital Arcades will be free and open to all who want to come, mingle, and play games thanks to the generous support of the ATLAS Institute and CU Boulder's EEF</p>
+				</div>
+				<div class="detailInfo">
+					<img src="images/conference.png" />
+					<h3>Conference</h3>
+					<p>The conference portion of the Festival is limited to 175 tickets and will feature talks, workshops, panels, and tons of fun surprises. Tickets are $40, with special Early Bird pricing of $30 until 10/1</p>
+				</div>
+			</div>
+
+			
+			<h3 class="whiteText">arcade</h3>
+			<div class="copy">
+				<p>This year's specially curated selection of games will not disappoint. From vintage classic on the original hardware to installation games that can't be experienced anywhere else. You'll be talking about this for months. We'll provide a list as we get closer, but, keep in mind, we don't want to blow all the surprises. 🙈🙉🙊</p>
+			</div>
+			
+			<h3 class="whiteText">Speakers</h3>
+			
+			<div class="speakers copy">
+				<div class="speakerInfo">
+					<img src="images/nicole.jpg" />
+					<h3>Nicole<br />He</h3>
+					<p>Nicole He is a game developer and creative technologist based in Brooklyn, making unconventional voice technology projects and videogames. She previously worked as a creative technologist at Google Creative Lab and an outreach lead at Kickstarter, and currently teaches at NYU ITP.</p>
+				</div>
+				<div class="speakerInfo">
+					<img src="images/nathalie.jpg" />
+					<h3>Nathalie<br />Lawhead</h3>
+					<p>Nathalie Lawhead is a solo-dev that makes experimental work on computers ranging from net-art to altgames and art games. They have been making this stuff for over 10 years, so they are very experienced in programming, art, animation, sound design, writing, narrative, composing, and all the things...</p>
+				</div>
+			</div>
+			
+			<h3 class="whiteText">conference features</h3>
+			<div class="copy">
+				<p class="centered">This year's conference is going to be 🤯! You'll get to hear our amazing speakers above as well as:</p>
+						<div class="featureList">
+							<div>
+								Official Whaaat!? Cereal Bar<br />
+								Game Jams<br />
+							</div>
+							<div>
+								Workshops<br />
+								Panels
+							</div>
+						</div>
+						<p class="centered">And More Surprises to Come!</p>
+			</div>
+			
+			<h3 class="whiteText">Registration</h3>
+			<p>Registration is open now for both Arcade and Full Conference passes. Arcade is free and open to all, and the Conference is limited to 175 seats. Register below for your chance to attend this year's Whaaat!? Festival. We'll see you then!</p>
+			<div class="tickets">
+							<div class="ticketOption">
+								<a href="https://www.eventbrite.com/e/whaaat-arcade-tickets-65282732410">
+								<div class="ticketDescription">Arcade</div>
+								<div class="ticketPrice title">Free</div>
+								<div class="ticketDescription">Access to the Whaaat!? Arcade!</div>
+								</a>
+							</div>
+							
+							<div class="ticketOption">
+								<a href="https://www.eventbrite.com/e/whaaat-festival-tickets-65281816671">
+								<div class="ticketDescription">Conference</div>
+								<div class="ticketPrice title">$40</div>
+								<div class="ticketDescription">$30 Early Bird until 10/1</div>
+								</a>
+							</div>
+							
+							<div class="ticketOption">
+								<div class="ticketDescription">Student Scholarship</div>
+								<div class="ticketPrice title">Via Application</div>
+								<div class="ticketDescription">Application opens 10/1</div>
+								
+							</div>
+			</div>
+
+			
+			
+			<div class="signup">
+			
+			<!-- Begin Mailchimp Signup Form -->
+
+			<div id="mc_embed_signup">
+				<form action="https://whaaat.us17.list-manage.com/subscribe/post?u=5852695ce94c7b2d4773eff91&amp;id=d62c192b0a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div id="mc_embed_signup_scroll">
+					<h4 class="title">Sign up for the mailing list</h4>
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" width="300px" required>
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5852695ce94c7b2d4773eff91_d62c192b0a" tabindex="-1" value=""></div>
+					<p></p>
+					<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    			</div>
+				</form>
+			</div>
+
+			<!--End mc_embed_signup-->
+			
+			</div>
+			
+			<div class="archive copy">
+				<ol>
+					<li>past festivals:</li>
+					<li><a href="whaaat.io/2020/">2020</a></li>
+					<li><a href="whaaat.io/2019/">2019</a></li>
+					<li><a href="whaaat.io/2018/">2018</a></li>
+				</ol>
+			</div>
+		
+		</main>
+		
+		<footer>
+			<img src="images/universityPartners.png" />
+		</footer>
+
+	</body>
+	
+
+
+</html>

@@ -1,0 +1,126 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%; /* fall back */
+	width: 100vw;
+	min-width: 900px;
+	text-align: center;
+	font-family: 'Courier Prime', monospace;
+	color: #999;
+    font-size: 200%;
+    background-color: #000;
+}
+
+h3 {
+	clear: both;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 5px;
+	margin-bottom: 0;
+	font-size: 150%;
+	line-height: 120%;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Jost', sans-serif;
+}
+
+main {
+	margin: 0 auto;
+	width: 60%;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	position: relative;
+	top: -50px;
+	line-height: 1.5em;
+	padding-bottom: 100px;
+	min-width: 900px;
+}
+
+.conferenceDetails {
+	column-count: 2;
+	font-size: 80%;
+	display: flex;
+}
+
+.detailInfo {
+	width: 80%;
+	break-inside: avoid;
+}
+
+.detailInfo img {
+	width: 100%;
+}
+
+.detailInfo li {
+	text-align: left;
+}
+
+/* Copy */
+
+.copy {
+	margin-bottom: 2%;
+	width: 90%;
+	margin-left: 5%;
+}
+
+/* Schedule */
+			.schedule {
+	display: grid;
+	grid-template-columns: 25% 75%;	
+	grid-remplate-rows: auto;
+	grid-row-gap: 40px;
+	font-size: 1rem;
+	background-color: #fff;	
+	padding: 80px;
+}
+
+.schedule--time{
+	font-weight: bold;
+}
+.schedule--location{
+	color: #666;
+}
+
+.schedule--event {
+	text-align: left;
+	align-self: start;
+	background-color: #fff;	
+}
+
+.schedule--event--title {
+	font-size: 1.75rem;
+	padding-bottom: 10px;
+	align-self: start;
+}
+
+.schedule--event--description {
+	line-height: 1.5rem;
+}
+
+/* Misc Typography */
+
+.title {
+	font-family: itc-avant-garde-gothic-pro-500, sans-serif; 
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 120%;		
+}
+
+.centered {
+	text-align: center;
+}
+
+a {
+	color: #91BF41;
+	text-decoration: none;
+}
+
+p {
+	clear: both;
+}
