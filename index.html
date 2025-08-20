@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camp Whaaat!? - October 25th</title>
+    <title>Camp Whaaat!? -Â October 25th</title>
     <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
     <style>
         html {
@@ -12,29 +12,36 @@
             /* background-color: #005838; */
             background: url('/images-2025/woodbg.svg');
             background-size: cover;
+            min-height: 100vh;
         }
 
         body {
-            display:flex;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             align-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         p, h2 {
             font-family: "cooper-black-std", serif;
             color: white;
-            font-size: 2.5vw;
-            margin-top: 2vw;
-            margin-bottom: 0vw;
+            font-size: clamp(18px, 4vw, 36px);
+            margin-top: 2rem;
+            margin-bottom: 0;
             text-align: center;
-            padding: 0 20vw;
+            padding: 0 10%;
             color: #f9eedb;
+            line-height: 1.3;
         }
 
         h2 {
-            font-size: 1.5vw;
+            font-size: clamp(14px, 3vw, 24px);
+            margin-top: 3rem;
         }
 
         #mc_embed_signup_scroll {
@@ -52,16 +59,11 @@
             height: 3vw;
         }
 
-        #mc_embed_signup_scroll {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-        }
-
         img {
-            height: 40vh;
-            margin-top: 25%;
+            max-width: 90%;
+            height: auto;
+            max-height: 40vh;
+            margin-top: 2rem;
         }
 
         a {
@@ -70,7 +72,76 @@
         }
 
         a:hover {
-            color: #56b5a9 
+            color: #56b5a9;
+        }
+
+        .holder {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Mobile styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            p {
+                font-size: clamp(16px, 5vw, 24px);
+                padding: 0 5%;
+                margin-top: 1.5rem;
+            }
+            
+            h2 {
+                font-size: clamp(12px, 4vw, 18px);
+                padding: 0 5%;
+                margin-top: 2rem;
+            }
+            
+            img {
+                max-width: 95%;
+                margin-top: 1rem;
+                max-height: 35vh;
+            }
+        }
+
+        /* Extra small mobile styles */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            p {
+                font-size: clamp(14px, 6vw, 20px);
+                padding: 0 2%;
+            }
+            
+            h2 {
+                font-size: clamp(11px, 5vw, 16px);
+                padding: 0 2%;
+                line-height: 1.4;
+            }
+            
+            img {
+                max-width: 100%;
+                max-height: 30vh;
+            }
+        }
+
+        /* Large desktop styles */
+        @media screen and (min-width: 1200px) {
+            p {
+                font-size: 36px;
+                padding: 0 20%;
+            }
+            
+            h2 {
+                font-size: 24px;
+                padding: 0 20%;
+            }
         }
     </style>
 </head>
