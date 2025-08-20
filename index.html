@@ -3,726 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whaaat!? Festival 2024</title>
-    <link rel="stylesheet" href="https://use.typekit.net/kax8djx.css">
-    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
+    <style>
+        html {
+            /* background-color: black; */
+            /* background-color: #213A1B; */
+            /* background-color: #005838; */
+            background: url('/images-2025/woodbg.svg');
+            background-size: cover;
+        }
+
+        body {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+        }
+
+        p, h2 {
+            font-family: "cooper-black-std", serif;
+            color: white;
+            font-size: 2.5vw;
+            margin-top: 2vw;
+            margin-bottom: 0vw;
+            text-align: center;
+            padding: 0 20vw;
+            color: #f9eedb;
+        }
+
+        h2 {
+            font-size: 1.5vw;
+        }
+
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .email {
+            width: 20vw;
+            margin-bottom: 1vw;
+            margin-right: 1vw;
+            font-family: "cooper-black-std", serif;
+            height: 3vw;
+        }
+
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            height: 40vh;
+            margin-top: 25%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f9eedb;
+        }
+
+        a:hover {
+            color: #56b5a9 
+        }
+    </style>
 </head>
 <body>
-    <section id="top">
-        <div class="tv-container">
-            <img src="/tvimagelayers/tv-new.png" alt="TV Frame" class="tv-frame">
-            <video class="tv-video" autoplay muted loop playsinline>
-                <source src="/channelvideo/LIVINGROOM3-sm.m4v" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="button-container">
-            <button id="btn1" class="btn" data-channel="1">1</button>
-            <button id="btn2" class="btn" data-channel="2">2</button>
-            <button id="btn3" class="btn active" data-channel="3">3</button>
-            <button id="btn4" class="btn" data-channel="4">4</button>
-            <button id="btn5" class="btn" data-channel="5">5</button>
-            <button id="btn6" class="btn" data-channel="6">6</button>
-            <!-- <button id="btn13" class="btn">P</button> -->
-        </div>
-        <div id="intro">
-            <p id="intro-text-top" class="header-text">Returning for its seventh season: <br> America's favorite festival for experimental games and playful interactions!</p>
-        </div>
-        <div class="ticket-container">
-            <a class="ticket-btn" href="https://www.eventbrite.com/e/whaaat-festival-2024-tickets-1029544263607?aff=oddtdtcreator">
-            <button id="ticket">Tickets</button>
-            </a>
-        </div>
-    </section>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-toggle" id="navToggle" onclick="toggleMenu()">
-                &#9776;
-            </div>
-            <div class="active-button" id="activeButton">Top</div>
-            <div class="nav-menu" id="navMenu">
-                <!-- <button>Power</button> -->
-                <button class="nav-btn" data-target="#top">Top</button>
-                <button class="nav-btn" data-target="#info">Info</button>
-                <button class="nav-btn" data-target="#speakers">Speakers</button>
-                <button class="nav-btn" data-target="#schedule">Schedule</button>
-                <button class="nav-btn" data-target="#arcade">Arcade</button>
-                <button class="nav-btn" data-target="#tickets">Tickets</button>
-                <button class="nav-btn" id="haha-btn">Haha</button>
-            </div>
-            
-        </div>
-    </nav>
-
-    <section id="info" class="hero-section">
-        <div class="hero-content">
-            <h2>The Whaaat!? Gang Has Been Busy Since Last Year!</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Vk7UanbXiT0?si=N5F1gmQ4WBbkkXoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div>
-            <p class="descr-text">The gang has been busy, and this year's Whaaat!? Festival promises to wow attendees, befuddle critics, and cement its place as the nation's hottest festival for experimental games and playful interactions!</p>
-            <p class="descr-text">You can expect old favorites (the return of the crowd-pleasing cereal bar), new faces (amazing, nationally known keynote speakers), and as always, buddling games and interactions that will make you wonder whaaat might happen next!</p>
-            <h2>Generously Supported by...</h2>
-            <div class="sponsors">
-                <img class="sponsor" src="sponsor-logos/atlas.png">
-                <img class="sponsor" src="sponsor-logos/EEF.png">
-                <img class="sponsor" src="sponsor-logos/alienware.jpg" alt="">
-                <img id="sunblink" class="sponsor" src="sponsor-logos/sunblink.png">
-        
-        
-                <!-- <svg class="sponsor" width="248" height="120" viewBox="0 0 248 120">
-                    <path d="M16.4112 9.97696C16.3606 9.32482 16.2846 8.67268 16.1707 8.03321C16.0567 7.39373 15.9048 6.76059 15.6896 6.14011C15.582 5.82987 15.4617 5.51963 15.3288 5.22838C15.1895 4.9308 15.0376 4.64589 14.8666 4.3673C14.6957 4.08872 14.5058 3.8228 14.2969 3.56954C14.088 3.31628 13.8601 3.08202 13.6133 2.86042C13.1322 2.42355 12.5941 2.05 12.0117 1.73976C11.4293 1.42951 10.8216 1.19525 10.1886 1.03697C9.55557 0.872348 8.89722 0.790039 8.23888 0.790039C7.58053 0.790039 6.92219 0.878679 6.28917 1.03697C5.65615 1.20158 5.04844 1.42951 4.46606 1.73976C3.88368 2.05 3.34561 2.42355 2.86451 2.86042C2.62396 3.08202 2.39606 3.31628 2.18083 3.56954C1.97193 3.8228 1.78203 4.08872 1.61111 4.3673C1.44019 4.64589 1.28826 4.9308 1.149 5.22838C1.00973 5.52596 0.889475 5.8362 0.788191 6.14011C0.579292 6.76059 0.427359 7.39373 0.307085 8.03321C0.19314 8.67268 0.117174 9.32482 0.0665321 9.97696C0.0158904 10.6291 -0.00943447 11.2812 0.00322602 11.927C0.0158865 12.5729 0.0728643 13.225 0.186809 13.8645C0.243781 14.1874 0.319748 14.5103 0.408371 14.8268C0.496995 15.1434 0.604602 15.4537 0.718546 15.7576C1.18698 16.9732 1.85165 18.0939 2.5733 19.1829C2.93413 19.7274 3.30762 20.2656 3.68743 20.7974C4.06725 21.3292 4.4534 21.8547 4.89651 22.3359C5.11807 22.5765 5.34595 22.8045 5.59916 23.0134C5.85237 23.2223 6.11824 23.4249 6.39045 23.5959C6.66898 23.7732 6.96017 23.9251 7.27035 24.0391C7.42228 24.0961 7.58053 24.1404 7.74512 24.1657C7.9097 24.1974 8.07429 24.21 8.23888 24.21C8.40346 24.21 8.56805 24.1974 8.73264 24.1657C8.89722 24.1341 9.04915 24.0961 9.20741 24.0391C9.51759 23.9315 9.80878 23.7732 10.0873 23.5959C10.3658 23.4186 10.6317 23.2223 10.8786 23.0134C11.1255 22.8045 11.3597 22.5765 11.5812 22.3359C12.018 21.8547 12.4042 21.3292 12.7903 20.7974C13.1765 20.2656 13.5436 19.7274 13.9044 19.1829C14.6261 18.0939 15.2908 16.9732 15.7592 15.7576C15.8732 15.4537 15.9808 15.1434 16.0694 14.8268C16.158 14.5103 16.234 14.1874 16.2909 13.8645C16.4049 13.2187 16.4619 12.5729 16.4745 11.927C16.4872 11.2812 16.4619 10.6291 16.4112 9.97696ZM1.18066 12.5982C1.18066 12.5982 4.79522 13.4213 7.10576 18.2648C7.10576 18.2648 0.876809 18.1572 1.18066 12.5982ZM9.37832 18.2648C11.6889 13.4149 15.3034 12.5982 15.3034 12.5982C15.6136 18.1635 9.37832 18.2648 9.37832 18.2648Z"></path>
-                    <path d="M32.272 6.06421L26.6571 18.8221L26.6064 18.9297H28.5688L30.2147 15.1878L30.5312 14.4344H35.9499L37.9123 18.9297H39.8556L34.1078 6.06421H32.272ZM35.2852 12.9148H31.1706L33.1899 8.10928L35.2852 12.9148ZM54.2633 6.20982H56.0294V17.3722H64.4295L62.7205 18.9297H54.2633V6.20982ZM242.816 17.3848L235.061 17.3722V7.78637H242.525V6.20982H233.295V18.9297H242.993V17.3848H242.816ZM239.961 13.2062L241.67 11.6803H236.422V13.2062H239.961ZM80.6413 6.20982H78.8815V18.9297H80.6413V6.20982ZM121.68 6.24148L130.1 16.4604V6.20982H131.764V18.9297H130.011L129.986 18.9044L121.566 8.64745V18.9297H119.876V6.20982H121.655L121.68 6.24148ZM160.491 16.6504L156.693 6.26047L156.674 6.20982H155.066L151.249 16.6314L148.267 6.2668L148.248 6.20982H146.406L150.097 18.8791L150.109 18.9297H152.072L155.864 8.71076L159.63 18.9297H161.592L165.302 6.31112L165.334 6.20982H163.492L160.491 16.6504ZM218.356 10.148C218.356 11.0407 218.065 11.7625 217.482 12.2944L217.463 12.288C216.912 12.7945 216.203 13.1364 215.355 13.3201L218.679 18.9234H216.723L216.697 18.8854L213.633 13.6936H209.861V12.1931H213.994C214.317 12.1804 214.64 12.1297 214.956 12.0474C215.267 11.9651 215.545 11.8385 215.786 11.6802C216.02 11.5219 216.216 11.3193 216.362 11.0787C216.507 10.8445 216.583 10.5595 216.583 10.243V9.83143C216.583 9.31225 216.4 8.83106 216.077 8.52082C215.577 8.0333 214.83 7.78637 213.874 7.78637H209.202V18.9297H207.442V6.20982H213.988C214.634 6.20982 215.229 6.2858 215.767 6.44408C216.305 6.60237 216.773 6.83663 217.153 7.13423C217.539 7.43181 217.837 7.80537 218.046 8.24224C218.248 8.67277 218.356 9.16663 218.356 9.7048V10.148ZM179.792 18.8284L185.413 6.06421H187.243L192.99 18.936H191.047L191.028 18.8917L189.085 14.4407H183.666L183.35 15.1942L181.704 18.936H179.741L179.792 18.8284ZM184.312 12.9148H188.426L186.331 8.10928L184.312 12.9148ZM102.031 13.2062L103.747 11.6803H98.4989V13.2062H102.031ZM97.1316 7.78637V17.3722L104.892 17.3848H105.07V18.9297H95.3718V6.20982H104.601V7.78637H97.1316ZM244.139 6.45675V6.20982H245.664V6.45675H245.031V7.7927H244.747V6.45675H244.139ZM247.025 7.15323L246.361 6.20982V6.21615H246.057V7.7927H246.342V6.60237L246.937 7.45081H247.108L247.715 6.59604V7.78637H248V6.20982H247.703L247.025 7.15323Z"></path>
-                </svg> -->
-                
-                <img class="sponsor" src="sponsor-logos/Stellar.png">
-            </div>
-        </div>
-    </section>
-
-    <section id="speakers" class="tv-section">
-        <div class="tv-content">
-            <h2>New Faces Join the Cast!</h2>
-            <p id="intro-text" class="header-text">Our keynote speakers this year are really something!</p>
-
-            <div class="container">
-                <div class="round-image">
-                    <img src="/speakers/josh.jpeg" alt="Round Image">
-                </div>
-                <div class="text">
-                    <h2>Josh Zhong</h2>
-                    <p>Josh Zhong is an art school veteran, most recently serving two years at NYU's Interactive Telecommunications Program where he is now a “Post-Doctoral Research Resident” despite not having a PhD. He designs questionably fun tools and experiences capitalising on the disembodiment of himself, and has never taken a single thing seriously in his life.</p>
-                </div>
-            </div>
-            <div class="container">
-                <div class="round-image">
-                    <img src="/speakers/naomi.jpg" alt="Round Image">
-                </div>
-                <div class="text">
-                    <h2>Naomi Clark</h2>
-                    <p>Naomi Clark is a game designer, teacher, and scholar who has been making games since 1999. In that time, she's contributed to over three dozen titles in varied roles including game designer, writer, and producer, as well as occasionally contributing to code and graphic design. Naomi's experience ranges from games for well-known companies such as LEGO and Atari to casual and mobile games for mass audiences as well as smaller-scale independent and experimental work.</p>
-                </div>
-            </div>
-            
-        </div>
-    </section>
-
-    <section id="schedule" class="hero-section">
-        <div class="hero-content">
-            <h2>Episode by Episode!</h2>
-            <!-- <p id="intro-text" class="header-text">Full season schedule coming soon! Stay tuned!</p> -->
-             <!-- Schedule -->
-		
-			<div class="schedule">
-				<div class="schedule--info">
-					<div class="schedule--time">9AM - 10AM</div>
-					<div class="schedule--location">ATLAS Lobby</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Check-in and Cereal Bar</div>
-					<div class="schedule--event--description">It's everyone's favorite once a year tradition: the ALL YOU CAN EAT WHAAAT!? CEREAL EXTRAVAGANZA. Brought to you this year by the one and only <a href="https://www.sunblink.com/">Sunblink</a>.</div>
-				</div>
-				
-				<!-- <div class="schedule--info">
-					<div class="schedule--time">9AM - 4PM</div>
-					<div class="schedule--location">ATLAS Lobby</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Whaaat!? Tabletop</div>
-					<div class="schedule--event--description">Games! On boards! And cards! And tokens? Meeples? Sponsored by our friends at <a href="https://stellarfactory.com">Stellar Factory</a>.</div>
-				</div> -->
-				
-				<div class="schedule--info">
-					<div class="schedule--time">9AM - 10AM</div>
-					<div class="schedule--location">ATLAS BBX</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">VIP Arcade</div>
-					<div class="schedule--event--description">Big Festival Passholders get one hour to luxuriate in all our phenomenal games before the unwashed masses arrive.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">10AM - 10:15AM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Opening Remarks</div>
-					<div class="schedule--event--description">The Whaaat!? Team will 100% remember all of the things that they want to let you know about the exciting events of the day. There is no way they will forget to mention something that will pop-up later to surprise and delight you.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">10:30AM - 11:30AM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Talk: Josh Zhong</div>
-					<div class="schedule--event--description">We all lean forward in our seats, waiting with bated breath for <a href="https://joshjoshjosh.net/">Josh Zhong</a> to tell us things. Amazing things. Life-changing things.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">11:30AM - 12PM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">First Person Josh (FPJ)</div>
-					<div class="schedule--event--description">You are a ghost who controls real-life Josh Zhong as he goes out in the world, making him interact with everything around him. Makes perfect sense to us, why are you looking at us like that?</div>
-				</div>
-
-                <div class="schedule--info">
-					<div class="schedule--time">11:30AM - 1:00PM</div>
-					<div class="schedule--location">ATLAS 104</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">5x5 Gameshow</div>
-					<div class="schedule--event--description">You think you remember the 90s? What about the 80s? Don't tell me you can recall the 70s? Surely not the 60s?! Prove it, in a fast-paced trivia game full of questions proven to stave off brainrot from watching too much TV.</div>
-				</div>
-				
-				
-				
-				<!-- <div class="schedule--info">
-					<div class="schedule--time">11AM - 3PM</div>
-					<div class="schedule--location">ATLAS BBX</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Whaaat!? Arcade</div>
-					<div class="schedule--event--description">Games! It's the name of the game! It's the <em>games</em> with our name! The Whaaat!? Arcade! Located in the ATLAS Lobby and the B2 level. Maybe we included your favorite game this year? Only one way to find out!</div>
-				</div> -->
-				
-				
-				<!-- <div class="schedule--info">
-					<div class="schedule--time">11AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL3</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">MAL presents <em>That Kid in Your Neighborhood's Basement</em></div>
-					<div class="schedule--event--description">The coolest kids on the block, the <a href="https://mediaarchaeologylab.com">Media Archeology Lab</a> return with their plaid suitcases stuffed to the brim with vintage games. Come play Q*bert, Zork, Contra, GoldenEye, the infamous ET, and MORE on an original Commodore 64, Apple //c, Atari 2600, NES, N64, Sega Genesis, and Vextrex!</div>
-				</div> -->
-				
-				<!-- <div class="schedule--info">
-					<div class="schedule--time">11AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL2</div>
-				</div>
-
-				<div class="schedule--event">
-					<div class="schedule--event--title">Chill Games for Spicy Times</div>
-					<div class="schedule--event--description">Come. Take a seat. Breath. Pick up a controller. Play some of these games. Everything is going to be AOK. We promise.</div>
-				</div> -->
-				
-				<!-- <div class="schedule--info">
-					<div class="schedule--time">11AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL1</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Crittercaaade</div>
-					<div class="schedule--event--description">Look, it's not our fault. We weren't <em>planning</em> on doing a themed arcade this year, but then all of these adorable animals in video games started being all cute and doing awesome stuff? What were we supposed to do? <em>Not</em> include them?!</div>
-				</div> -->
-				
-				<!--
-				<div class="schedule--info">
-					<div class="schedule--time">11AM - 3PM</div>
-					<div class="schedule--location">ATLAS 113 BTU Lab</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">The Whaaat!? Student Showcase</em></div>
-					<div class="schedule--event--description">A selection of games from the very talented ATLAS student body's brains.</div>
-				</div>		
-				-->		
-				
-				<div class="schedule--info">
-					<div class="schedule--time">12PM - 1PM</div>
-					<div class="schedule--location">ATLAS Lobby / Boulder Area</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Lunch Break / Game Lunch</div>
-					<div class="schedule--event--description">For some reason we thought it would be a good idea to let you borrow a game from our extensive board game library <em>AND</em> provide you with an all-you-can-eat nacho bar? We don't know. Weird business model, if you ask us.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">1PM - 2PM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Talk: Naomi Clark</div>
-					<div class="schedule--event--description">You thought you were full from the nachos at lunch... Wait until <a href="https://gamecenter.nyu.edu/faculty/naomi-clark/">Naomi Clark</a> stuffs your brain with a spicy mix of joy, knowledge, and inspiration!</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">2PM - 2:30PM</div>
-					<div class="schedule--location">ATLAS 102</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">LazerDisc Mysteries</div>
-					<div class="schedule--event--description">We know, we know. It's laser with an S, but really? Can you blame us? Semi-obscure mystery games on antiquated technology in a movie theatre?! It deserves the Z.</div>
-				</div>
-
-                <div class="schedule--info">
-					<div class="schedule--time">2:00PM - 3:00PM</div>
-					<div class="schedule--location">ATLAS 104</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">5x5 Gameshow</div>
-					<div class="schedule--event--description">This will be a lot easier if you do it at 11:30AM too... good thing we aren't handing out prizes to the winners of this. Or are we? I can't remember. Shoot, there's that brainrot again.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">2:30PM - 3PM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Group Games</div>
-					<div class="schedule--event--description">"There's too many of us!" you say. "This room is too large" Au contraire. It's the perfect size to contain all the fun we're going to have with this buffet of large-group games to end the day.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">3PM - 3:15PM</div>
-					<div class="schedule--location">ATLAS 100</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Closing Remarks and Whaaat!? Raffle</div>
-					<div class="schedule--event--description">"Wait. What raffle?" Exactly. "No, I mean <em>what</em> are you going to raffle off?" See. You get it.</div>
-				</div>
-
-			</div>
-            
-        </div>
-    </section>
-
-    <section id="arcade">
-        <div class="tv-content">
-            <h2>Games Galore This Season!</h2>
-        </div>
-        <div class="tv-container">
-            <img src="/tvimagelayers/tv2-new.png" alt="TV Frame" class="tv-frame">
-            <video class="tv-video-2" autoplay muted loop playsinline>
-                <source src="/channelvideo/staticonly.m4v" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="button-container no-padding">
-            <button id="btn7" class="btn" data-channel="1">1</button>
-            <button id="btn8" class="btn" data-channel="2">2</button>
-            <button id="btn9" class="btn" data-channel="3">3</button>
-            <button id="btn10" class="btn" data-channel="4">4</button>
-            <button id="btn11" class="btn" data-channel="5">5</button>
-            <button id="btn12" class="btn" data-channel="6">6</button>
-        </div>
-        <div class="hero-content">
-        <p id="intro-text-top" class="header-text games">This season, the gang races slugs, scales to new heights, campaigns for rodent gun control legislation, lives a Kafka-esque existence, and much more!</p>
-        <div id="game-schedule"class="schedule">
-            <div class="schedule--info">
-					<div class="schedule--time">10AM - 3PM</div>
-					<div class="schedule--location">ATLAS BBX</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Whaaat!? Arcade</div>
-					<div class="schedule--event--description">Games! It's the name of the game! It's the <em>games</em> with our name! The Whaaat!? Arcade! Located in the ATLAS Lobby and the B2 level. Maybe we included your favorite game this year? Only one way to find out!</div>
-				</div>
-				
-				
-				<div class="schedule--info">
-					<div class="schedule--time">10AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL3</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">MAL presents <em>That Kid in Your Neighborhood's Basement</em></div>
-					<div class="schedule--event--description">The coolest kids on the block, the <a href="https://mediaarchaeologylab.com">Media Archeology Lab</a> return with their plaid suitcases stuffed to the brim with vintage games. Come play Q*bert, Zork, Contra, GoldenEye, the infamous ET, and MORE on an original Commodore 64, Apple //c, Atari 2600, NES, N64, Sega Genesis, and Vextrex!</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">10AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL2</div>
-				</div>
-
-				<div class="schedule--event">
-					<div class="schedule--event--title">Chill Games for Spicy Times</div>
-					<div class="schedule--event--description">Come. Take a seat. Breath. Pick up a controller. Play some of these games. Everything is going to be AOK. We promise.</div>
-				</div>
-				
-				<div class="schedule--info">
-					<div class="schedule--time">10AM - 3PM</div>
-					<div class="schedule--location">ATLAS SL1</div>
-				</div>
-				<div class="schedule--event">
-					<div class="schedule--event--title">Crittercaaade</div>
-					<div class="schedule--event--description">Look, it's not our fault. We weren't <em>planning</em> on doing a themed arcade this year, but then all of these adorable animals in video games started being all cute and doing awesome stuff? What were we supposed to do? <em>Not</em> include them?!</div>
-				</div>
-        </div>
+    <div class="holder">
+        <img src="/images-2025/camp.svg" alt="A sign styled like a national forest sign with the date 10.25 and the word Whaaat!?">
     </div>
-    </section>
 
-    <section id="tickets" class="hero-section">
-        <div class="hero-content">
-            <h2>Won't You Join Us for Season Seven?</h2>
-            <div class="ticket-container">
-                <a class="ticket-btn" href="https://www.eventbrite.com/e/whaaat-festival-2024-tickets-1029544263607?aff=oddtdtcreator">
-                <button id="ticket">Tickets</button>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        window.onload = function() {
-        const firstTvContainer = document.querySelector('.tv-container');
-        firstTvContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        };
-
-        let btn1 = document.querySelector('#btn1');
-            btn1.addEventListener('click', ()=>{ 
-                changeChannel(btn1.dataset.channel);
-                if (btn1.classList.contains('active')) {
-                    btn1.classList.remove('active');
-                }
-                else {
-                btn1.classList.add('active');
-                btn2.classList.remove('active');
-                btn3.classList.remove('active');
-                btn4.classList.remove('active');
-                btn5.classList.remove('active');
-                btn6.classList.remove('active');
-                }
-            });
-
-            let btn2 = document.querySelector('#btn2');
-            btn2.addEventListener('click', ()=>{ 
-                changeChannel(btn2.dataset.channel);
-                if (btn2.classList.contains('active')) {
-                    btn2.classList.remove('active');
-                } else {
-                btn1.classList.remove('active');
-                btn2.classList.add('active');
-                btn3.classList.remove('active');
-                btn4.classList.remove('active');
-                btn5.classList.remove('active');
-                btn6.classList.remove('active');
-                }
-            });
-
-            let btn3 = document.querySelector('#btn3');
-            let firstTime = true;
-            btn3.addEventListener('click', ()=>{ 
-                    
-                changeChannel(btn3.dataset.channel);
-                if (btn3.classList.contains('active')) {
-                    btn3.classList.remove('active');
-                } else {
-                btn1.classList.remove('active');
-                btn2.classList.remove('active');
-                btn3.classList.add('active');
-                btn4.classList.remove('active');
-                btn5.classList.remove('active');
-                btn6.classList.remove('active');
-                }
-            });
-
-            let btn4 = document.querySelector('#btn4');
-            btn4.addEventListener('click', ()=>{ 
-                changeChannel(btn4.dataset.channel);
-                if (btn4.classList.contains('active')) {
-                    btn4.classList.remove('active');
-                } else {
-                btn1.classList.remove('active');
-                btn2.classList.remove('active');
-                btn3.classList.remove('active');
-                btn4.classList.add('active');
-                btn5.classList.remove('active');
-                btn6.classList.remove('active');
-                }
-            });
-
-            let btn5 = document.querySelector('#btn5');
-            btn5.addEventListener('click', ()=>{ 
-                changeChannel(btn5.dataset.channel);
-                if (btn5.classList.contains('active')) {
-                    btn5.classList.remove('active');
-                } else {
-                btn1.classList.remove('active');
-                btn2.classList.remove('active');
-                btn3.classList.remove('active');
-                btn4.classList.remove('active');
-                btn5.classList.add('active');
-                btn6.classList.remove('active');
-                }
-            });
-
-            let btn6 = document.querySelector('#btn6');
-            btn6.addEventListener('click', ()=>{ 
-                changeChannel(btn6.dataset.channel);
-                if (btn6.classList.contains('active')) {
-                    btn6.classList.remove('active');
-                } else {
-                btn1.classList.remove('active');
-                btn2.classList.remove('active');
-                btn3.classList.remove('active');
-                btn4.classList.remove('active');
-                btn5.classList.remove('active');
-                btn6.classList.add('active');
-                }
-            });
-
-            
-
-            function changeChannel(channel) {
-                let video = document.querySelector('video');
-                let oldSrc = video.src;
-                let newSrc = "channelvideo/LIVINGROOM" + channel + "-sm.m4v";
-                if (firstTime == true) {
-                    let newSrc = "channelvideo/staticonly.m4v";
-                    video.setAttribute('src', newSrc);
-                    video.load();
-                    firstTime = false;
-                }
-                else if (oldSrc.includes(newSrc)) {
-                    let newSrc = "channelvideo/staticonly.m4v";
-                    video.setAttribute('src', newSrc);
-                    video.load();
-                }
-                else { 
-                    video.setAttribute('src', newSrc);
-                    video.load();
-                }
-            };
-
-            
-            // laugh track button
-
-            const mp3Files = ['/laughtracks/laugh-001.mp3', '/laughtracks/laugh-002.mp3', '/laughtracks/laugh-003.mp3'];
-            const playButton = document.getElementById('haha-btn');
-            let audio = new Audio();
-
-            playButton.addEventListener('click', () => {
-                if (!audio.paused) {
-                    audio.pause();
-                    playButton.classList.remove('active');
-                    return;
-                }
-
-                const randomMp3 = mp3Files[Math.floor(Math.random() * mp3Files.length)];
-                audio.src = randomMp3;
-                audio.play();
-                playButton.classList.add('active');
-                if (innerWidth > 1100) {
-                            activeButton.style.display = 'none';
-                        }
-            
-
-                audio.onended = () => {
-                    playButton.classList.remove('active');
-                    if (innerWidth > 1100) {
-                            activeButton.style.display = 'none';
-                        }
-                    
-                };
-            });
-
-            // This is the bottom tv (game videos)
-
-            function changeGame(channel) {
-                let video = document.querySelector('.tv-video-2');
-                let oldSrc = video.src;
-                let newSrc = "/game-gifs/game" + channel + ".mp4";        
-                
-                if (oldSrc.includes(newSrc)) {
-                    let newSrc = "/channelvideo/staticonly.m4v";
-                    video.setAttribute('src', newSrc);
-                    video.load();
-                }
-                else { 
-                    video.setAttribute('src', newSrc);
-                    video.load();
-                }
-            };
-
-            let btn7 = document.querySelector('#btn7');
-            btn7.addEventListener('click', ()=>{ 
-                changeGame(btn7.dataset.channel);
-                if (btn7.classList.contains('active')) {
-                    btn7.classList.remove('active');
-                }
-                else {
-                btn7.classList.add('active');
-                btn8.classList.remove('active');
-                btn9.classList.remove('active');
-                btn10.classList.remove('active');
-                btn11.classList.remove('active');
-                btn12.classList.remove('active');
-                }});
-
-                let btn8 = document.querySelector('#btn8');
-                btn8.addEventListener('click', ()=>{ 
-                    changeGame(btn8.dataset.channel);
-                if (btn8.classList.contains('active')) {
-                    btn8.classList.remove('active');
-                }
-                else {
-                btn7.classList.remove('active');
-                btn8.classList.add('active');
-                btn9.classList.remove('active');
-                btn10.classList.remove('active');
-                btn11.classList.remove('active');
-                btn12.classList.remove('active');
-                }});
-
-                
-                let btn9 = document.querySelector('#btn9');
-                btn9.addEventListener('click', ()=>{ 
-                    changeGame(btn9.dataset.channel);
-                if (btn9.classList.contains('active')) {
-                    btn9.classList.remove('active');
-                }
-                else {
-                btn7.classList.remove('active');
-                btn8.classList.remove('active');
-                btn9.classList.add('active');
-                btn10.classList.remove('active');
-                btn11.classList.remove('active');
-                btn12.classList.remove('active');
-                }});
-
-                let btn10 = document.querySelector('#btn10');
-                btn10.addEventListener('click', ()=>{ 
-                    changeGame(btn10.dataset.channel);
-                if (btn10.classList.contains('active')) {
-                    btn10.classList.remove('active');
-                }
-                else {
-                btn7.classList.remove('active');
-                btn8.classList.remove('active');
-                btn9.classList.remove('active');
-                btn10.classList.add('active');
-                btn11.classList.remove('active');
-                btn12.classList.remove('active');
-                }});
-
-                let btn11 = document.querySelector('#btn11');
-                btn11.addEventListener('click', ()=>{ 
-                    changeGame(btn11.dataset.channel);
-                if (btn11.classList.contains('active')) {
-                    btn11.classList.remove('active');
-                }
-                else {
-                btn7.classList.remove('active');
-                btn8.classList.remove('active');
-                btn9.classList.remove('active');
-                btn10.classList.remove('active');
-                btn11.classList.add('active');
-                btn12.classList.remove('active');
-                }});
-
-                let btn12 = document.querySelector('#btn12');
-                btn12.addEventListener('click', ()=>{ 
-                    changeGame(btn12.dataset.channel);
-                if (btn12.classList.contains('active')) {
-                    btn12.classList.remove('active');
-                }
-                else {
-                btn7.classList.remove('active');
-                btn8.classList.remove('active');
-                btn9.classList.remove('active');
-                btn10.classList.remove('active');
-                btn11.classList.remove('active');
-                btn12.classList.add('active');
-                }});
-
-
-            // document.querySelectorAll('.nav-btn').forEach(button => {
-            //     button.addEventListener('click', function() {
-            //         const target = document.querySelector(this.getAttribute('data-target'));
-            //         target.scrollIntoView({ behavior: 'smooth' });
-                
-             
-            //     });
-            // });
-
-            document.querySelectorAll('.nav-btn').forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault(); // Prevent default anchor click behavior
-                const target = document.querySelector(this.getAttribute('data-target'));
-                
-                // Calculate the offset position
-                const headerOffset = window.innerWidth <= 768 ? 500 : 10; // Adjust these values as needed
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-
-                var activeButtonDisplay = document.getElementById('activeButton');
-                // Additional logic for activeButtonDisplay if needed
-            });
-        });
-
-
-            window.addEventListener('scroll', () => {
-    let currentSection = '';
-    const headerOffset = window.innerWidth <= 768 ? 500 : 10; // Adjusted values
-
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - headerOffset) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    // You can use currentSection for further logic, like updating the active nav link
-    console.log(currentSection); // For debugging purposes
-
-
-
-                document.querySelectorAll('.nav-btn').forEach(button => {
-                    button.classList.remove('active');
-                    if (button.getAttribute('data-target') === `#${currentSection}`) {
-                        button.classList.add('active');
-                        setActiveButton(button);
-                        if (innerWidth > 1100) {
-                            activeButton.style.display = 'none';
-                        }
-                    }
-                   
-                });
-            });
-
-                function toggleMenu() {
-                    var menu = document.getElementById('navMenu');
-                    var activeButton = document.getElementById('activeButton');
-                    menu.classList.toggle('show');
-                    //console.log(window.innerWidth);
-                    
-                    activeButton.style.display = menu.classList.contains('show') ? 'none' : 'block';
-                    
-                }
-
-                // Function to set the active button
-                function setActiveButton(button) {
-                    var buttons = document.querySelectorAll('.nav-btn');
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    // Update the active button display
-                    var activeButtonDisplay = document.getElementById('activeButton');
-                    activeButtonDisplay.textContent = button.textContent;
-
-                }
-
-                // Collapse the menu when a button is clicked and set the active button
-                document.querySelectorAll('.nav-btn').forEach(button => {
-                    button.addEventListener('click', () => {
-                        var menu = document.getElementById('navMenu');
-                        menu.classList.remove('show');
-                        setActiveButton(button);
-                        document.getElementById('activeButton').style.display = 'block';
-                    });
-                });
-
-                // Example usage: Set the first button as active on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                    var firstButton = document.querySelector('.nav-btn');
-                    setActiveButton(firstButton);
-                });
-    </script>
+    <div class="holder">
+        
+        <p>This year, Whaaat!? goes to camp. <br> Whatever that means.</p>
+        <!-- <p>Whatever that means.</p> -->
+        <h2><a href="http://eepurl.com/hcOlw9" target="_blank">Want to stay in the know? Sign-up for e-mail alerts here.<a></h2>
+    </div>
 </body>
 </html>
