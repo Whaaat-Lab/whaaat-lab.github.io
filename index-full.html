@@ -199,6 +199,7 @@
             flex-shrink: 0;
             transition: transform 0.3s ease;
             margin-right: 5rem;
+            
         }
 
         .nav-logo:hover {
@@ -278,14 +279,15 @@
             justify-content: center;
             align-items: center;
             background: none;
-            border: 2px solid var(--cream);
-            color: var(--cream);
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
             width: 48px;
             height: 48px;
             cursor: pointer;
             border-radius: 8px;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 1.5rem;
         }
 
         .mobile-menu-btn:hover {
@@ -880,7 +882,7 @@
                 </ul>
                 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" id="mobileMenuBtn"></button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">!?</button>
             </div>
         </nav>
     </div>
@@ -1027,14 +1029,14 @@
             function openMobileMenu() {
                 mobileMenuBtn.classList.add('active');
                 mobileMenuOverlay.classList.add('active');
-                mobileMenuBtn.textContent = '×';
+                mobileMenuBtn.textContent = 'X';
                 document.body.style.overflow = 'hidden';
             }
 
             function closeMobileMenu() {
                 mobileMenuBtn.classList.remove('active');
                 mobileMenuOverlay.classList.remove('active');
-                mobileMenuBtn.textContent = '‽';
+                mobileMenuBtn.textContent = '!?';
                 document.body.style.overflow = '';
             }
 
