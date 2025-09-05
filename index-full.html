@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Whaaat!? - October 25th</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #56b5a9;
+            --secondary-green: #213A1B;
+            --cream: #f9eedb;
+            --black: #000000;
+            --font-family: "cooper-black-std", serif;
+            --nav-height-desktop: 80px;
+            --nav-height-mobile: 70px;
+            --nav-height-small: 60px;
+        }
+
+        html {
+            min-height: 100vh;
+            background-color: var(--primary-green);
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+            font-family: var(--font-family);
+            color: var(--cream);
+        }
+
+        /* Typography */
+        p, h2, ul {
+            font-family: var(--font-family);
+            color: var(--cream);
+            font-size: clamp(18px, 4vw, 36px);
+            margin-top: 2rem;
+            margin-bottom: 0;
+            text-align: center;
+            padding: 0 10%;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: clamp(14px, 3vw, 24px);
+            margin-top: 3rem;
+        }
+
+        ul {
+            text-align: left;
+            font-size: clamp(12px, 2.5vw, 30px);
+            font-family: "Nunito Sans";
+        }
+        
+        .bullet-list {
+            max-width: 75rem;
+        }
+
+        /* Links */
+        a {
+            text-decoration: none;
+            color: var(--cream);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Layout */
+        .holder {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .section-block {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Section Backgrounds */
+        #home {
+            background: url('/images-2025/woodbg.svg');
+            background-size: cover;
+            background-color: var(--cream);
+            background-repeat: no-repeat;
+        }
+
+        #about {
+            background: url(/images-2025/whaaat-woods.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Add overlay for better text readability */
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg, 
+                rgba(0, 0, 0, 0.5) 0%, 
+                rgba(33, 58, 27, 0.3) 50%, 
+                rgba(0, 0, 0, 0.5) 100%
+            );
+            z-index: 1;
+        }
+
+        #about .holder {
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(6px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 100%;
+            height: 100vh;
+        }
+
+        #tickets {
+            position: relative;
+        }
+
+      
+        /* Images */
+        img {
+            max-width: 90%;
+            height: auto;
+            max-height: 40vh;
+            margin-top: 2rem;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+        }
+
+        .nav-container.visible {
+            transform: translateY(0);
+        }
+
+        nav {
+            background-color: var(--primary-green);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--cream);
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-family);
+            color: var(--cream);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-logo:hover {
+            color: var(--cream);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .nav-links li a {
+            font-family: var(--font-family);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a:hover {
+            color: var(--cream);
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--cream);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--cream);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Camp Ticket Button */
+        .camp-ticket-btn {
+            background: linear-gradient(135deg, var(--cream) 0%, #e8d4b0 100%);
+            border: 4px solid var(--primary-green);
+            border-radius: 15px;
+            color: var(--primary-green);
+            cursor: pointer;
+            font-family: var(--font-family);
+            font-size: clamp(18px, 3.5vw, 28px);
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: clamp(15px, 3vw, 25px) clamp(30px, 6vw, 50px);
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 8px 20px rgba(33, 58, 27, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4);
+            margin-top: 2rem;
+            text-transform: uppercase;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .camp-ticket-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 12px 30px rgba(33, 58, 27, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #f0e6d2 100%);
+        }
+
+        .camp-ticket-btn:active {
+            transform: translateY(-1px) scale(1.02);
+            box-shadow: 
+                0 4px 15px rgba(33, 58, 27, 0.4),
+                inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .camp-ticket-btn:focus {
+            outline: none;
+            box-shadow: 
+                0 8px 20px rgba(33, 58, 27, 0.3),
+                0 0 0 4px rgba(249, 238, 219, 0.5);
+        }
+
+        /* Footer Styles */
+        .footer-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            transition: all 0.3s ease;
+            transform: translateY(100%);
+        }
+
+        .footer-container.visible {
+            transform: translateY(0);
+        }
+
+        footer {
+            background: rgba(33, 58, 27, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 2px solid var(--primary-green);
+            color: var(--cream);
+            font-family: var(--font-family);
+        }
+
+        .footer-bottom {
+            background: var(--cream);
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid rgba(86, 181, 169, 0.3);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(33, 58, 27, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                border-top: 2px solid var(--primary-green);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            p {
+                font-size: clamp(16px, 5vw, 24px);
+                padding: 0 5%;
+                margin-top: 1.5rem;
+            }
+            
+            h2 {
+                font-size: clamp(12px, 4vw, 18px);
+                padding: 0 5%;
+                margin-top: 2rem;
+            }
+            
+            img {
+                max-width: 95%;
+                margin-top: 1rem;
+                max-height: 35vh;
+            }
+
+            .bullet-list {
+                max-width: 90%;
+            }
+
+            #about .holder {
+                max-width: 95%;
+                padding: 2rem 1.5rem;
+            }
+            
+            #about .bullet-list {
+                padding: 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+
+            .section-block {
+                min-height: auto;
+                padding: 1rem 0;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+            
+            p {
+                font-size: clamp(14px, 6vw, 20px);
+                padding: 0 2%;
+            }
+            
+            h2 {
+                font-size: clamp(11px, 5vw, 16px);
+                padding: 0 2%;
+                line-height: 1.4;
+            }
+            
+            img {
+                max-width: 100%;
+                max-height: 30vh;
+            }
+
+            .bullet-list {
+                max-width: 95%;
+            }
+
+            #about .holder {
+                padding: 1.5rem 1rem;
+                margin: 1rem auto;
+                min-height: auto;
+            }
+
+            #about .bullet-list {
+                padding: 2rem 1rem;
+                margin: 1rem auto;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            p {
+                font-size: 36px;
+                padding: 0 20%;
+            }
+            
+            h2 {
+                font-size: 24px;
+                padding: 0 20%;
+            }
+        }
+
+        #tickets {
+            background-color: #111217;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+#tickets .fire {
+  transform: translate(0, 0);
+  height: 15vw;
+  width: 15vw;
+}
+#tickets .fire .flames {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translateX(-50%) rotate(45deg);
+}
+#tickets .fire .flames .flame {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 0%;
+  height: 0%;
+  background-color: #FFDC01;
+  border-radius: 1vw;
+}
+#tickets .fire .flames .flame:nth-child(2n+1) {
+  -webkit-animation: flameodd 1.5s ease-in infinite;
+          animation: flameodd 1.5s ease-in infinite;
+}
+#tickets .fire .flames .flame:nth-child(2n) {
+  -webkit-animation: flameeven 1.5s ease-in infinite;
+          animation: flameeven 1.5s ease-in infinite;
+}
+#tickets .fire .flames .flame:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+#tickets .fire .flames .flame:nth-child(2) {
+  -webkit-animation-delay: 0.375s;
+          animation-delay: 0.375s;
+}
+#tickets .fire .flames .flame:nth-child(3) {
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+}
+#tickets .fire .flames .flame:nth-child(4) {
+  -webkit-animation-delay: 1.125s;
+          animation-delay: 1.125s;
+}
+#tickets .fire .logs {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 15%;
+}
+#tickets .fire .logs:before, #tickets .fire .logs:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  height: 100%;
+  width: 100%;
+  border-radius: 1vw;
+  background-color: #70392F;
+}
+#tickets .fire .logs:before {
+  transform: translate(-50%, -50%) rotate(-20deg);
+  background-color: #612E25;
+}
+
+@-webkit-keyframes flameodd {
+  0%, 100% {
+    width: 0%;
+    height: 0%;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: #FFDC01;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: #FDAC01;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: #F73B01;
+    z-index: -10;
+  }
+  0% {
+    right: 0%;
+    bottom: 0%;
+  }
+  25% {
+    right: 1%;
+    bottom: 2%;
+  }
+  100% {
+    right: 150%;
+    bottom: 170%;
+  }
+}
+
+@keyframes flameodd {
+  0%, 100% {
+    width: 0%;
+    height: 0%;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: #FFDC01;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: #FDAC01;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: #F73B01;
+    z-index: -10;
+  }
+  0% {
+    right: 0%;
+    bottom: 0%;
+  }
+  25% {
+    right: 1%;
+    bottom: 2%;
+  }
+  100% {
+    right: 150%;
+    bottom: 170%;
+  }
+}
+@-webkit-keyframes flameeven {
+  0%, 100% {
+    width: 0%;
+    height: 0%;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: #FFDC01;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: #FDAC01;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: #F73B01;
+    z-index: -10;
+  }
+  0% {
+    right: 0%;
+    bottom: 0%;
+  }
+  25% {
+    right: 2%;
+    bottom: 1%;
+  }
+  100% {
+    right: 170%;
+    bottom: 150%;
+  }
+}
+@keyframes flameeven {
+  0%, 100% {
+    width: 0%;
+    height: 0%;
+  }
+  25% {
+    width: 100%;
+    height: 100%;
+  }
+  0% {
+    background-color: #FFDC01;
+    z-index: 1000000;
+  }
+  40% {
+    background-color: #FDAC01;
+    z-index: 1000000;
+  }
+  100% {
+    background-color: #F73B01;
+    z-index: -10;
+  }
+  0% {
+    right: 0%;
+    bottom: 0%;
+  }
+  25% {
+    right: 2%;
+    bottom: 1%;
+  }
+  100% {
+    right: 170%;
+    bottom: 150%;
+  }
+}
+
+#about p, #about ul {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Enhanced bullet list for better readability */
+#about .bullet-list {
+    padding: 4rem;
+    margin: 2rem;
+}
+
+#about .bullet-list li {
+    margin: 1.2rem 0;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav-container" id="navbar">
+        <nav>
+            <div class="nav-content">
+                <a href="#" class="nav-logo">Whaaat!?</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tickets">Tickets</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="section-block">
+        <div class="holder">
+            <img src="/images-2025/camp.svg" alt="A sign styled like a national forest sign with the date 10.25 and the word Whaaat!?">
+        </div>
+        <div class="holder">    
+            <!-- <p>On October 25th, Whaaat!? goes to camp. <br> Whatever that means.</p> -->
+             <p>We're back for our 8th year of experimental games and playful interactions, and this year, we're taking it to...CAMP WHAAAT!?</p>
+            <!-- <p><a href="http://eepurl.com/hcOlw9" target="_blank" class="email-signup-link">Want to stay in the know? Sign-up for e-mail alerts here →</a></p> -->
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section-block">
+        <div class="holder">
+            <p>Join us for one full day of weird, summer-campy goodness, featuring:</p>
+            <ul class="bullet-list">
+                <li>Themed "arcade lodges" full of wild video games, both old, new and yet-to-be-released</li>
+                <li>"IT CAME FROM CAMP WHAAAT!?", a showcase of bespoke interactive installations from world-renowned artists and creators, built just for the festival</li>
+                <li>Exclusive interactive play-sessions, run by people dressed like camp counselors</li>
+                <li>Gorgeous Camp Whaaat!? Merit Badges, and lots of ways to earn them</li>
+                <li>A 24-foot rainbow play parachute, lawsuits be damned</li>
+                <li>The Camp Whaaat!? "big ol' table of all-you-can-eat cereal" breakfast party</li>
+                <li>More "camp- themed" surprises, probably</li>
+            </ul>
+            <p>Get your tickets today, and we'll see you at Camp Whaaat!? on Saturday, October 25th! </p>
+        </div>
+    </div>
+
+    <!-- Tickets Section -->
+    <div id="tickets" class="section-block">
+        <div class="fire">
+            <div class="flames">
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+                <div class="flame"></div>
+            </div>
+            <div class="logs"></div>
+        </div>
+        <div class="holder">
+            <p>Join us by the campfire this year, why won't you?</p>
+            <button class="camp-ticket-btn" onclick="buyTickets()">Buy Tickets Now</button>
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container" id="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2025 Whaaat!? Festival</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const footer = document.getElementById('footer');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            const scrollThreshold = 100;
+
+            // Navigation scroll functionality
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const documentHeight = document.documentElement.scrollHeight;
+                const windowHeight = window.innerHeight;
+
+                // Show/hide navbar on scroll
+                if (scrollPosition > scrollThreshold) {
+                    navbar.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                }
+
+                // Show footer only at bottom of page
+                if (scrollPosition + windowHeight >= documentHeight - 10) {
+                    footer.classList.add('visible');
+                } else {
+                    footer.classList.remove('visible');
+                }
+            });
+
+            // Mobile menu functionality
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!navbar.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        function buyTickets() {
+            alert('Redirecting to ticket purchase...');
+            // Example: window.location.href = 'https://your-ticketing-site.com';
+        }
+    </script>
+</body>
+</html>
