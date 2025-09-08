@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Caaamp Whaaat!? - October 18-25, 2025</title>
+ <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+ <style>
+* {
+  font-family: "cooper-black-std", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('/images-2025/forestvector.svg') center center/cover no-repeat;
+  background-color: black;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: #f9eedb;
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+}
+
+#hero-image {
+  width: 100%;
+  max-width: 700px;
+  flex: 0 0 auto;
+}
+
+#hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+#hero-blurb {
+  width: 100%;
+  max-width: 800px;
+  flex: 0 0 auto;
+}
+
+.links-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 0 0 auto;
+}
+
+.links-container p {
+  padding: 0.8rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.links-container p:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+a {
+  text-decoration: none;
+  color: #f9eedb;
+  transition: color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+a:hover, .discord-btn:hover {
+  color: #7dd3c7;
+}
+
+.discord-btn {
+  cursor: pointer;
+}
+
+
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  margin: 3% auto;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 2px solid #7dd3c7;
+  box-shadow: 0 10px 30px rgba(125, 211, 199, 0.3);
+}
+
+.close {
+  color: #7dd3c7;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close:hover {
+  color: #f9eedb;
+}
+
+.modal h2 {
+  color: #7dd3c7;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.modal h3 {
+  color: #f9eedb;
+  margin: 1.5rem 0 0.8rem 0;
+  font-size: 1.2rem;
+}
+
+.modal ul {
+  color: #f9eedb;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal li {
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.discord-link {
+  display: block;
+  background: #5865F2;
+  color: white !important;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 2rem auto 0;
+  text-align: center;
+  max-width: 300px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.discord-link:hover {
+  background: #4752C4;
+  color: white !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 5% auto;
+  }
+  
+  .modal h2 {
+    font-size: 1.4rem;
+  }
+  
+  .modal h3 {
+    font-size: 1.1rem;
+  }
+  
+  .modal li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive breakpoints for main page */
+@media (max-width: 480px) {
+  .container {
+    gap: 0.5rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  #hero-image {
+    max-width: 400px;
+  }
+  
+  .links-container {
+    gap: 0.5rem;
+  }
+  
+  .links-container p {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    gap: 0.8rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+  }
+  
+  #hero-image {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    gap: 1.2rem;
+  }
+  
+  p {
+    font-size: 1.3rem;
+  }
+  
+  #hero-image {
+    max-width: 600px;
+  }
+  
+  .links-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .links-container p {
+    flex: 1;
+    min-width: 250px;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    gap: 1.5rem;
+  }
+  
+  p {
+    font-size: 1.4rem;
+  }
+  
+  #hero-image {
+    max-width: 700px;
+  }
+  
+  .links-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  .links-container p {
+    flex: 1;
+    margin: 0 0.5rem;
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .container {
+    gap: 2rem;
+  }
+  
+  p {
+    font-size: 1.6rem;
+  }
+  
+  #hero-image {
+    max-width: 800px;
+  }
+  
+  .links-container p {
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .container {
+    gap: 0.3rem;
+  }
+  
+  #hero-image {
+    max-width: 250px;
+  }
+  
+  p {
+    font-size: 0.8rem;
+    line-height: 1.1;
+  }
+  
+  .links-container {
+    gap: 0.3rem;
+  }
+  
+  .links-container p {
+    padding: 0.4rem;
+  }
+}
+</style>
+</head>
+<body>
+ <div class="container">
+   <div id="hero-image">
+     <img src="/images-2025/campwhaaat_sign.webp" alt="A sign in the style of the national parks that says Camp Whaaat!?">
+   </div>
+   
+   <div id="hero-blurb">
+     <p>Spend the week collaborating on playful, interactive projects with other cool weirdos, and then unleash/test them on the public at the 8th annual Whaaat!? Festival on October 25th.</p>
+   </div>
+   
+   <div class="links-container">
+     <p class="discord-btn" onclick="openModal()">Want to know more?</p>
+     <p><a href="https://whaaat.io/">Looking for the 8th Whaaat Festival!?</a></p>
+   </div>
+ </div>
+
+ <!-- Modal -->
+ <div id="campModal" class="modal">
+   <div class="modal-content">
+     <span class="close" onclick="closeModal()">&times;</span>
+     <h2>Camp Whaaat!? Details</h2>
+     
+     <div class="modal-body">
+       <div class="modal-sections">
+         <div>
+           <h3>What We Have For You:</h3>
+           <ul>
+             <li>World class fabrication and performance technology spaces of the ATLAS Institute and CU Boulder</li>
+             <li>A host of brilliant, skilled weirdos (and motivated creative technology students)</li>
+             <li>An established festival with a playful, curious audience to show your work to</li>
+             <li>Numerous excursions to various Colorado-y destinations (interactive art spaces, scenic vistas, delicious bites and beverages, obscure technology museums)</li>
+             <li>Daily coffee and breakfast burritos</li>
+             <li>Camp Whaaat!? themed swag</li>
+             <li>An absolutely picturesque place to hang out alongside the mountains</li>
+           </ul>
+         </div>
+         
+         <div>
+           <h3>What We're Asking of You:</h3>
+           <ul>
+             <li>Get Here (fly to DEN, we can pick you up from the airport)</li>
+             <li>Find a place to stay (in Boulder, we can help coordinate rooms and possibly get hotel discounts through the university)</li>
+             <li>Join daily camp meetups, and go on at least some planned excursions</li>
+             <li>Show a piece of work at the Whaaat!? Festival (can be something you already want to share, but ideally something you worked on during the week of camp)</li>
+             <li>Be Awesome, generally</li>
+           </ul>
+         </div>
+       </div>
+       
+       <a href="https://discord.gg/aRkkY7YZ" class="discord-link" target="_blank">Join Our Discord For More</a>
+     </div>
+   </div>
+ </div>
+
+ <script>
+   function openModal() {
+     document.getElementById('campModal').style.display = 'block';
+   }
+   
+   function closeModal() {
+     document.getElementById('campModal').style.display = 'none';
+   }
+   
+   // Close modal when clicking outside of it
+   window.onclick = function(event) {
+     var modal = document.getElementById('campModal');
+     if (event.target === modal) {
+       closeModal();
+     }
+   }
+   
+   // Close modal with Escape key
+   document.addEventListener('keydown', function(event) {
+     if (event.key === 'Escape') {
+       closeModal();
+     }
+   });
+ </script>
+</body>
+</html>
