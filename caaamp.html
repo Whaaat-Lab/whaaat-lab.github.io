@@ -28,6 +28,7 @@ body {
   height: 100vh;
   overflow: hidden;
   padding: 1rem;
+  position: relative;
 }
 
 .container {
@@ -38,20 +39,20 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vh, 1.5rem);
 }
 
 p {
-  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
   color: #f9eedb;
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.3;
   margin: 0;
 }
 
 #hero-image {
   width: 100%;
-  max-width: 700px;
+  max-width: clamp(300px, 60vw, 700px);
   flex: 0 0 auto;
 }
 
@@ -64,8 +65,9 @@ p {
 
 #hero-blurb {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   flex: 0 0 auto;
+  padding: 0 1rem;
 }
 
 .links-container {
@@ -73,21 +75,25 @@ p {
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: clamp(0.5rem, 1vh, 1rem);
   flex: 0 0 auto;
+  padding: 0 1rem;
 }
 
 .links-container p {
-  padding: 0.8rem;
+  padding: clamp(0.6rem, 1.5vh, 1rem);
   border-radius: 8px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
+  font-size: clamp(0.85rem, 2.2vw, 1.2rem);
+  border: 1px solid rgba(125, 211, 199, 0.2);
 }
 
 .links-container p:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   transform: translateY(-2px);
+  border-color: rgba(125, 211, 199, 0.4);
 }
 
 a {
@@ -106,8 +112,6 @@ a:hover, .discord-btn:hover {
   cursor: pointer;
 }
 
-
-
 /* Modal Styles */
 .modal {
   display: none;
@@ -118,30 +122,35 @@ a:hover, .discord-btn:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(3px);
 }
 
 .modal-content {
   background-color: #1a1a1a;
-  margin: 3% auto;
-  padding: 2rem;
+  margin: 2vh auto;
+  padding: clamp(1rem, 3vh, 2rem);
   border-radius: 15px;
-  width: 90%;
-  max-width: 700px;
-  max-height: 90vh;
-  overflow-y: auto;
+  width: clamp(320px, 95vw, 700px);
+  height: 96vh;
+  overflow: hidden;
   position: relative;
-  border: 2px solid #7dd3c7;  
+  border: 2px solid #7dd3c7;
+  box-shadow: 0 10px 30px rgba(125, 211, 199, 0.3);
+  display: flex;
+  flex-direction: column;
 }
 
 .close {
   color: #7dd3c7;
   position: absolute;
-  right: 15px;
-  top: 10px;
-  font-size: 28px;
+  right: clamp(10px, 2vw, 20px);
+  top: clamp(8px, 1.5vh, 15px);
+  font-size: clamp(20px, 5vw, 28px);
   font-weight: bold;
   cursor: pointer;
   z-index: 10000;
+  transition: color 0.3s ease;
+  line-height: 1;
 }
 
 .close:hover {
@@ -151,26 +160,56 @@ a:hover, .discord-btn:hover {
 .modal h2 {
   color: #7dd3c7;
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.6rem;
+  margin-bottom: clamp(0.5rem, 2vh, 1.5rem);
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  flex-shrink: 0;
+  padding-right: clamp(30px, 8vw, 50px);
+}
+
+.modal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.modal-sections {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: clamp(0.5rem, 2vh, 1rem);
+  overflow: hidden;
+}
+
+.modal-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .modal h3 {
   color: #f9eedb;
-  margin: 1.5rem 0 0.8rem 0;
-  font-size: 1.2rem;
+  margin: 0 0 clamp(0.3rem, 1vh, 0.8rem) 0;
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  flex-shrink: 0;
 }
 
 .modal ul {
   color: #f9eedb;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  margin-left: clamp(1rem, 3vw, 1.5rem);
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
 .modal li {
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  line-height: 1.4;
+  margin-bottom: clamp(0.2rem, 0.5vh, 0.4rem);
+  font-size: clamp(0.75rem, 2.2vw, 0.95rem);
+  line-height: 1.3;
   font-family: "DM Sans", sans-serif;
 }
 
@@ -178,14 +217,16 @@ a:hover, .discord-btn:hover {
   display: block;
   background: #5865F2;
   color: white !important;
-  padding: 1rem 2rem;
+  padding: clamp(0.6rem, 2vh, 1rem) clamp(1rem, 4vw, 2rem);
   border-radius: 8px;
   text-decoration: none;
-  margin: 2rem auto 0;
+  margin: clamp(0.5rem, 2vh, 1rem) auto 0;
   text-align: center;
-  max-width: 300px;
+  max-width: clamp(200px, 80vw, 300px);
   font-weight: bold;
   transition: background 0.3s ease;
+  flex-shrink: 0;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
 }
 
 .discord-link:hover {
@@ -193,76 +234,76 @@ a:hover, .discord-btn:hover {
   color: white !important;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
+/* Extra Small Devices (phones in portrait) */
+@media (max-width: 375px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .container {
+    gap: 0.3rem;
+  }
+  
+  #hero-blurb, .links-container {
+    padding: 0 0.5rem;
+  }
+  
   .modal-content {
-    width: 95%;
-    padding: 1.5rem;
-    margin: 5% auto;
+    width: 98vw;
+    height: 98vh;
+    margin: 1vh auto;
+    padding: 0.8rem;
   }
   
   .modal h2 {
-    font-size: 1.4rem;
-  }
-  
-  .modal h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
   
   .modal li {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
 }
 
-/* Responsive breakpoints for main page */
-@media (max-width: 480px) {
+/* Small phones (phones in portrait) */
+@media (min-width: 376px) and (max-width: 480px) {
   .container {
-    gap: 0.5rem;
-  }
-  
-  p {
-    font-size: 0.9rem;
+    gap: 0.4rem;
   }
   
   #hero-image {
-    max-width: 400px;
-  }
-  
-  .links-container {
-    gap: 0.5rem;
+    max-width: 350px;
   }
   
   .links-container p {
-    padding: 0.6rem;
-    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 }
 
+/* Large phones (phones in landscape, small tablets) */
 @media (min-width: 481px) and (max-width: 768px) {
   .container {
-    gap: 0.8rem;
-  }
-  
-  p {
-    font-size: 1.1rem;
+    gap: 0.6rem;
   }
   
   #hero-image {
-    max-width: 500px;
+    max-width: 450px;
+  }
+  
+  .links-container {
+    max-width: 600px;
   }
 }
 
+/* Tablets (portrait and landscape) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .container {
-    gap: 1.2rem;
-  }
-  
-  p {
-    font-size: 1.3rem;
+    gap: 1rem;
   }
   
   #hero-image {
-    max-width: 600px;
+    max-width: 550px;
   }
   
   .links-container {
@@ -270,6 +311,7 @@ a:hover, .discord-btn:hover {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    max-width: 700px;
   }
   
   .links-container p {
@@ -277,60 +319,115 @@ a:hover, .discord-btn:hover {
     min-width: 250px;
     margin: 0 0.5rem;
   }
+  
+  .modal-content {
+    width: 85vw;
+    max-width: 600px;
+  }
 }
 
+/* Small laptops and desktops */
 @media (min-width: 1025px) and (max-width: 1440px) {
   .container {
-    gap: 1.5rem;
-  }
-  
-  p {
-    font-size: 1.4rem;
+    gap: 1.2rem;
   }
   
   #hero-image {
-    max-width: 700px;
+    max-width: 650px;
   }
   
   .links-container {
     flex-direction: row;
     justify-content: space-between;
     gap: 1.5rem;
+    max-width: 750px;
   }
   
   .links-container p {
     flex: 1;
     margin: 0 0.5rem;
-    max-width: 400px;
+    max-width: 350px;
+  }
+  
+  .modal-content {
+    width: 80vw;
+    max-width: 650px;
   }
 }
 
+/* Large desktops */
 @media (min-width: 1441px) {
   .container {
-    gap: 2rem;
-  }
-  
-  p {
-    font-size: 1.6rem;
+    gap: 2.5rem;
+    padding: 3rem 1rem;
   }
   
   #hero-image {
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+  }
+  
+  #hero-blurb {
+    margin-bottom: 2rem;
+  }
+  
+  #hero-blurb p {
+    font-size: 1.5rem;
+    line-height: 1.4;
     max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .links-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
   }
   
   .links-container p {
-    padding: 1rem;
+    flex: 1;
+    margin: 0 1rem;
+    max-width: 380px;
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+  
+  .modal-content {
+    width: 65vw;
+    max-width: 700px;
+    padding: 3rem;
+  }
+  
+  .modal h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .modal h3 {
     font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .modal li {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
   }
 }
 
-@media (max-height: 500px) and (orientation: landscape) {
+/* Short screens (landscape phones, short laptops) */
+@media (max-height: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+  
   .container {
     gap: 0.3rem;
   }
   
   #hero-image {
-    max-width: 250px;
+    max-width: min(300px, 40vw);
   }
   
   p {
@@ -338,12 +435,93 @@ a:hover, .discord-btn:hover {
     line-height: 1.1;
   }
   
-  .links-container {
-    gap: 0.3rem;
+  .links-container p {
+    padding: 0.4rem;
+    font-size: 0.75rem;
+  }
+  
+  .modal-content {
+    height: 95vh;
+    margin: 2.5vh auto;
+    padding: 1rem;
+  }
+  
+  .modal h2 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .modal h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .modal li {
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+    line-height: 1.1;
+  }
+  
+  .discord-link {
+    padding: 0.5rem 1rem;
+    margin: 0.3rem auto 0;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  #hero-image {
+    max-width: 800px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .links-container p {
+    transition: none;
+  }
+  
+  .links-container p:hover {
+    transform: none;
+  }
+  
+  a, .discord-btn, .close {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+    overflow: visible;
+    height: auto;
+  }
+  
+  .modal {
+    display: none;
+  }
+  
+  p, a {
+    color: black;
   }
   
   .links-container p {
-    padding: 0.4rem;
+    background: none;
+    border: 1px solid black;
   }
 }
 </style>
@@ -352,6 +530,10 @@ a:hover, .discord-btn:hover {
  <div class="container">
    <div id="hero-image">
      <img src="/images-2025/campwhaaat_sign.webp" alt="A sign in the style of the national parks that says Camp Whaaat!?">
+   </div>
+
+   <div id="hero-blurb">
+     <p>October 18-25, 2025</p>
    </div>
    
    <div id="hero-blurb">
@@ -372,20 +554,20 @@ a:hover, .discord-btn:hover {
      
      <div class="modal-body">
        <div class="modal-sections">
-         <div>
+         <div class="modal-section">
            <h3>What We Have For You:</h3>
            <ul>
              <li>World class fabrication and performance technology spaces of the ATLAS Institute and CU Boulder</li>
              <li>A host of brilliant, skilled weirdos (and motivated creative technology students)</li>
              <li>An established festival with a playful, curious audience to show your work to</li>
-             <li>Numerous excursions to various Colorado-y destinations (interactive art spaces, scenic vistas, delicious bites and beverages, obscure technology museums)</li>
+             <!-- <li>Numerous excursions to various Colorado-y destinations (interactive art spaces, scenic vistas, delicious bites and beverages, obscure technology museums)</li> -->
              <li>Daily coffee and breakfast burritos</li>
              <li>Camp Whaaat!? themed swag</li>
              <li>An absolutely picturesque place to hang out alongside the mountains</li>
            </ul>
          </div>
          
-         <div>
+         <div class="modal-section">
            <h3>What We're Asking of You:</h3>
            <ul>
              <li>Get Here (fly to DEN, we can pick you up from the airport)</li>
