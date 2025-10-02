@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whaaat!? Festival - October 25th</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="button.css">
+    <style>
+     /* CSS Reset and Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-green: #56b5a9;
+    --secondary-green: #213A1B;
+    --cream: #f9eedb;
+    --black: #000000;
+    --font-family: "cooper-black-std", serif;
+    --body-font: "DM Sans", sans-serif;
+    --navbar-bg: rgba(39, 13, 3, 0.95);
+    --navbar-accent: #7dd3c7;
+    --navbar-hover: rgba(249, 238, 219, 0.15);
+}
+
+/* Base Styles - Mobile First */
+html {
+    overflow-x: hidden;
+    background-color: var(--black);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--cream);
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* Typography - Mobile First with Fluid Sizing */
+p, h2, h3 {
+    font-family: var(--font-family);
+    color: var(--cream);
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: clamp(0.95rem, 3vw, 2rem);
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 4vw, 2.6rem);
+    margin-top: 2rem;
+}
+
+.color {
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: clamp(1.1rem, 3.5vw, 2.2rem);
+}
+
+/* Specific styling for paragraphs after .color headers */
+.color + p {
+    margin-top: 0.5rem;
+    font-size: clamp(0.85rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+}
+
+h3 {
+    font-size: clamp(1rem, 3.2vw, 1.8rem);
+    color: var(--primary-green);
+    margin-top: 1.5rem;
+}
+
+ul {
+    font-family: var(--body-font);
+    color: var(--cream);
+    text-align: left;
+    font-size: clamp(0.85rem, 2.5vw, 1.3rem);
+    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+ul li {
+    margin: 0.8rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+ul li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+}
+
+#about ul li::before {
+    color: var(--cream);
+    content: "•";
+}
+
+#info ul li::before,
+#activities ul li::before {
+    content: "🏕";
+}
+
+/* Links */
+a {
+    color: var(--cream);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-green);
+}
+
+/* Layout Components */
+.section-block {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.holder {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: clamp(250px, 40vh, 450px);
+    margin: 1rem 0;
+    border-radius: 10px;
+}
+
+/* Video Container - Responsive */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.schedule-item {
+    background: rgba(249, 238, 219, 0.1);
+    border: 2px solid var(--primary-green);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.schedule-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(86, 181, 169, 0.3);
+    background: rgba(249, 238, 219, 0.15);
+}
+
+.schedule-time {
+    font-family: var(--font-family);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.schedule-title {
+    font-family: var(--font-family);
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.schedule-description {
+    font-family: var(--body-font);
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    color: var(--cream);
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Navigation Container */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-100%);
+}
+
+.nav-container.visible {
+    transform: translateY(0);
+}
+
+/* Main Navigation */
+nav {
+    background: var(--navbar-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 2px solid rgba(86, 181, 169, 0.3);
+    position: relative;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    position: relative;
+}
+
+/* Logo */
+.nav-logo {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    margin-right: 1rem;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-logo img {
+    height: clamp(35px, 8vw, 55px);
+    width: auto;
+    display: block;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: none;
+    list-style: none;
+    gap: 0.3rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    font-family: var(--font-family);
+    color: var(--cream);
+    font-size: clamp(0.75rem, 1.5vw, 1.15rem);
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 25px;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.3px;
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--navbar-accent);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-links li a.active {
+    color: var(--navbar-accent);
+}
+
+.nav-links li a:hover{
+    transform: scale(1.1);
+    color: var(--navbar-accent);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 80%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--primary-green);
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 1.3rem;
+    font-family: var(--font-family);
+    font-weight: 900;
+}
+
+.mobile-menu-btn:hover {
+    background: var(--navbar-hover);
+    color: var(--navbar-accent);
+    transform: scale(1.05);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(33, 58, 27, 0.98) 0%, rgba(17, 18, 23, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-menu-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="camp-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(125,211,199,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23camp-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+/* Mobile Menu Links */
+.mobile-nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.mobile-nav-links li {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-overlay.active .mobile-nav-links li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(6) { transition-delay: 0.6s; }
+
+.mobile-nav-links li a {
+    font-family: var(--font-family);
+    color: var(--cream);
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-weight: 700;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: rgba(249, 238, 219, 0.05);
+    backdrop-filter: blur(10px);
+    display: block;
+    text-align: center;
+    min-width: 180px;
+}
+
+.mobile-nav-links li a:hover,
+.mobile-nav-links li a.active {
+    border-color: var(--navbar-accent);
+    background: rgba(249, 238, 219, 0.15);
+    color: var(--navbar-accent);
+}
+
+/* Section Backgrounds */
+#home {
+    background: url('/images-2025/logcabin1.webp') center/cover no-repeat;
+    background-color: var(--cream);
+}
+
+#about {
+    background: url('/images-2025/whaaat-woods.svg') center/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(33, 58, 27, 0.3) 50%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+#about .holder {
+    position: relative;
+    z-index: 2;
+}
+
+#about .content-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(249, 238, 219, 0.3);
+}
+
+#info {
+    background: linear-gradient(135deg, #1a2a1f 0%, #0d1612 100%);
+    position: relative;
+}
+
+#info::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="tent-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20,5 L30,25 L10,25 Z" fill="rgba(86,181,169,0.05)" stroke="rgba(86,181,169,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23tent-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+#info .holder {
+    position: relative;
+    z-index: 2;
+}
+
+#schedule {
+    background: linear-gradient(135deg, #213A1B 0%, #111217 100%);
+    position: relative;
+}
+
+#activities {
+    background: linear-gradient(135deg, #0d1612 0%, #1a2a1f 100%);
+    position: relative;
+}
+
+#tickets {
+    background-color: #111217;
+    position: relative;
+}
+
+/* Camp Ticket Button - Fully Responsive */
+.camp-ticket-btn {
+    background: linear-gradient(135deg, var(--cream) 0%, #f0e6d2 50%, #e8d4b0 100%);
+    border: 3px solid var(--primary-green);
+    border-radius: 15px;
+    color: var(--primary-green);
+    font-family: var(--font-family);
+    font-size: clamp(0.9rem, 3vw, 1.6rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: clamp(0.8rem, 3vw, 1.8rem) clamp(1.5rem, 5vw, 3.5rem);
+    margin: 2rem 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.camp-ticket-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.camp-ticket-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #ffffff 0%, #f5f0e6 50%, #f0e6d2 100%);
+}
+
+.camp-ticket-btn:hover::before {
+    left: 100%;
+}
+
+/* Fire Animation - Responsive */
+.fire {
+    height: clamp(100px, 20vw, 200px);
+    width: clamp(100px, 20vw, 200px);
+    margin: 2rem 0;
+    position: relative;
+}
+
+.fire .flames {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.fire .flames .flame {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: 0%;
+    height: 0%;
+    background-color: #FFDC01;
+    border-radius: 8px;
+}
+
+.fire .flames .flame:nth-child(2n+1) {
+    animation: flameodd 1.5s ease-in infinite;
+}
+
+.fire .flames .flame:nth-child(2n) {
+    animation: flameeven 1.5s ease-in infinite;
+}
+
+.fire .flames .flame:nth-child(1) { animation-delay: 0s; }
+.fire .flames .flame:nth-child(2) { animation-delay: 0.375s; }
+.fire .flames .flame:nth-child(3) { animation-delay: 0.75s; }
+.fire .flames .flame:nth-child(4) { animation-delay: 1.125s; }
+
+.fire .logs {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 15%;
+}
+
+.fire .logs:before, .fire .logs:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #70392F;
+}
+
+.fire .logs:before {
+    transform: translate(-50%, -50%) rotate(-20deg);
+    background-color: #612E25;
+}
+
+/* Footer */
+.footer-container {
+    width: 100%;
+    background: linear-gradient(135deg, var(--secondary-green) 0%, #0d1612 100%);
+    border-top: 2px solid rgba(86, 181, 169, 0.3);
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content .prev-fest {
+    font-family: var(--body-font);
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    color: var(--cream);
+    margin: 0;
+    padding: 0;
+}
+
+.footer-content .prev-fest a {
+    color: var(--primary-green);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.footer-content .prev-fest a:hover {
+    color: var(--navbar-accent);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(86, 181, 169, 0.2);
+}
+
+.footer-bottom p {
+    font-family: var(--body-font);
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    color: var(--cream);
+    opacity: 0.7;
+    font-weight: 400;
+    margin: 0;
+    text-shadow: none;
+}
+
+/* Animations */
+@keyframes flameodd {
+    0%, 100% { width: 0%; height: 0%; }
+    25% { width: 100%; height: 100%; }
+    0% { background-color: #FFDC01; right: 0%; bottom: 0%; }
+    40% { background-color: #FDAC01; }
+    100% { background-color: #F73B01; right: 150%; bottom: 170%; }
+}
+
+@keyframes flameeven {
+    0%, 100% { width: 0%; height: 0%; }
+    25% { width: 100%; height: 100%; }
+    0% { background-color: #FFDC01; right: 0%; bottom: 0%; }
+    40% { background-color: #FDAC01; }
+    100% { background-color: #F73B01; right: 170%; bottom: 150%; }
+}
+
+/* Tablet - 768px and up */
+@media (min-width: 768px) {
+    .section-block {
+        padding: 3rem 2rem;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .mobile-menu-overlay {
+        display: none;
+    }
+
+    .content-container {
+        padding: 2rem;
+    }
+    
+    .nav-content {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.4rem;
+    }
+}
+
+/* Desktop - 1024px and up */
+@media (min-width: 1024px) {
+    .section-block {
+        padding: 4rem 3rem;
+    }
+
+    .content-container {
+        padding: 3rem;
+        max-width: 900px;
+    }
+    
+    .nav-content {
+        padding: 1rem 2rem;
+    }
+    
+    .nav-links {
+        gap: 0.6rem;
+    }
+}
+
+/* Large Desktop - 1440px and up */
+@media (min-width: 1440px) {
+    .content-container {
+        max-width: 1000px;
+        padding: 4rem;
+    }
+    
+    .nav-content {
+        padding: 1.2rem 3rem;
+    }
+    
+    .nav-links {
+        gap: 0.8rem;
+    }
+}
+
+/* Landscape Mobile Fix */
+@media (max-height: 500px) and (orientation: landscape) {
+    .section-block {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .mobile-nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .mobile-nav-links li a {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        min-width: auto;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    .section-block {
+        overflow-x: hidden;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Clean Navigation -->
+    <div class="nav-container" id="navbar">
+        <nav>
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="#home">
+                        <img src="/images-2025/whaaatscript_white.svg" alt="Camp Whaaat!? Logo">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#info" class="nav-link">Info</a></li>
+                    <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                    <li><a href="#activities" class="nav-link">Activities</a></li>
+                    <li><a href="#tickets" class="nav-link">Tickets</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">!?</button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <ul class="mobile-nav-links">
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#info" class="mobile-nav-link">Info</a></li>
+            <li><a href="#schedule" class="mobile-nav-link">Schedule</a></li>
+            <li><a href="#activities" class="mobile-nav-link">Activities</a></li>
+            <li><a href="#tickets" class="mobile-nav-link">Tickets</a></li>
+        </ul>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home" class="section-block">
+        <div class="holder">
+            <img src="/images-2025/camp.svg" alt="A sign styled like a national forest sign with the date 10.25 and the word Whaaat!?">
+            <p>We're back for our 8th year of experimental games and playful interactions, and this year, we're taking it to...CAMP WHAAAT!?</p>
+            <button class="camp-ticket-btn" onclick="buyTickets()">Buy Tickets Now</button>
+        </div>
+    </div>
+    
+
+        <!-- About Section -->
+    <div id="about" class="section-block">
+        <div class="holder">
+            <div class="holder">
+                
+                <p>It's gonna be a great day at Camp Whaaat!?</p>
+                
+                <div class="video-container" style="max-width: 800px; margin: 2rem auto;">
+                    <iframe width="700" height="400" src="https://www.youtube.com/embed/Vk7UanbXiT0?si=N5F1gmQ4WBbkkXoo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <p>This year, we have all sorts of diversions, events, and escapades that are sure to delight, befuddle, and generally leaving you wondering whaaat!? you just experienced. All that, plus the world famous All-You-Can-Eat Cereal Jamboree Bar and more!</p>
+                
+                <!-- <p class="descr-text">The gang has been busy, and this year's Whaaat!? Festival promises to wow attendees, befuddle critics, and cement its place as the nation's hottest festival for experimental games and playful interactions!</p>
+            <p class="descr-text">You can expect old favorites (the return of the crowd-pleasing cereal bar), new faces (amazing, nationally known keynote speakers), and as always, buddling games and interactions that will make you wonder whaaat might happen next!</p> -->
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- About Section -->
+    <!-- <div id="about" class="section-block">
+        <div class="holder">
+            <div class="holder">
+                
+                <p>Join us for one full day of weird, summer-campy goodness, featuring:</p>
+                <ul>
+                    <li>Themed <strong>Arcade Lodges</strong> full of wild video games, both old, new and yet-to-be-released</li>
+                    <li><strong><em>IT CAME FROM CAMP WHAAAT!?</strong></em>, a showcase of interactive installations from world-renowned artists and creators, built just for the festival</li>
+                    <li><em><strong>SCOUTMASTER</strong>,</em> a live game show where we <s>torment</s> challenge some of those aforementioned creators for <em>your entertainment</em></li>
+                    <li>Exclusive interactive play-sessions, run by people dressed like camp counselors</li>
+                    <li>Gorgeous Camp Whaaat!? Merit Badges, and lots of ways to earn them</li>
+                    <li>A 24-foot rainbow play parachute, lawsuits be damned</li>
+                    <li>The Camp Whaaat!? <em><strong>Big Table Full of Cereal</strong></em> Breakfast Jamboree</li>
+                    <li>More "Camp-Themed" surprises, as we think of them</li>
+                </ul>
+                <p>Get your tickets today, and we'll see you at Camp Whaaat!? on Saturday, October 25th!</p>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Info Section -->
+    <div id="info" class="section-block">
+        <div class="holder">
+             <div class="holder">
+            <div class="holder">
+                
+                <p>Join us for one full day of weird, summer-campy goodness, featuring:</p>
+                <ul>
+                   <li>The same arcades you know and love, but now cabin themed! We got nature, we got critters, we got games to make you rage, and more!</li>
+                    <li><strong><em>IT CAME FROM CAMP WHAAAT!?</strong></em>, a showcase of interactive installations from world-renowned artists and creators, built just for the festival</li>
+                    <li><em><strong>SCOUTMASTER</strong>,</em> a live game show where we <s>torment</s> challenge some of those aforementioned creators for <em>your entertainment</em></li>
+                    <li>Exclusive interactive play-sessions, run by people dressed like camp counselors</li>
+                    <li>Gorgeous Camp Whaaat!? Merit Badges, and lots of ways to earn them</li>
+                    <li>A 30-foot rainbow play parachute, lawsuits be damned</li>
+                    <li>The Camp Whaaat!? <em><strong>Big Table Full of Cereal</strong></em> Breakfast Jamboree</li>
+                    <lI>Our own little putt putt course, right in the middle of it all!</li>
+                    <li>More "Camp-Themed" surprises, as we think of them</li>
+                </ul>
+                <p>Get your tickets today, and we'll see you at Camp Whaaat!? on Saturday, October 25th!</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Schedule Section -->
+    <div id="schedule" class="section-block">
+        <div class="holder">
+            <h2>Event Schedule</h2>
+            <p>Throughout the day, we've got so many activities for you to ooh and aah over!</p>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-time">9:00 AM</div>
+                    <div class="schedule-title">Gates Open & Breakfast at the Flagpole</div>
+                    <div class="schedule-description">Rise and shine! Grab your favorite cereal at the Big Table Full of Cereal Breakfast Jamboree.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">10:00 AM</div>
+                    <div class="schedule-title">Flag Raising & Opening Ceremony in the Main Lodge</div>
+                    <div class="schedule-description">Come learn the Camp Whaaat!? theme song and listen to us talk about how much fun you'll have at camp!</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">10:30 AM</div>
+                    <div class="schedule-title">Cereal Sommelier at the Flagpole</div>
+                    <div class="schedule-description">Do you know your cereals? Think you can beat our Cereal Sommelier? Stop by the flagpole and give it a shot!</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">11:00 AM</div>
+                    <div class="schedule-title">Hot Streak in the Casino Cabin</div>
+                    <div class="schedule-description">We've got a mascot race going on in the Casino Cabin, and you can bet on it! Can you back the right character to victory?</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">11:30 AM</div>
+                    <div class="schedule-title">Matt Wants to Play Four Square in the ???</div>
+                    <div class="schedule-description">Our friend Matt really wants to play Four Square, and by golly, we're gonna let him. Hopefully at least 3 other people show up... It'd be hard to play Four Square by yourself.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">12:00 PM</div>
+                    <div class="schedule-title">Japan World Cup in the Casino Cabin</div>
+                    <div class="schedule-description">Return to the Casino Cabin for some high octane racing through the streets of Tokyo!</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">12:30 PM</div>
+                    <div class="schedule-title">Glunchtime at the Flagpole</div>
+                    <div class="schedule-description">Yea, put games and lunch together in a single word. It's a camp tradition. Come grab a bite and play games with friends old and new!</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">1:30 PM</div>
+                    <div class="schedule-title">Scoutmaster in the Main Lodge</div>
+                    <div class="schedule-description">The Scoutmaster has things that need to be done, and they need to be done now! Think you can help out? Come watch us put on a whole gameshow, and even participate a bit... you might win the Scoutmaster's begrudging admiration!</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">1:00 PM</div>
+                    <div class="schedule-title">Hot Streak in the Casino Cabin</div>
+                    <div class="schedule-description">The same mascots you know from before, but in an entirely new race. Same betting rules as before.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">2:00 PM</div>
+                    <div class="schedule-title">Japan World Cup in the Casino Cabin</div>
+                    <div class="schedule-description">"Car Racing? Again?" You ask. We reply: "You have a problem, not us."</div>
+                </div>
+
+                  <div class="schedule-item">
+                    <div class="schedule-time">3:00 PM</div>
+                    <div class="schedule-title">Murder Mysteries in the Casino Cabin</div>
+                    <div class="schedule-description">Something something Agatha Cristie. Help us solve a murder. This probably won't turn into a betting game.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">3:30 PM</div>
+                    <div class="schedule-title">Parachute Time in the Gymnasium</div>
+                    <div class="schedule-description">Remember gym class? Yeah, it's that parachute, but bigger. 30 feet of rainbow nostalgia. We'll make waves, mushrooms, and memories.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">4:30 PM</div>
+                    <div class="schedule-title">Closing Ceremony and Camp Whaaat!? Awards in the Main Lodge</div>
+                    <div class="schedule-description">Join us around the campfire as we wrap our day of camp up and give away raffle prizes! We'll also honor our Scouts of the Year, along with other random awards, superlatives, and accolades.</div>
+                </div>
+
+                <div class="schedule-item">
+                    <div class="schedule-time">5:00 PM</div>
+                    <div class="schedule-title">Camp Whaaat!? Closes</div>
+                    <div class="schedule-description">You don't have to go home, but you can't stay at Camp Whaaat!?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activities Section -->
+    <div id="activities" class="section-block">
+        <div class="holder">
+            <h2>The World Famous Camp Whaaat!? Arcade Cabins</h2>
+            <p>The arcades return, this time in cabin form. Check what games the Whaaat!? gang has been salivating over the past year.
+            <div class="content-container">
+
+                <h2 class="color">The Gymnasium – BBX</h3>
+
+                <p>We learned a lot from last year, and one of those things is any game on a 20' screen is a good game. So come check out 3 of 'em, all in their 20' glory.</p>
+                
+
+                <h2 class="color">Critterrr Cabin – SL1 </h3>
+                <p>Ok, really, we swore we weren't going to do this again. But it's just so on theme that we couldn't help ourselves. Come see what animal-based games we included in this years Criterrr Cabin!</p>
+
+                <h2 class="color">That Kid in Your Neighborhood's Cabin's Basement – SL3</h3>
+                <p>Some kids can't go to camp without their technology. Good thing we're not that kind of camp. Come check out some of the best games from the past, courtesy of the Media Archaeology Lab.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tickets Section -->
+    <div id="tickets" class="section-block">
+        <div class="holder">
+            <div class="fire">
+                <div class="flames">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                </div>
+                <div class="logs"></div>
+            </div>
+            <p>Join us by the campfire this year, why don't you?</p>
+            <button class="camp-ticket-btn" onclick="buyTickets()">Buy Tickets Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-container">
+        <!-- <div class="footer-content">
+           
+        </div> -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Whaaat!? Festival | Previous Festivals: <a href="/2024">2024</a> | <a href="/2023">2023</a> | <a href="/2022">2022</a> | <a href="/2021">2021</a> | <a href="/2020">2020</a> | <a href="/2019">2019</a> | <a href="/2018">2018</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const sections = document.querySelectorAll('.section-block');
+            const scrollThreshold = 100;
+
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
+            // Enhanced navigation scroll functionality
+            function updateNavbar() {
+                const scrollPosition = window.scrollY;
+
+                // Show/hide navbar on scroll
+                if (scrollPosition > scrollThreshold) {
+                    navbar.classList.add('visible');
+                } else {
+                    navbar.classList.remove('visible');
+                }
+
+                // Update active nav link based on scroll position
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollPosition >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Update desktop nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update mobile nav links
+                mobileNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                lastScrollY = scrollPosition;
+                ticking = false;
+            }
+
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateNavbar);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', requestTick);
+
+            // Mobile menu functionality
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMobileMenu();
+            });
+
+            function toggleMobileMenu() {
+                const isActive = mobileMenuBtn.classList.contains('active');
+                
+                if (isActive) {
+                    closeMobileMenu();
+                } else {
+                    openMobileMenu();
+                }
+            }
+
+            function openMobileMenu() {
+                mobileMenuBtn.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                mobileMenuBtn.textContent = 'X';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuBtn.textContent = '!?';
+                document.body.style.overflow = '';
+            }
+
+            // Close mobile menu when clicking nav links
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    closeMobileMenu();
+                });
+            });
+
+            // Close mobile menu when clicking overlay
+            mobileMenuOverlay.addEventListener('click', (e) => {
+                if (e.target === mobileMenuOverlay) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navbar.contains(e.target) && !mobileMenuOverlay.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Smooth scrolling for all nav links
+            const allNavLinks = [...navLinks, ...mobileNavLinks];
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Close mobile menu on window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Handle escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+
+            // Initialize navbar state
+            requestTick();
+        });
+
+        function buyTickets() {
+            window.open(
+                'https://www.eventbrite.com/e/whaaat-festival-2025-tickets-1648873859099?aff=oddtdtcreator',
+                '_blank'
+            );
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whaaat!? Festival - October 25th</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wsi1dwo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #56b5a9;
+            --secondary-green: #213A1B;
+            --cream: #f9eedb;
+            --black: #000000;
+            --font-family: "cooper-black-std", serif;
+            --body-font: "DM Sans", sans-serif;
+            --navbar-bg: rgba(39, 13, 3, 0.95);
+            --navbar-accent: #7dd3c7;
+            --navbar-hover: rgba(249, 238, 219, 0.15);
+            --section-padding: 2rem 1rem;
+            --container-max-width: 1200px;
+        }
+
+        html {
+            overflow-x: hidden;
+            background-color: var(--black);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--cream);
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+
+        p, h2, h3 {
+            font-family: var(--font-family);
+            color: var(--cream);
+            text-align: center;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            margin-top: 1.5rem;
+        }
+
+        .section-block {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        .holder {
+            width: 100%;
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+
+        /* Merit Badge Styles */
+        .merit-badge {
+            position: relative;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 1rem;
+        }
+
+        .badge-circle {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #4a9d92 100%);
+            border: 4px solid var(--cream);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .badge-circle:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 25px rgba(86, 181, 169, 0.5);
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+            filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+        }
+
+        .badge-text {
+            font-family: var(--font-family);
+            font-size: 0.7rem;
+            color: var(--cream);
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
+        }
+
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 0 1rem;
+        }
+
+        .camp-ticket-btn {
+            background: linear-gradient(135deg, var(--cream) 0%, #f0e6d2 50%, #e8d4b0 100%);
+            border: 3px solid var(--primary-green);
+            border-radius: 15px;
+            color: var(--primary-green);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            padding: 1rem 2rem;
+            margin: 2rem 0;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .camp-ticket-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        #home {
+            background: linear-gradient(135deg, #f9eedb 0%, #e8d4b0 100%);
+        }
+
+        #activities {
+            background: linear-gradient(135deg, #0d1612 0%, #1a2a1f 100%);
+        }
+
+        #tickets {
+            background-color: #111217;
+        }
+
+        .fire {
+            height: 120px;
+            width: 120px;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .fire .flames {
+            position: absolute;
+            bottom: 40%;
+            left: 50%;
+            width: 60%;
+            height: 60%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .fire .flames .flame {
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            width: 0%;
+            height: 0%;
+            background-color: #FFDC01;
+            border-radius: 8px;
+        }
+
+        .fire .flames .flame:nth-child(2n+1) {
+            animation: flameodd 1.5s ease-in infinite;
+        }
+
+        .fire .flames .flame:nth-child(2n) {
+            animation: flameeven 1.5s ease-in infinite;
+        }
+
+        .fire .flames .flame:nth-child(1) { animation-delay: 0s; }
+        .fire .flames .flame:nth-child(2) { animation-delay: 0.375s; }
+        .fire .flames .flame:nth-child(3) { animation-delay: 0.75s; }
+        .fire .flames .flame:nth-child(4) { animation-delay: 1.125s; }
+
+        .fire .logs {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 15%;
+        }
+
+        .fire .logs:before, .fire .logs:after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(20deg);
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            background-color: #70392F;
+        }
+
+        .fire .logs:before {
+            transform: translate(-50%, -50%) rotate(-20deg);
+            background-color: #612E25;
+        }
+
+        @keyframes flameodd {
+            0%, 100% { width: 0%; height: 0%; }
+            25% { width: 100%; height: 100%; }
+            0% { background-color: #FFDC01; right: 0%; bottom: 0%; }
+            40% { background-color: #FDAC01; }
+            100% { background-color: #F73B01; right: 150%; bottom: 170%; }
+        }
+
+        @keyframes flameeven {
+            0%, 100% { width: 0%; height: 0%; }
+            25% { width: 100%; height: 100%; }
+            0% { background-color: #FFDC01; right: 0%; bottom: 0%; }
+            40% { background-color: #FDAC01; }
+            100% { background-color: #F73B01; right: 170%; bottom: 150%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Section -->
+    <div id="home" class="section-block">
+        <div class="holder">
+            <h2 style="color: var(--primary-green); font-size: 3rem;">CAMP WHAAAT!?</h2>
+            <p style="color: var(--secondary-green);">We're back for our 8th year of experimental games and playful interactions!</p>
+            <p style="color: var(--secondary-green); font-weight: bold;">October 25th, 2025</p>
+        </div>
+    </div>
+
+    <!-- Activities Section -->
+    <div id="activities" class="section-block">
+        <div class="holder">
+            <h2>Featured Activities</h2>
+            <div class="content-container">
+                <h3>🎮 Arcade Lodges</h3>
+                <p>Explore four themed arcade lodges, each packed with unique gaming experiences:</p>
+                
+                <div class="badges-container">
+                    <div class="merit-badge">
+                        <div class="badge-circle">
+                            <div class="badge-icon">🕹️</div>
+                            <div class="badge-text">Retro Cabin</div>
+                        </div>
+                    </div>
+                    <div class="merit-badge">
+                        <div class="badge-circle">
+                            <div class="badge-icon">🎮</div>
+                            <div class="badge-text">Indie Lodge</div>
+                        </div>
+                    </div>
+                    <div class="merit-badge">
+                        <div class="badge-circle">
+                            <div class="badge-icon">🥽</div>
+                            <div class="badge-text">VR Treehouse</div>
+                        </div>
+                    </div>
+                    <div class="merit-badge">
+                        <div class="badge-circle">
+                            <div class="badge-icon">🎪</div>
+                            <div class="badge-text">Experimental Tent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Each lodge offers unique gaming experiences from classic arcade games to cutting-edge VR adventures!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tickets Section -->
+    <div id="tickets" class="section-block">
+        <div class="holder">
+            <div class="fire">
+                <div class="flames">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                </div>
+                <div class="logs"></div>
+            </div>
+            <p>Join us by the campfire this year, why don't you?</p>
+            
+            <div class="merit-badge">
+                <div class="badge-circle" onclick="buyTickets()">
+                    <div class="badge-icon">🎟️</div>
+                    <div class="badge-text">Get Your Ticket</div>
+                </div>
+            </div>
+            
+            <button class="camp-ticket-btn" onclick="buyTickets()">Buy Tickets Now</button>
+        </div>
+    </div>
+
+    <script>
+        function buyTickets() {
+            window.open(
+                'https://www.eventbrite.com/e/whaaat-festival-2025-tickets-1648873859099?aff=oddtdtcreator',
+                '_blank'
+            );
+        }
+    </script>
+</body>
+</html>
