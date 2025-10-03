@@ -234,6 +234,30 @@ img {
     text-align: left;
 }
 
+/* Circles for Schedule Section */
+.circles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+#schedule .holder {
+    position: relative;
+    z-index: 2;
+}
+
 /* Navigation Container */
 .nav-container {
     position: fixed;
@@ -891,7 +915,7 @@ nav {
              <div class="holder">
             <div class="holder">
                 
-                <p>Join us for one full day of weird, summer-campy goodness, featuring:</p>
+                <p>Join us for a day full of weird, summer-campy goodness, featuring:</p>
                 <ul>
                    <li>The same arcades you know and love, but now cabin themed! We got nature, we got critters, we got games to make you rage, and more!</li>
                     <li><strong><em>IT CAME FROM CAMP WHAAAT!?</strong></em>, a showcase of interactive installations from world-renowned artists and creators, built just for the festival</li>
@@ -911,6 +935,7 @@ nav {
 
     <!-- Schedule Section -->
     <div id="schedule" class="section-block">
+        <div class="circles-container" id="scheduleCircles"></div>
         <div class="holder">
             <h2>Event Schedule</h2>
             <p>Throughout the day, we've got so many activities for you to ooh and aah over!</p>
@@ -1052,6 +1077,128 @@ nav {
     </footer>
 
     <script>
+        // CONFIGURATION: Add your image URLs here for the circles
+        const circleImages = [
+            // Example images - replace with your camp-themed URLs
+            'images-2025/badges/caaampfire.svg',
+            'images-2025/badges/day-camper.svg',
+            'images-2025/badges/gaaambling.svg',
+            'images-2025/badges/naturecaaade.svg',
+            'images-2025/badges/rainbow-chute.svg',
+            'images-2025/badges/special-camper.svg'
+        ];URL
+        
+        // Set to true to use images, false to use solid colors
+        const useImages = true;
+        
+        function checkOverlap(x1, y1, r1, circles) {
+            for (const c of circles) {
+                const dx = x1 - c.x;
+                const dy = y1 - c.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                // Check if circles overlap (with small buffer for spacing)
+                if (distance < r1 + c.radius + 10) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        function generateCircles() {
+            const container = document.getElementById('scheduleCircles');
+            const numCircles = 15;
+            const section = document.getElementById('schedule');
+            const viewportWidth = section.offsetWidth;
+            const viewportHeight = section.offsetHeight;
+            
+            // Base size scales with viewport, but has min/max bounds
+            const baseSize = Math.min(viewportWidth, viewportHeight) * 0.15;
+            const minSize = 50;
+            const maxSize = Math.max(baseSize, 200);
+            
+            const placedCircles = [];
+            const maxAttempts = 100; // Maximum attempts to place each circle
+            
+            for (let i = 0; i < numCircles; i++) {
+                let placed = false;
+                let attempts = 0;
+                
+                while (!placed && attempts < maxAttempts) {
+                    attempts++;
+                    
+                    // Random size between min and max
+                    const size = minSize + Math.random() * (maxSize - minSize);
+                    const radius = size / 2;
+                    
+                    // Random position within viewport bounds
+                    const x = radius + Math.random() * (viewportWidth - size);
+                    const y = radius + Math.random() * (viewportHeight - size);
+                    
+                    // Check if this position overlaps with existing circles
+                    if (!checkOverlap(x, y, radius, placedCircles)) {
+                        // No overlap - create and place the circle
+                        const circle = document.createElement('div');
+                        circle.className = 'circle';
+                        
+                        circle.style.width = `${size}px`;
+                        circle.style.height = `${size}px`;
+                        circle.style.left = `${x - radius}px`;
+                        circle.style.top = `${y - radius}px`;
+                        
+                        if (useImages && circleImages.length > 0) {
+                            // Use a random image from the array
+                            const randomImage = circleImages[Math.floor(Math.random() * circleImages.length)];
+                            circle.style.backgroundImage = `url('${randomImage}')`;
+                            circle.style.backgroundSize = 'cover';
+                            circle.style.backgroundPosition = 'center';
+                            
+                            // Optional: add opacity to images
+                            const opacity = 0.3 + Math.random() * 0.4;
+                            circle.style.opacity = opacity;
+                        } else {
+                            // Fallback to solid colors - make them more visible for testing
+                            const opacity = 0.2 + Math.random() * 0.3;
+                            circle.style.background = `rgba(86, 181, 169, ${opacity})`; // Using your primary green color
+                        }
+                        
+                        container.appendChild(circle);
+                        
+                        // Store circle data for overlap checking
+                        placedCircles.push({ x, y, radius });
+                        placed = true;
+                    }
+                }
+                
+                // If we couldn't place a circle after max attempts, skip it
+                if (!placed) {
+                    console.log(`Could not place circle ${i + 1} after ${maxAttempts} attempts`);
+                }
+            }
+            
+            console.log(`Successfully placed ${placedCircles.length} out of ${numCircles} circles`);
+        }
+        
+        // Generate circles on page load - moved outside the other DOMContentLoaded
+        window.addEventListener('load', function() {
+            // Give the page a moment to fully render
+            setTimeout(generateCircles, 100);
+        });
+        
+        // Optional: Regenerate circles on window resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const container = document.getElementById('scheduleCircles');
+                if (container) {
+                    container.innerHTML = '';
+                    generateCircles();
+                }
+            }, 250);
+        });
+
+        // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.getElementById('navbar');
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
