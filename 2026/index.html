@@ -72,6 +72,7 @@
     font-family: "futura-100", sans-serif;
     font-weight: 400;
     font-size: 28.8px;
+    white-space: nowrap;
     margin: 0;
   }
   .date-line:first-of-type {
@@ -117,7 +118,7 @@
   }
   .flag-wrap {
     width: 45%;
-    margin: 2rem auto 0;
+    margin: 3.5rem auto 0;
     overflow: visible;
   }
   .flagwave {
@@ -146,7 +147,7 @@
     text-align: center;
   }
   .invite-line {
-    margin: 8rem auto 2rem;
+    margin: 4rem auto 1.75rem;
     color: #604118;
     font-family: "nitti-typewriter-cameo", monospace;
     font-size: 26px;
@@ -159,7 +160,7 @@
     list-style-position: outside;
     text-align: left;
     color: #604118;
-    font-family: "futura-100-book", sans-serif;
+    font-family: "nitti-typewriter-normal", monospace;
     font-weight: 400;
     font-size: 24px;
   }
@@ -171,38 +172,39 @@
     font-size: 0.6em;
   }
   .medium-phrase {
-    font-family: "futura-100", sans-serif;
-    font-weight: 500;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-weight: 700;
   }
   .activity-more {
     margin: 1rem auto 2rem;
     color: #604118;
-    font-family: "futura-100", sans-serif;
+    font-family: "nitti-typewriter-cameo", monospace;
     font-weight: 700;
-    font-style: oblique;
     font-size: 24px;
     text-align: center;
   }
   @media (max-width: 900px) {
     .header {
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 0.75rem;
+      flex-wrap: nowrap;
+      gap: 1.2vw;
+      padding: 1.2vw 1vw;
+      font-size: clamp(6px, 1.6vw, 14px);
     }
     .header-text {
-      font-size: 0.75rem;
+      white-space: nowrap;
     }
     .header-icon {
-      height: 1.5em;
+      height: 2em;
+      flex-shrink: 0;
     }
     .wordmark {
       max-width: 92%;
     }
     .date-line {
-      font-size: 5.2vw;
+      font-size: clamp(9px, 4vw, 28.8px);
     }
     .date-line:first-of-type {
-      font-size: 6.6vw;
+      font-size: clamp(11px, 5vw, 36px);
     }
     .cta-button {
       font-size: 1.3rem;
@@ -230,7 +232,7 @@
       font-size: 18px;
     }
     .activity-more {
-      font-size: 18px;
+      font-size: 5.5vw;
     }
   }
 </style>
