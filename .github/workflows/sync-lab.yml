@@ -1,4 +1,4 @@
-name: Sync Only Changed Files
+name: Sync Only Changed Files -- Lab
 
 on:
   push:
