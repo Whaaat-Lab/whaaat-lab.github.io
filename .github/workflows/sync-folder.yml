@@ -1,0 +1,37 @@
+name: Sync Folder to Destination Repo
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/festival-site/**'
+      - 'src/lab-site/**' # Triggers ONLY when files in this folder change
+
+jobs:
+  sync-folder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repo
+        uses: actions/checkout@v4
+
+      - name: Push Folder to Festival Repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ORG_ACCESS_TOKEN }}
+        with:
+          source-directory: 'src/festival-site'
+          destination-github-username: 'Whaaat-Lab'
+          destination-repository-name: 'festival.whaaat.io'
+          target-branch: 'main' # Files land directly in the root of 'main'
+
+
+      - name: Push Folder to Lab Repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.ORG_ACCESS_TOKEN }}
+        with:
+          source-directory: 'src/lab-site'
+          destination-github-username: 'Whaaat-Lab'
+          destination-repository-name: 'lab.whaaat.io'
+          target-branch: 'main' # Files land directly in the root of 'main'
