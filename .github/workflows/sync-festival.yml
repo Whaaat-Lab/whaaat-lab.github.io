@@ -1,0 +1,45 @@
+name: Sync Only Changed Files -- Lab
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'festival-site/**' # Triggers only when files inside this folder change
+
+jobs:
+  sync-changes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repo
+        uses: actions/checkout@v5
+        with:
+          path: source-repo # Checks out your source repo into a folder named 'source-repo'
+
+      - name: Checkout Destination Repo
+        uses: actions/checkout@v5
+        with:
+          repository: whaaat-lab/lab.whaaat.io # Replace with your org and target repo
+          token: ${{ secrets.ORG_ACCESS_TOKEN }}
+          path: destination-repo # Checks out your target repo into a folder named 'destination-repo'
+
+      - name: Copy and Commit Only Changed Files
+        run: |
+          # 1. Copy changed files from source to destination without wiping existing contents
+          cp -r source-repo/festival-site/. destination-repo/
+          
+          # 2. Navigate to destination repo and configure bot identity
+          cd destination-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 3. Stage changes and check if anything actually changed
+          git add .
+          
+          # 4. Check for unstaged/staged differences. Only commit and push if a delta exists.
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "Automated sync: Pushed updated files from source folder"
+            git push origin main
+          else
+            echo "No actual file modifications detected. Skipping push."
+          fi
