@@ -5,8 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'src/festival-site/**'
-      - 'src/lab-site/**' # Triggers ONLY when files in this folder change
+      - 'festival-site/**'
+      - 'lab-site/**' # Triggers ONLY when files in this folder change
+      # - main # Triggers on ANY change pushed to main
 
 jobs:
   sync-folder:
