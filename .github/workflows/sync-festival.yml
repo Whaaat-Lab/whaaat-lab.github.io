@@ -19,7 +19,7 @@ jobs:
       - name: Checkout Destination Repo
         uses: actions/checkout@v5
         with:
-          repository: whaaat-lab/lab.whaaat.io # Replace with your org and target repo
+          repository: whaaat-lab/festival.whaaat.io # Replace with your org and target repo
           token: ${{ secrets.ORG_ACCESS_TOKEN }}
           path: destination-repo # Checks out your target repo into a folder named 'destination-repo'
 
