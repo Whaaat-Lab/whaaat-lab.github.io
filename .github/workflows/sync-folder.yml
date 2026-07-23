@@ -21,7 +21,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.ORG_ACCESS_TOKEN }}
         with:
-          source-directory: 'src/festival-site'
+          source-directory: '/'
           destination-github-username: 'Whaaat-Lab'
           destination-repository-name: 'festival.whaaat.io'
           target-branch: 'main' # Files land directly in the root of 'main'
@@ -32,7 +32,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.ORG_ACCESS_TOKEN }}
         with:
-          source-directory: 'src/lab-site'
+          source-directory: '/'
           destination-github-username: 'Whaaat-Lab'
           destination-repository-name: 'lab.whaaat.io'
           target-branch: 'main' # Files land directly in the root of 'main'
