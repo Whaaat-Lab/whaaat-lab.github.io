@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5 # Upgraded to resolve the Node deprecation
 
-      - name: Push Folder to Festival Repo
+      - name: Push Folder to Destination Repo
         uses: cpina/github-action-push-to-another-repository@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.ORG_ACCESS_TOKEN }}
