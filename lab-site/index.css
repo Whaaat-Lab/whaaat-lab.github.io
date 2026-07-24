@@ -1,4 +1,7 @@
 
+    html {
+        overflow-x: hidden;
+    }
     body {
         margin: 40px
         auto;
@@ -20,4 +23,31 @@
 	  margin-left: auto;
 	  margin-right: auto;
 	  width: 60%;
+    }
+
+    .other-site-bar {
+        position: relative;
+        left: 50%;
+        right: 50%;
+        width: 100vw;
+        box-sizing: border-box;
+        margin-top: -40px;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-bottom: 1.5em;
+        background-color: #231f20;
+        color: #bfc54a;
+        font-family: "nitti-typewriter-book", "Courier New", Courier, monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 18px;
+        text-align: center;
+        padding: 0.6em 1em;
+    }
+    .other-site-bar a {
+        color: #bfc54a;
+        text-decoration: none;
+    }
+    .other-site-bar a:hover {
+        text-decoration: underline;
     }

@@ -43,6 +43,25 @@
     position: relative;
     z-index: 1;
   }
+  .other-site-bar {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: #fff;
+    color: #444;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0.5em 1em;
+  }
+  .other-site-bar a {
+    color: #444;
+    text-decoration: underline;
+  }
+  .other-site-bar a:hover {
+    color: #000;
+  }
   .header {
     display: flex;
     align-items: center;
@@ -434,5 +453,8 @@
       document.querySelectorAll('.footnote-marker').forEach(closeFootnote);
     });
   </script>
+  <div class="other-site-bar">
+    <a href="https://lab.whaaat.io">Looking for the Whaaat!? Lab!? Click here!?</a>
+  </div>
 </body>
 </html>
