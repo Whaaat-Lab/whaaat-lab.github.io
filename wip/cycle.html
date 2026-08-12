@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Cycler</title>
+    <style>
+        /* Center the image and make it look clickable */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .clickable-image {
+            max-width: 30%;
+            max-height: 30vh;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: transform 0.2s;
+        }
+        .clickable-image:hover {
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- The interactive image element -->
+    <img id="display-image" 
+         src="images/interro1.jpg" 
+         alt="Click to change image" 
+         class="clickable-image">
+
+    <script>
+        // 1. Define the directory path and list your image filenames
+        const dirPath = "images/";
+        const images = [
+            "interro1.svg",
+            "interro2.svg",
+            "interro3.svg",
+            "interro4.svg",
+            "interro5.svg",
+            "interro6.svg",
+            "interro7.svg",
+            "interro8.svg",
+            "interro9.svg",
+            "interro10.svg",
+            "interro11.svg",
+            "interro12.svg",
+            "interro13.svg",
+            "interro14.svg",
+            "interro15.svg",
+            "interro16.svg",
+            "interro17.svg",
+            "interro18.svg",
+            "interro19.svg",
+            "interro20.svg",
+            "interro21.svg",
+            "interro22.svg",
+            "interro23.svg",
+            "interro24.svg",
+        ];
+
+        // Track the currently displayed image index to prevent consecutive duplicates
+        let currentIndex = 0;
+
+        // 2. Target the HTML image element
+        const imageElement = document.getElementById("display-image");
+
+        // 3. Add the click event listener
+        imageElement.addEventListener("click", () => {
+            let randomIndex;
+
+            // Loop to ensure the new random image is different from the current one
+            do {
+                randomIndex = Math.floor(Math.random() * images.length);
+            } while (randomIndex === currentIndex && images.length > 1);
+
+            // Update the tracking index
+            currentIndex = randomIndex;
+
+            // Combine the directory path with the randomly selected filename
+            imageElement.src = dirPath + images[randomIndex];
+        });
+    </script>
+
+</body>
+</html>

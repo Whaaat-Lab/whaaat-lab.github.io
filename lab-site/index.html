@@ -13,13 +13,14 @@
 	<div class="other-site-bar">
 		<a href="https://whaaat.io" target="_blank">Looking for this year's Whaaat Festival!? Click here!?</a>
 	</div>
-	<img src="/images/whaaaterrobang.svg" alt="interrobang logo" class="responsive-svg">
+	<img id="interrobang" src="images/interrobangs/interro10.svg" alt="interrobang logo" class="clickable-image">
+
 	<h2> <em>Whaaat!?</em> embodies the feeling of simultaneous delight and bewilderment when you have a fresh encounter something wonderfully weird. </h2>
 
 <p>The <strong>Whaaat!? Lab</strong> is a hybrid studio-laboratory dedicated to uncovering and fostering that feeling, specifically through <em><strong>experimental games </em></strong>and <em><strong>playful interactivity</em></strong>. It is located within the <a href="https://colorado.edu/atlas" target="_blank">ATLAS Institute</a>, at <a href="https://colorado.edu" target="_blank">CU Boulder.</a></p>
 
 <p>Since 2018, we’ve curated the <strong>Whaaat!? Festival</strong> for experimental games and playful interactions. It changes a little bit each year. </p>
-	<p>Past Festivals: <a href="../festival-site/2025" target="_blank">2025</a> | <a href="../festival-site/2024" target="_blank">2024</a> | <a href="../festival-site/2023" target="_blank">2023</a> | <a href="../festival-site/2022" target="_blank">2022</a> | <a href="../festival-site/2021" target="_blank">2021</a> | <a href="../festival-site/2020" target="_blank">2020</a> | <a href="../festival-site/2019" target="_blank">2019</a> | <a href="../festival-site/2018" target="_blank">2018</a></p>
+	<p>Past Festivals: <a href="https://whaaat.io/2025" target="_blank">2025</a> | <a href="https://whaaat.io/2024" target="_blank">2024</a> | <a href="https://whaaat.io/2023" target="_blank">2023</a> | <a href="https://whaaat.io/2022" target="_blank">2022</a> | <a href="https://whaaat.io/2021" target="_blank">2021</a> | <a href="https://whaaat.io/2020" target="_blank">2020</a> | <a href="https://whaaat.io/2019" target="_blank">2019</a> | <a href="https://whaaat.io/2018" target="_blank">2018</a></p>
 
 
 <p>The Whaaat!? Lab has contributed to many <a href="projects.html">games & projects,</a> some of them highly acclaimed.</p>
@@ -27,6 +28,56 @@
 <p>The lab maintains a modest <a href="https://equipment.cheqroom.com/?key=189ea313ee642c8a4ce3fa22649ebc6ac3779b24051f78baff00d4bb20d2474d" target="_blank">board game library</a> for students in the <a href="https://www.colorado.edu/atlas/academics" target="_blank">CTD program</a>, primarily for inspiration and leisure.</p>
 
 <p>The lab currently directed by <a href="https://www.colorado.edu/atlas/danny-rankin-0" target="_blank">Danny Rankin</a>. It has a community of <a href="humans.html">related humans.</a></p>
+
+<script>
+        
+        const dirPath = "images/interrobangs/";
+        const images = [
+            "interro1.svg",
+            "interro2.svg",
+            "interro3.svg",
+            "interro4.svg",
+            "interro5.svg",
+            "interro6.svg",
+            "interro7.svg",
+            "interro8.svg",
+            "interro9.svg",
+            "interro10.svg",
+            "interro11.svg",
+            "interro12.svg",
+            "interro13.svg",
+            "interro14.svg",
+            "interro15.svg",
+            "interro16.svg",
+            "interro17.svg",
+            "interro18.svg",
+            "interro19.svg",
+            "interro20.svg",
+            "interro21.svg",
+            "interro22.svg",
+            "interro23.svg",
+            "interro24.svg",
+        ];
+
+        let currentIndex = 0;
+        const imageElement = document.getElementById("interrobang");
+
+        // 3. Add the click event listener
+        imageElement.addEventListener("click", () => {
+            let randomIndex;
+
+            // Loop to ensure the new random image is different from the current one
+            do {
+                randomIndex = Math.floor(Math.random() * images.length);
+            } while (randomIndex === currentIndex && images.length > 1);
+
+            // Update the tracking index
+            currentIndex = randomIndex;
+
+            // Combine the directory path with the randomly selected filename
+            imageElement.src = dirPath + images[randomIndex];
+        });
+</script>
 
 </body>
 </html>
