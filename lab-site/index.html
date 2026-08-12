@@ -62,19 +62,14 @@
         let currentIndex = 0;
         const imageElement = document.getElementById("interrobang");
 
-        // 3. Add the click event listener
         imageElement.addEventListener("click", () => {
             let randomIndex;
 
-            // Loop to ensure the new random image is different from the current one
             do {
                 randomIndex = Math.floor(Math.random() * images.length);
             } while (randomIndex === currentIndex && images.length > 1);
 
-            // Update the tracking index
-            currentIndex = randomIndex;
-
-            // Combine the directory path with the randomly selected filename
+            currentIndex = randomIndex
             imageElement.src = dirPath + images[randomIndex];
         });
 </script>
