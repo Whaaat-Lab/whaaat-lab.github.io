@@ -149,14 +149,13 @@
   .video-placeholder {
     width: 70%;
     max-width: 640px;
-    aspect-ratio: 16 / 9;
     margin: 3rem auto 0;
     border-radius: 6px;
     overflow: hidden;
   }
-  .video-placeholder iframe {
+  .video-placeholder video {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     border: 0;
   }
@@ -270,8 +269,16 @@
   .logo-divider + .invite-line {
     margin-top: 2rem;
   }
-  .logo-divider + .video-placeholder {
+  .logo-divider + .flag-wrap {
     margin-top: 2rem;
+  }
+  .invite-line + .video-placeholder {
+    margin-top: 0;
+  }
+  .video-placeholder + .medium-body {
+    margin-top: 2rem;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 20px;
   }
   .activity-list {
     width: 60%;
@@ -310,33 +317,223 @@
     font-family: "nitti-typewriter-normal", monospace;
     font-weight: 700;
   }
-  .medium-body{
-    font-family: "futura-100"; sans-serif;
-    width: 80%;
+  .medium-body {
+    box-sizing: border-box;
+    width: 70%;
     margin: 0 auto;
-    padding: 0 12rem 0 6rem;
+    padding: 0;
     color: #604118;
-    text-align: left;
+    font-family: "futura-100", sans-serif;
     font-weight: 400;
     font-size: 18px;
-  }
-  .medium-callout{
-    font-family: "nitti-typewriter-normal", monospace;
-    font-weight: 400;
-    color: #604118;
-    font-size: 22px;
-    width: 80%;
-    margin: 1rem auto 1.5rem;
-    padding: 0 12rem 0 6rem;
     text-align: left;
   }
   p.medium-body {
+    margin-bottom: 1.5rem;
     font-family: "nitti-typewriter-normal", monospace;
     font-size: 22px;
-    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
+  ul.medium-body {
+    padding-left: 1.25em;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  .pass-intro {
+    text-align: center;
+  }
+  .pass-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+  .pass-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    background-color: #fff5c3;
+    border: 1px solid #604118;
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 #604118;
+    color: #604118;
+    text-align: center;
+  }
+  .pass-price {
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px dashed #604118;
+    font-family: "futura-100", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1;
+  }
+  .pass-name {
+    margin: 0 0 0.6rem;
+    font-family: "futura-100", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+  .pass-desc {
+    margin: 0;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+  .pass-card--hero {
+    width: 90%;
+    margin: 0 auto 2.5rem;
+    padding: 1.75rem 2rem;
+    background-color: #604118;
+    color: #fff5c3;
+    box-shadow: 4px 4px 0 #a5ac3e;
+  }
+  .pass-card--hero .pass-price {
+    border-bottom-color: #fff5c3;
+  }
+  .pass-kicker {
+    margin: 0 0 0.75rem;
+    font-family: "nitti-typewriter-cameo", monospace;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .pass-perks {
+    margin: 0.75rem auto 0;
+    padding-left: 1.25em;
+    max-width: 34rem;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 16px;
+    line-height: 1.35;
+    text-align: left;
+  }
+  .pass-perks li {
+    margin-bottom: 0.4rem;
+  }
+  .pass-card--hero + .cta-button {
+    margin-top: 0;
   }
   ul.medium-body li {
     margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .keynote {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    width: 80%;
+    margin: 0 auto 2rem;
+  }
+  .keynote-figure {
+    flex: 0 0 45%;
+    width: 45%;
+  }
+  .keynote-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .keynote-text {
+    flex: 1;
+    color: #604118;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 20px;
+    text-align: left;
+  }
+  .keynote-text p {
+    margin: 0 0 1rem;
+    line-height: 1.3;
+  }
+  .keynote-text p:last-child {
+    margin-bottom: 0;
+  }
+  .schedule {
+    width: 70%;
+    margin: 0 auto 2rem;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #604118;
+    color: #604118;
+    text-align: left;
+  }
+  .arcade-section {
+    width: 70%;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: #604118;
+    border-radius: 6px;
+  }
+  .arcade-subtitle {
+    width: 50%;
+    margin: -1rem auto 1.75rem;
+    color: #604118;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 22px;
+    text-align: center;
+  }
+  .arcade-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .arcade-card {
+    padding: 1.25rem;
+    background-color: #fff5c3;
+    border-radius: 6px;
+    color: #604118;
+    text-align: left;
+  }
+  .arcade-title {
+    margin: 0;
+    font-family: "futura-100", sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.1;
+  }
+  .arcade-location {
+    margin: 0.35rem 0 0.6rem;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #604118;
+  }
+  .schedule-time {
+    margin: 0;
+    font-family: "nitti-typewriter-cameo", monospace;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .schedule-title {
+    margin: 0;
+    font-family: "futura-100", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .schedule-location {
+    margin: 0.35rem 0 0.6rem;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .schedule-desc {
+    margin: 0;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 18px;
     line-height: 1.3;
   }
   .activity-more {
@@ -400,7 +597,86 @@
       font-size: 18px;
     }
     .activity-more {
-      font-size: 5.5vw;
+      font-size: clamp(16px, 4vw, 24px);
+    }
+    .invite-line--futura {
+      font-size: clamp(22px, 6vw, 36px);
+    }
+    .video-placeholder + .medium-body {
+      font-size: 17px;
+    }
+    .keynote,
+    .schedule,
+    .arcade-section,
+    .medium-body,
+    .pass-grid,
+    .pass-card--hero {
+      width: 92%;
+    }
+    .keynote {
+      gap: 1.5rem;
+    }
+    .keynote-text {
+      font-size: 17px;
+    }
+    p.medium-body {
+      font-size: 18px;
+    }
+    .pass-grid {
+      gap: 1rem;
+    }
+    .pass-card {
+      padding: 1rem;
+    }
+    .pass-card--hero {
+      padding: 1.5rem 1.25rem;
+    }
+    .arcade-section {
+      padding: 1rem;
+    }
+    .arcade-card {
+      padding: 1rem;
+    }
+    .arcade-subtitle {
+      width: 85%;
+      font-size: 18px;
+    }
+    .schedule-item {
+      grid-template-columns: 7.5rem 1fr;
+      gap: 1rem;
+    }
+    .schedule-time {
+      font-size: 16px;
+    }
+    .schedule-title {
+      font-size: 20px;
+    }
+    .schedule-desc {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 720px) {
+    .pass-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .keynote {
+      flex-direction: column;
+    }
+    .keynote-figure {
+      flex: none;
+      width: 80%;
+    }
+    .keynote-text {
+      font-size: 16px;
+    }
+    .schedule-item {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+    .video-placeholder + .medium-body {
+      font-size: 16px;
     }
   }
 </style>
@@ -521,10 +797,10 @@
         <img class="header-icon" src="images/smallinterro.svg" alt="">
         <hr>
       </div>
-      <div class="video-placeholder">
-        <iframe src="https://www.youtube.com/embed/n1VcnlTe_DI" title="Whaaat!? Festival Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      <div class="flag-wrap">
+        <svg class="flagwave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 403.75 277.69" width="403.75" height="277.69"><defs><style>.f{fill:#543231;}.g{fill:#a5ac3e;}.h{mix-blend-mode:multiply;opacity:.75;}.i{fill:#71c286;}.j{fill:#bfc54a;}.k{isolation:isolate;}.l{filter:url(#c);}.m{fill:#fff;}.n{fill:#fff5c3;}</style><filter id="c" x="135.16" y="76.92" width="149.27" height="113.67" filterUnits="userSpaceOnUse"><feOffset dx="9" dy="3"/><feGaussianBlur result="d" stdDeviation="0"/><feFlood flood-color="#543231" flood-opacity=".75"/><feComposite in2="d" operator="in"/><feComposite in="SourceGraphic"/></filter></defs><g class="k"><g id="b"><g class="h"><path class="f" d="M44.32,40.55c-.08,43.76-.15,87.52-.23,131.28L296.78,33.01c-84.15,3.82-168.35,29.25-252.46,7.55Z"/><path class="f" d="M364.84,35.63c8.1,1.28,16.66,2.97,25.52,5.16-8.51-2.18-17.02-3.87-25.52-5.16Z"/><path class="f" d="M390.23,159.94S112.03,252.69,89.18,259.22c100.4,8.28,200.79-33.12,301.19-7.41V112.93c-.06,25.15-.14,47.01-.14,47.01Z"/><path class="f" d="M44.08,172.14s.04,79.64.13,79.66v-79.74l-.13.07Z"/><path class="f" d="M87.75,259.58c.17-.02.65-.14,1.43-.36-14.99-1.24-29.97-3.57-44.96-7.41,21.25,5.72,37.25,8.38,43.53,7.77Z"/><path class="f" d="M390.37,40.79v72.14c.07-29.6.12-63.75,0-72.14Z"/><path class="f" d="M364.84,35.63c-39.4-6.24-67.89-3.03-67.89-3.03l-.29.16c22.73-1.07,45.46-.57,68.18,2.87Z"/><path class="f" d="M390.37,112.93V40.79c-8.87-2.19-17.43-3.87-25.52-5.16-22.73-3.43-45.46-3.94-68.18-2.87L44.22,172.07v79.74c14.99,3.84,31.59,8.46,44.96,7.41,22.85-6.53,301.05-99.28,301.05-99.28,0,0,.08-21.87.14-47.01Z"/></g><path class="j" d="M32.32,32.55c-.08,43.76-.15,87.52-.23,131.28L284.78,25.01c-84.15,3.82-168.35,29.25-252.46,7.55Z"/><path class="i" d="M352.84,27.63c8.1,1.28,16.66,2.97,25.52,5.16-8.51-2.18-17.02-3.87-25.52-5.16Z"/><path class="j" d="M378.23,151.94S100.03,244.69,77.18,251.22c100.4,8.28,200.79-33.12,301.19-7.41V104.93c-.06,25.15-.14,47.01-.14,47.01Z"/><path class="n" d="M32.08,164.14s.04,79.64.13,79.66v-79.74l-.13.07Z"/><path class="n" d="M75.75,251.58c.17-.02.65-.14,1.43-.36-14.99-1.24-29.97-3.57-44.96-7.41,21.25,5.72,37.25,8.38,43.53,7.77Z"/><path class="n" d="M378.37,32.79v72.14c.07-29.6.12-63.75,0-72.14Z"/><path class="n" d="M352.84,27.63c-39.4-6.24-67.89-3.03-67.89-3.03l-.29.16c22.73-1.07,45.46-.57,68.18,2.87Z"/><path class="g" d="M378.37,104.93V32.79c-8.87-2.19-17.43-3.87-25.52-5.16-22.73-3.43-45.46-3.94-68.18-2.87L32.22,164.07v79.74c14.99,3.84,31.59,8.46,44.96,7.41,22.85-6.53,301.05-99.28,301.05-99.28,0,0,.08-21.87.14-47.01Z"/><g class="l"><path class="m" d="M210.04,77.99c-.06-.06-1.17-1.08-1.17-1.07,0,0-10.98,11.31-10.98,11.31,33.36,32.41,43.09,43.14,38.16,51.16l-33.65-32.87-11.21,12.03,34.44,30.78c-8.79,5.62-16.58.8-45.92-26.86-5.69,6.11-13.24,14.32-13.24,14.32l-16.86,18.14,12.18,11.32,18.44-20.05c21.27,18.45,39.67,28.54,57.77,14.18l10.54,9.42,9.15-9.3-10.44-10.19c6.61-7.98,6.68-16.41,2.98-26.29-4.11-10.95-18.56-24.82-40.18-46.04Z"/><circle class="m" cx="145.33" cy="172.12" r="10.17"/><circle class="m" cx="265.25" cy="177.41" r="10.17"/></g></g></g></svg>
       </div>
-      <p class="flag-caption">Figure 1: A news dispatch covering the microrepublic's last celebration</p>
+      <p class="flag-caption">Figure 1: The FLAG of the Glorious<br>Revolutionary Microrepublic of Whaaat!?<span class="footnote-wrap"><button type="button" class="footnote-marker" aria-expanded="false" aria-controls="footnote-1">*</button><span class="footnote" id="footnote-1" hidden>*a sovereign micro-republic created almost entirely for marketing purposes</span></span></p>
       <div class="manifesto">
         <p class="manifesto-line">In affirmation of <span class="medium-phrase">PLAY</span> as the purest expression of human freedom...</p>
         <p class="manifesto-line">In embrace of <span class="medium-phrase">GAMES</span> that are weird, whimsical, confounding, and experimental...</p>
@@ -533,15 +809,39 @@
           We, the citizens of the glorious revolutionary microrepublic of Whaaat!?, hereby intend to celebrate our 9th year with all the pomp and circumstance our glorious nation can afford.
         </p>
       </div>
-      <div class="flag-wrap">
-        <svg class="flagwave" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 403.75 277.69" width="403.75" height="277.69"><defs><style>.f{fill:#543231;}.g{fill:#a5ac3e;}.h{mix-blend-mode:multiply;opacity:.75;}.i{fill:#71c286;}.j{fill:#bfc54a;}.k{isolation:isolate;}.l{filter:url(#c);}.m{fill:#fff;}.n{fill:#fff5c3;}</style><filter id="c" x="135.16" y="76.92" width="149.27" height="113.67" filterUnits="userSpaceOnUse"><feOffset dx="9" dy="3"/><feGaussianBlur result="d" stdDeviation="0"/><feFlood flood-color="#543231" flood-opacity=".75"/><feComposite in2="d" operator="in"/><feComposite in="SourceGraphic"/></filter></defs><g class="k"><g id="b"><g class="h"><path class="f" d="M44.32,40.55c-.08,43.76-.15,87.52-.23,131.28L296.78,33.01c-84.15,3.82-168.35,29.25-252.46,7.55Z"/><path class="f" d="M364.84,35.63c8.1,1.28,16.66,2.97,25.52,5.16-8.51-2.18-17.02-3.87-25.52-5.16Z"/><path class="f" d="M390.23,159.94S112.03,252.69,89.18,259.22c100.4,8.28,200.79-33.12,301.19-7.41V112.93c-.06,25.15-.14,47.01-.14,47.01Z"/><path class="f" d="M44.08,172.14s.04,79.64.13,79.66v-79.74l-.13.07Z"/><path class="f" d="M87.75,259.58c.17-.02.65-.14,1.43-.36-14.99-1.24-29.97-3.57-44.96-7.41,21.25,5.72,37.25,8.38,43.53,7.77Z"/><path class="f" d="M390.37,40.79v72.14c.07-29.6.12-63.75,0-72.14Z"/><path class="f" d="M364.84,35.63c-39.4-6.24-67.89-3.03-67.89-3.03l-.29.16c22.73-1.07,45.46-.57,68.18,2.87Z"/><path class="f" d="M390.37,112.93V40.79c-8.87-2.19-17.43-3.87-25.52-5.16-22.73-3.43-45.46-3.94-68.18-2.87L44.22,172.07v79.74c14.99,3.84,31.59,8.46,44.96,7.41,22.85-6.53,301.05-99.28,301.05-99.28,0,0,.08-21.87.14-47.01Z"/></g><path class="j" d="M32.32,32.55c-.08,43.76-.15,87.52-.23,131.28L284.78,25.01c-84.15,3.82-168.35,29.25-252.46,7.55Z"/><path class="i" d="M352.84,27.63c8.1,1.28,16.66,2.97,25.52,5.16-8.51-2.18-17.02-3.87-25.52-5.16Z"/><path class="j" d="M378.23,151.94S100.03,244.69,77.18,251.22c100.4,8.28,200.79-33.12,301.19-7.41V104.93c-.06,25.15-.14,47.01-.14,47.01Z"/><path class="n" d="M32.08,164.14s.04,79.64.13,79.66v-79.74l-.13.07Z"/><path class="n" d="M75.75,251.58c.17-.02.65-.14,1.43-.36-14.99-1.24-29.97-3.57-44.96-7.41,21.25,5.72,37.25,8.38,43.53,7.77Z"/><path class="n" d="M378.37,32.79v72.14c.07-29.6.12-63.75,0-72.14Z"/><path class="n" d="M352.84,27.63c-39.4-6.24-67.89-3.03-67.89-3.03l-.29.16c22.73-1.07,45.46-.57,68.18,2.87Z"/><path class="g" d="M378.37,104.93V32.79c-8.87-2.19-17.43-3.87-25.52-5.16-22.73-3.43-45.46-3.94-68.18-2.87L32.22,164.07v79.74c14.99,3.84,31.59,8.46,44.96,7.41,22.85-6.53,301.05-99.28,301.05-99.28,0,0,.08-21.87.14-47.01Z"/><g class="l"><path class="m" d="M210.04,77.99c-.06-.06-1.17-1.08-1.17-1.07,0,0-10.98,11.31-10.98,11.31,33.36,32.41,43.09,43.14,38.16,51.16l-33.65-32.87-11.21,12.03,34.44,30.78c-8.79,5.62-16.58.8-45.92-26.86-5.69,6.11-13.24,14.32-13.24,14.32l-16.86,18.14,12.18,11.32,18.44-20.05c21.27,18.45,39.67,28.54,57.77,14.18l10.54,9.42,9.15-9.3-10.44-10.19c6.61-7.98,6.68-16.41,2.98-26.29-4.11-10.95-18.56-24.82-40.18-46.04Z"/><circle class="m" cx="145.33" cy="172.12" r="10.17"/><circle class="m" cx="265.25" cy="177.41" r="10.17"/></g></g></g></svg>
-      </div>
-      <p class="flag-caption">Figure 2: The FLAG of the Glorious<br>Revolutionary Microrepublic of Whaaat!?<span class="footnote-wrap"><button type="button" class="footnote-marker" aria-expanded="false" aria-controls="footnote-1">*</button><span class="footnote" id="footnote-1" hidden>*a sovereign micro-republic created almost entirely for marketing purposes</span></span></p>
       <div class="logo-divider">
         <hr>
         <img class="header-icon" src="images/smallinterro.svg" alt="">
         <hr>
       </div>
+      <p class="invite-line invite-line--futura">The Ministry of Play invites you to...</p>
+      <div class="video-placeholder">
+        <video src="images/whaaat-games.mov" width="1254" height="1080" title="Whaaat!? Festival Trailer" autoplay muted loop playsinline></video>
+      </div>
+      <ul class="medium-body">
+        <li>Enjoy a peaceful train ride showcasing the beautiful valleys and vistas of the nation</li>
+        <li>Explore the physics of sausage flipping, the official sport of the Whaaat!?</li>
+        <li>Indulge yourself in our favorite genre of music, drums</li>
+        <li>Help us deal with the growing sinkhole issue</li>
+      </ul>
+      <p class="activity-more">...and so much more!</p>
+      <div class="logo-divider">
+        <hr>
+        <img class="header-icon" src="images/smallinterro.svg" alt="">
+        <hr>
+      </div>
+      <p class="invite-line invite-line--futura">Introducing the Secretary of Keynotes</p>
+      <div class="keynote">
+        <div class="keynote-figure">
+          <img class="keynote-image" src="images/jamin.svg" alt="Portrait of Jamin Warren">
+          <p class="flag-caption">Figure 2: Look at this heroic figure who is sure to wow and impress you!</p>
+        </div>
+        <div class="keynote-text">
+          <p><span class="medium-phrase">Jamin Warren</span><br>Secretary of Keynotes</p>
+          <p>Jamin Warren is the founder of <span class="medium-phrase">Kill Screen</span>, the magazine and studio that spent years insisting, correctly, that video games are art and culture worth taking seriously. He created and hosted PBS Digital Studios' <span class="medium-phrase">Game/Show</span>, and before that covered arts and culture as a reporter for The Wall Street Journal.</p>
+        </div>
+      </div>
+      <!--
       <p class="invite-line">The Ministry of Play invites you to:</p>
       <ul class="medium-body">
         <li>Enjoy state-approved <span class="medium-phrase">themed arcades</span>!</li>
@@ -551,23 +851,155 @@
         <li>Sit for your <span class="medium-phrase">CAT (Cereal Aptitude Test)</span> with a breakfast of Imported American Cereals!</li>
       </ul>
       <p class="activity-more">...and so much more!</p>
+      -->
+      <div class="logo-divider">
+        <hr>
+        <img class="header-icon" src="images/smallinterro.svg" alt="">
+        <hr>
+      </div>
+      <p class="invite-line invite-line--futura">The day is jam packed with celebrations!</p>
+      <ol class="schedule">
+        <li class="schedule-item">
+          <p class="schedule-time">9:00–9:45</p>
+          <div>
+            <h3 class="schedule-title">Check In and Cereal Bar</h3>
+            <p class="schedule-location">ATLAS Lobby</p>
+            <p class="schedule-desc">We've imported a selection of exotic cereals and coffee to make you feel welcome, along with some of our local favorites. See how your pathetic Captain Crunch stands up to our beloved Commodore Chunk!</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">9:45–10:00</p>
+          <div>
+            <h3 class="schedule-title">Opening Remarks</h3>
+            <p class="schedule-location">ATLAS&nbsp;100</p>
+            <p class="schedule-desc">We officially open the Glorious Revolutionary Microrepublic of Whaaat!? with a flag raising and a performance of our national anthem. (subtitles provided)</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">10:00–10:45</p>
+          <div>
+            <h3 class="schedule-title">CAT</h3>
+            <p class="schedule-location">ATLAS&nbsp;104</p>
+            <p class="schedule-desc">Prove the power of your sensory capabilities in the standardized Cereal Aptitude Test, where you'll use all your senses to determine if you have what it takes to be a government bureaucrat.</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">11:00–12:00</p>
+          <div>
+            <h3 class="schedule-title">BRAAAINSHOW</h3>
+            <p class="schedule-location">ATLAS&nbsp;100</p>
+            <p class="schedule-desc">Do you like it? We like it! Join us for a live taping of Whaaat's most popular (and only) television game show, featuring the desperate antics of aspiring local celebrities!</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">12:30–1:30</p>
+          <div>
+            <h3 class="schedule-title">Glunch</h3>
+            <p class="schedule-location">ATLAS Lobby</p>
+            <p class="schedule-desc">We serve your nation's favorite lunch food – cylindrical tube sandwiches!!! With a veritable ocean of condiments!</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">1:00–1:30</p>
+          <div>
+            <h3 class="schedule-title">Giant Kuzu's Maze</h3>
+            <p class="schedule-location">ATLAS BBX</p>
+            <p class="schedule-desc">From our allies at Stellar Factory, the co-competitive tile game made 12x larger, and 7x as dangerous. We aren't saying that you'll get eaten by a Kuzu monster, but we aren't saying you won't either.</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">2:00–3:00</p>
+          <div>
+            <h3 class="schedule-title">Keynote</h3>
+            <p class="schedule-location">ATLAS&nbsp;100</p>
+            <p class="schedule-desc">Jamin Warren is the co-founder of Kill Screen and Gameplayarts, meaning he's ideally suited to help you sound cultured when you tell your parents you've been online playing something called "How to Fish" for the last 14 hours.</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">3:15–4:00</p>
+          <div>
+            <h3 class="schedule-title">Group Games</h3>
+            <p class="schedule-location">ATLAS&nbsp;100</p>
+            <p class="schedule-desc">You know what's better than games? Group games. Exponential fun multiplier.</p>
+          </div>
+        </li>
+        <li class="schedule-item">
+          <p class="schedule-time">4:00–4:30</p>
+          <div>
+            <h3 class="schedule-title">Closing Ceremony &amp; Raffle</h3>
+            <p class="schedule-location">ATLAS&nbsp;100</p>
+            <p class="schedule-desc">It's been great having you, but it's time you win some fabulous prizes and go home. You ate all the hot dogs, anyway.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="logo-divider">
+        <hr>
+        <img class="header-icon" src="images/smallinterro.svg" alt="">
+        <hr>
+      </div>
+      <p class="invite-line invite-line--futura">The Arcades</p>
+      <p class="arcade-subtitle">Our nation's greatest export, open all day from <span class="nowrap">10:00–5:00</span>.</p>
+      <div class="arcade-section">
+        <div class="arcade-grid">
+          <div class="arcade-card">
+            <h4 class="arcade-title">Revolutionary Exhibition Hall</h4>
+            <p class="arcade-location">ATLAS BBX</p>
+            <p class="schedule-desc">Join us in the Revolutionary Exhibition Hall for a rotating selection of the best and weirdest games we could find, projected as large as our revolutionary spirit (and the ceiling of the room) allow.</p>
+          </div>
+          <div class="arcade-card">
+            <h4 class="arcade-title">Ministry of Sport</h4>
+            <p class="arcade-location">ATLAS SL1</p>
+            <p class="schedule-desc">It's said the foundations of every healthy nation are its sports. Or in this case, surrealist videogame versions of "sports". So yeah, the nation is healthy, basically.</p>
+          </div>
+          <div class="arcade-card">
+            <h4 class="arcade-title">Ministry of Tedious but Important Tasks</h4>
+            <p class="arcade-location">ATLAS&nbsp;104</p>
+            <p class="schedule-desc">Even glorious revolutionary micronations have tedious tasks that mid-level bureaucrats have to complete to keep the lights on. Help us keep our lights on? The tasks are pretty fun, actually.</p>
+          </div>
+          <div class="arcade-card">
+            <h4 class="arcade-title">TKIYRNB (That Kid In Your Revolutionary Neighborhood's Basement)</h4>
+            <p class="arcade-location">ATLAS SL3</p>
+            <p class="schedule-desc">How did that kid from the Media Archaeology Lab get all these vintage video game consoles into the country? Call border security! After we play them all day, of course.</p>
+          </div>
+        </div>
+      </div>
       <div class="logo-divider">
         <hr>
         <img class="header-icon" src="images/smallinterro.svg" alt="">
         <hr>
       </div>
       <p class="invite-line invite-line--futura">Entrance Passes</p>
-        <p class="medium-body">This year, we have several options for festival goers looking to visit our glorious nation.<span class="footnote-wrap"><button type="button" class="footnote-marker" aria-expanded="false" aria-controls="footnote-2">*</button><span class="footnote" id="footnote-2" hidden>*Early Birds get 20% off</span></span></p>
-        <ul class="medium-body">
-          <li><span class="medium-phrase">Citizen Pass ($40):</span>  Full festival access with priority entry, cereal breakfast, one raffle ticket, a Whaaat!? passport, and sticker pack, featuring 10 different Whaaat!? Stickers.</li>
-          <li><span class="medium-phrase">Tourist Pass ($21):</span> Full Festival Access, cereal breakfast, and this year's Whaaat!? sticker.</li>
-          <li><span class="medium-phrase">Travel Waiver ($?):</span> Pay What You Can, and just show up!</li>
+      <p class="medium-body pass-intro">This year, we have several options for festival goers looking to visit our glorious nation.<span class="footnote-wrap"><button type="button" class="footnote-marker" aria-expanded="false" aria-controls="footnote-2">*</button><span class="footnote" id="footnote-2" hidden>*Early Birds get 20% off</span></span></p>
+      <div class="pass-grid">
+        <div class="pass-card">
+          <p class="pass-price">$40</p>
+          <h3 class="pass-name">Citizen Pass</h3>
+          <p class="pass-desc">Full festival access with priority entry, cereal breakfast, lunch, one raffle ticket, a Whaaat!? passport, and sticker pack, featuring 10 different Whaaat!? Stickers.</p>
+        </div>
+        <div class="pass-card">
+          <p class="pass-price">$21</p>
+          <h3 class="pass-name">Tourist Pass</h3>
+          <p class="pass-desc">Full Festival Access, cereal breakfast, and this year's Whaaat!? sticker.</p>
+        </div>
+        <div class="pass-card">
+          <p class="pass-price">$?</p>
+          <h3 class="pass-name">Travel Waiver</h3>
+          <p class="pass-desc">Pay What You Can, and just show up!</p>
+        </div>
+      </div>
+      <div class="pass-card pass-card--hero">
+        <p class="pass-kicker">For truly dedicated Whaaat!? Patriots</p>
+        <p class="pass-price">$250</p>
+        <h3 class="pass-name">Hero of the Microrepublic Pass</h3>
+        <p class="pass-desc">A full citizens pass, PLUS:</p>
+        <ul class="pass-perks">
+          <li>A commemorative 3D bust of your head</li>
+          <li>A Whaaat!? national flag</li>
+          <li>A Whaaatlandian gift basket full of local goodies</li>
+          <li>1 hour with a personal herald who will loudly announce your presence in each room you enter</li>
+          <li>Lunch and other heroic surprises</li>
         </ul>
-        <p class="medium-callout">And for truly dedicated Whaaat!? Patriots:</p>
-        <ul class="medium-body">
-          <li><span class="medium-phrase">Hero of the Microrepublic Pass ($250):</span> A full citizens pass, PLUS:<br> a commemorative 3D bust of your head, a Whaaat!? national flag, a Whaaatlandian gift basket full of local goodies, 1 hour with a personal herald who will loudly announce your presence in each room you enter. Lunch and other heroic surprises also included.</li>
-        </ul>
-
+      </div>
       <a href="https://www.eventbrite.com/e/2026-whaaat-festival-tickets-1995037479807?aff=oddtdtcreator" target="_blank" rel="noopener" class="cta-button">Get Your Pass Today!</a>
       <p class="flag-caption">Figure 3: A button that will take you<br>to the ticketing website</p>
 
