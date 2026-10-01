@@ -179,6 +179,19 @@
     margin: 3.5rem auto 0;
     overflow: visible;
   }
+  .bear-image {
+    display: block;
+    width: 60%;
+    height: auto;
+    margin: 1rem auto 0;
+  }
+  .bear-caption {
+    margin: 0.25rem 0 0;
+    color: #604118;
+    font-family: "nitti-typewriter-normal", monospace;
+    font-size: 7px;
+    text-align: center;
+  }
   .flagwave {
     display: block;
     width: 100%;
@@ -370,6 +383,22 @@
     font-weight: 600;
     font-size: 40px;
     line-height: 1;
+  }
+  .sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 3rem;
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
+  .sponsor-logo {
+    display: block;
+    height: 90px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
   }
   .pass-name {
     margin: 0 0 0.6rem;
@@ -585,6 +614,9 @@
 
     .flag-wrap {
       width: 80%;
+    }
+    .bear-image {
+      width: 85%;
     }
     .invite-line {
       margin: 3rem auto 1.5rem;
@@ -802,9 +834,6 @@
       </div>
       <p class="flag-caption">Figure 1: The FLAG of the Glorious<br>Revolutionary Microrepublic of Whaaat!?<span class="footnote-wrap"><button type="button" class="footnote-marker" aria-expanded="false" aria-controls="footnote-1">*</button><span class="footnote" id="footnote-1" hidden>*a sovereign micro-republic created almost entirely for marketing purposes</span></span></p>
       <div class="manifesto">
-        <p class="manifesto-line">In affirmation of <span class="medium-phrase">PLAY</span> as the purest expression of human freedom...</p>
-        <p class="manifesto-line">In embrace of <span class="medium-phrase">GAMES</span> that are weird, whimsical, confounding, and experimental...</p>
-        <p class="manifesto-line">In passionate <span class="medium-phrase">DEFIANCE</span> of mundanity, exploitation, and despair...</p>
         <p>
           We the citizens of the Glorious Revolutionary Microrepublic of <span class="medium-phrase">WHAAAT!?</span> hereby <br><span class="medium-phrase">INVITE THE WORLD</span> to our 9th annual <span class="medium-phrase">festival for experimental games and playful interactions!
         </p>
@@ -814,7 +843,7 @@
         <img class="header-icon" src="images/smallinterro.svg" alt="">
         <hr>
       </div>
-      <p class="invite-line invite-line--futura">The Ministry of Play invites you to...</p>
+      <p class="invite-line invite-line--futura">The Ministry of Games invites you to...</p>
       <div class="video-placeholder">
         <video width="1254" height="1080" title="Whaaat!? Festival Trailer" autoplay muted loop playsinline>
           <source src="images/whaaat-games.mov" type="video/quicktime">
@@ -834,19 +863,19 @@
         <img class="header-icon" src="images/smallinterro.svg" alt="">
         <hr>
       </div>
-      <p class="invite-line invite-line--futura">Introducing the Secretary of Keynotes</p>
+      <p class="invite-line invite-line--futura">Introducing the Speaker of Keynotes</p>
       <div class="keynote">
         <div class="keynote-figure">
           <img class="keynote-image" src="images/jamin.svg" alt="Portrait of Jamin Warren">
           <p class="flag-caption">Figure 2: Look at this heroic figure who is sure to wow and impress you!</p>
         </div>
         <div class="keynote-text">
-          <p><span class="medium-phrase">Jamin Warren</span><br>Secretary of Keynotes</p>
+          <p><span class="medium-phrase">Jamin Warren</span><br>Speaker of Keynotes</p>
           <p>Jamin Warren is the founder of <span class="medium-phrase">Kill Screen</span>, the magazine and studio that spent years insisting, correctly, that video games are art and culture worth taking seriously. He created and hosted PBS Digital Studios' <span class="medium-phrase">Game/Show</span>, and before that covered arts and culture as a reporter for The Wall Street Journal.</p>
         </div>
       </div>
       <!--
-      <p class="invite-line">The Ministry of Play invites you to:</p>
+      <p class="invite-line">The Ministry of Games invites you to:</p>
       <ul class="medium-body">
         <li>Enjoy state-approved <span class="medium-phrase">themed arcades</span>!</li>
         <li>Delight in a host of <span class="medium-phrase">playful interactions</span>!</li>
@@ -856,6 +885,18 @@
       </ul>
       <p class="activity-more">...and so much more!</p>
       -->
+      <div class="logo-divider">
+        <hr>
+        <img class="header-icon" src="images/smallinterro.svg" alt="">
+        <hr>
+      </div>
+      <p class="invite-line invite-line--futura">With the support of our Generous Allies</p>
+      <!-- Placeholder logos: swap each src/alt for a real sponsor logo in images/ -->
+      <div class="sponsor-logos">
+        <img class="sponsor-logo" src="images/stellarFactory.svg" alt="Stellar Factory">
+        <img class="sponsor-logo" src="images/thingamabob.svg" alt="Thingamabob">
+        <img class="sponsor-logo" src="images/smallinterro.svg" alt="Sponsor name">
+      </div>
       <div class="logo-divider">
         <hr>
         <img class="header-icon" src="images/smallinterro.svg" alt="">
@@ -1006,6 +1047,19 @@
       </div>
       <a href="https://www.eventbrite.com/e/2026-whaaat-festival-tickets-1995037479807?aff=oddtdtcreator" target="_blank" rel="noopener" class="cta-button">Get Your Pass Today!</a>
       <p class="flag-caption">Figure 3: A button that will take you<br>to the ticketing website</p>
+      <div class="logo-divider">
+        <hr>
+        <img class="header-icon" src="images/smallinterro.svg" alt="">
+        <hr>
+      </div>
+      <div class="manifesto">
+        <p class="manifesto-line">In affirmation of <span class="medium-phrase">PLAY</span> as the purest expression of human freedom...</p>
+        <p class="manifesto-line">In embrace of <span class="medium-phrase">GAMES</span> that are weird, whimsical, confounding, and experimental...</p>
+        <p class="manifesto-line">In passionate <span class="medium-phrase">DEFIANCE</span> of mundanity, exploitation, and despair...</p>
+        <p>Join us on Saturday, November 7th to celebrate the 9th anniversary of the glorious microrepublic of Whaaat!?</p>
+      </div>
+      <img class="bear-image" src="images/bear.svg" alt="">
+      <p class="bear-caption">it's going to be a bear of a time</p>
 
       <div class="header header--footer">
         <span class="header-text">&nbsp;the glorious revolutionary&nbsp;</span>
